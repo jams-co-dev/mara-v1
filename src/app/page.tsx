@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <PageWrapper>
       <section className="text-center my-12 md:my-16 px-4">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-headline font-bold tracking-tight text-primary">
           Crafting Digital Experiences
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
