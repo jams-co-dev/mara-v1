@@ -11,6 +11,7 @@ interface MoodBoardItem {
   videoId: string;
   thumbnail: string;
   hint: string;
+  title: string;
 }
 
 interface MoodBoardProps {
@@ -41,8 +42,13 @@ export function MoodBoard({ items }: MoodBoardProps) {
                   className="w-full h-full object-cover aspect-video transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={item.hint}
                 />
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <PlayCircle className="w-16 h-16 text-white/80" />
+                </div>
+                <div className="absolute bottom-0 left-0 p-4">
+                    <h3 className="text-white text-sm font-semibold transition-transform duration-300 group-hover:translate-x-1">
+                      {item.title}
+                    </h3>
                 </div>
               </CardContent>
             </Card>
@@ -57,10 +63,10 @@ export function MoodBoard({ items }: MoodBoardProps) {
               <iframe
                 width="100%"
                 height="100%"
-                src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                title="YouTube video player"
+                src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1`}
+                title="Vimeo video player"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
                 className="rounded-lg"
               ></iframe>

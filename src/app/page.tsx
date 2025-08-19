@@ -1,12 +1,12 @@
 import { MoodBoard } from '@/components/mood-board';
 
 const moodBoardItems = [
-  { id: '1', videoId: 'dQw4w9WgXcQ', thumbnail: 'https://placehold.co/600x400.png', hint: 'corporate video' },
-  { id: '2', videoId: '3JZ_D3ELwOQ', thumbnail: 'https://placehold.co/600x400.png', hint: 'product commercial' },
-  { id: '3', videoId: 'u31fedHaHTE', thumbnail: 'https://placehold.co/600x400.png', hint: 'fashion film' },
-  { id: '4', videoId: 'LXb3EKWsInQ', thumbnail: 'https://placehold.co/600x400.png', hint: 'food advertisement' },
-  { id: '5', videoId: '6JnGBs88sL0', thumbnail: 'https://placehold.co/600x400.png', hint: 'travel vlog' },
-  { id: '6', videoId: 'hY7m5jjJ9e4', thumbnail: 'https://placehold.co/600x400.png', hint: 'tech review' },
+  { id: '1', title: 'Corporate Flow', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'corporate video' },
+  { id: '2', title: 'Product Launch', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'product commercial' },
+  { id: '3', title: 'Fashion Film', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'fashion film' },
+  { id: '4', title: 'Gourmet Ads', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'food advertisement' },
+  { id: '5', title: 'Travel Diary', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'travel vlog' },
+  { id: '6', title: 'Tech Showcase', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'tech review' },
 ];
 
 
