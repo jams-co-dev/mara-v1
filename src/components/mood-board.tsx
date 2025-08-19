@@ -22,31 +22,44 @@ export function MoodBoard({ items }: MoodBoardProps) {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {items.map((item) => (
-          <Card 
-            key={item.id} 
-            className="overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-xl hover:scale-105"
-            onClick={() => setSelectedVideo(item.videoId)}
-            onKeyDown={(e) => e.key === 'Enter' && setSelectedVideo(item.videoId)}
-            tabIndex={0}
-            aria-label={`Play video: ${item.hint}`}
-          >
-            <CardContent className="p-0 relative">
-              <Image
-                src={item.thumbnail}
-                alt={item.hint}
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover aspect-video"
-                data-ai-hint={item.hint}
-              />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <PlayCircle className="w-16 h-16 text-white/80" />
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        {items.map((item, index) => {
+          // Assign different classes for varied sizes, creating a masonry effect
+          const sizeClass = (() => {
+            switch (index % 3) {
+              case 0: return 'aspect-[4/3]'; // Large
+              case 1: return 'aspect-square'; // Medium
+              case 2: return 'aspect-[3/4]'; // Small (tall)
+              default: return 'aspect-video';
+            }
+          })();
+
+          return (
+            <div key={item.id} className="break-inside-avoid">
+              <Card 
+                className="overflow-hidden cursor-pointer group transition-all duration-300 hover:shadow-xl hover:scale-105"
+                onClick={() => setSelectedVideo(item.videoId)}
+                onKeyDown={(e) => e.key === 'Enter' && setSelectedVideo(item.videoId)}
+                tabIndex={0}
+                aria-label={`Play video: ${item.hint}`}
+              >
+                <CardContent className="p-0 relative">
+                  <Image
+                    src={item.thumbnail}
+                    alt={item.hint}
+                    width={600}
+                    height={index % 3 === 2 ? 800 : 400}
+                    className={`w-full h-full object-cover ${sizeClass}`}
+                    data-ai-hint={item.hint}
+                  />
+                  <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <PlayCircle className="w-16 h-16 text-white/80" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          );
+        })}
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={(isOpen) => !isOpen && setSelectedVideo(null)}>
