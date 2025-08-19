@@ -41,9 +41,9 @@ export function Footer() {
     <footer className="bg-card border-t">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
-          <p className="text-sm text-muted-foreground order-3 md:order-1 md:col-span-1">
-            &copy; {currentYear} All Rights Reserved.
-          </p>
+          <div className="text-sm text-muted-foreground order-3 md:order-1 md:col-span-1">
+            {currentYear && <p>&copy; {currentYear} All Rights Reserved.</p>}
+          </div>
 
           <div className="flex justify-center order-1 md:order-2 md:col-span-1">
             <Link href="/" className="text-xl font-headline font-bold text-primary">
