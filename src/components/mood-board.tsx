@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { PlayCircle } from 'lucide-react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface MoodBoardItem {
   id: string;
@@ -18,28 +19,39 @@ interface MoodBoardProps {
   items: MoodBoardItem[];
 }
 
+const sizeClasses = [
+  'col-span-2 row-span-2', // Grande
+  'col-span-1 row-span-1', // Pequeño
+  'col-span-1 row-span-2', // Vertical
+  'col-span-2 row-span-1', // Horizontal
+  'col-span-1 row-span-1',
+  'col-span-2 row-span-2',
+  'col-span-2 row-span-1',
+  'col-span-1 row-span-2',
+];
+
 export function MoodBoard({ items }: MoodBoardProps) {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
-          <div key={item.id}>
+      <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-1">
+        {items.map((item, index) => (
+          <div key={item.id} className={cn(sizeClasses[index % sizeClasses.length], 'overflow-hidden')}>
             <Card 
-              className="overflow-hidden cursor-pointer group rounded-none border-0"
+              className="overflow-hidden cursor-pointer group rounded-none border-0 h-full"
               onClick={() => setSelectedVideo(item.videoId)}
               onKeyDown={(e) => e.key === 'Enter' && setSelectedVideo(item.videoId)}
               tabIndex={0}
               aria-label={`Play video: ${item.hint}`}
             >
-              <CardContent className="p-0 relative">
+              <CardContent className="p-0 relative h-full">
                 <Image
                   src={item.thumbnail}
                   alt={item.hint}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover aspect-video transition-transform duration-300 group-hover:scale-105"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   data-ai-hint={item.hint}
                 />
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
