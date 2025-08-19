@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Video, Megaphone, Camera, PenTool, BarChart3, Users } from 'lucide-react';
 
 const services = [
@@ -46,18 +46,24 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service, index) => (
-          <Card key={index} className="text-center transition-all duration-300 hover:shadow-xl hover:border-primary">
-            <CardHeader className="items-center p-8">
-              <div className="p-4 bg-accent/20 rounded-full mb-4">
-                <service.icon className="w-8 h-8 text-primary" />
-              </div>
-              <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
-              <CardDescription className="mt-2 text-base">{service.description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+      <div className="max-w-4xl mx-auto">
+        <Accordion type="single" collapsible className="w-full">
+          {services.map((service, index) => (
+            <AccordionItem value={`item-${index}`} key={index}>
+              <AccordionTrigger className="text-xl font-headline hover:no-underline">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-accent/20 rounded-full">
+                    <service.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  {service.title}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-muted-foreground pl-16">
+                {service.description}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       </div>
     </div>
   );
