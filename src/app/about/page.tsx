@@ -103,17 +103,13 @@ export default function AboutPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member) => (
-                <Link key={member.slug} href={`/team/${member.slug}`}>
-                    <Card className="overflow-hidden h-full group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                        <CardContent className="p-0">
-                            <Image
-                                src={member.imageUrl}
-                                alt={member.name}
-                                width={400}
-                                height={400}
-                                className="w-full h-auto object-cover aspect-square"
-                                data-ai-hint={member.hint}
-                            />
+                <Link key={member.slug} href={`/team/${member.slug}`} className="group">
+                    <Card className="h-full text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 pt-8 pb-4">
+                        <CardContent className="p-0 flex flex-col items-center">
+                             <Avatar className="w-32 h-32 border-4 border-transparent group-hover:border-accent transition-colors duration-300">
+                                <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
+                                <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
+                            </Avatar>
                         </CardContent>
                         <CardHeader>
                             <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
