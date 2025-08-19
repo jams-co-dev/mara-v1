@@ -103,7 +103,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-headline text-primary mb-12 text-center">
             Meet the Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {teamMembers.map((member) => (
                   <Link key={member.slug} href={`/team/${member.slug}`} className="group">
                       <Card className="h-full text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 pt-8 pb-4">
