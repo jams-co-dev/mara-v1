@@ -12,8 +12,8 @@ const moodBoardItems = [
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section className="text-center mb-16">
+    <div>
+      <section className="text-center my-12 md:my-16 px-4">
         <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
           Crafting Digital Experiences
         </h1>
