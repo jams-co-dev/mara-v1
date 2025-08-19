@@ -57,7 +57,7 @@ export default function ServicesPage() {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col md:flex-row w-full h-screen pt-20">
+      <div className="flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)] -mt-20">
           {services.map((service, index) => (
             <div
               key={index}
