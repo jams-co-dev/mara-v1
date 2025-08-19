@@ -99,9 +99,9 @@ export default function AboutPage() {
           </Card>
         </div>
         
-        <section className="mt-24">
+        <section className="mt-24 md:hidden">
           <h2 className="text-3xl font-headline text-primary mb-12 text-center">
-            Meet the Team (Card Version)
+            Meet the Team
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {teamMembers.map((member) => (
@@ -123,9 +123,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mt-24">
+        <section className="mt-24 hidden md:block">
           <h2 className="text-3xl font-headline text-primary mb-12 text-center">
-            Meet the Team (Interactive Version)
+            Meet the Team
           </h2>
           <div className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full max-w-6xl mx-auto">
             {teamMembers.map((member, index) => (
