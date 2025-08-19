@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { Video, Megaphone, Camera, PenTool, BarChart3, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageWrapper } from '@/components/page-wrapper';
 
 const services = [
@@ -57,7 +57,35 @@ export default function ServicesPage() {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)] -mt-20">
+      {/* Mobile and Tablet View: Stacked Cards */}
+      <div className="md:hidden">
+        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="text-center mb-12">
+                <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+                    Our Services
+                </h1>
+                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                    What we can do for you.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 gap-8">
+                {services.map((service, index) => (
+                    <Card key={index} className={cn("text-center overflow-hidden", service.color)}>
+                        <CardHeader className="pt-8">
+                            <service.icon className={cn("w-12 h-12 mx-auto mb-4", service.textColor)} />
+                            <CardTitle as="h3" className={cn("font-headline text-2xl", service.textColor)}>{service.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="pb-8">
+                            <p className="text-muted-foreground max-w-md mx-auto">{service.description}</p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </section>
+      </div>
+      
+      {/* Desktop View: Interactive Panels */}
+      <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)] -mt-20">
           {services.map((service, index) => (
             <div
               key={index}
