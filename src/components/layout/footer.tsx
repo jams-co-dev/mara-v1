@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -32,14 +33,18 @@ export function Footer() {
   return (
     <footer className="bg-card border-t mt-16">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          <div className="text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+          <p className="text-sm text-muted-foreground order-3 md:order-1 md:col-span-1">
+            &copy; {new Date().getFullYear()} All Rights Reserved.
+          </p>
+
+          <div className="flex justify-center order-1 md:order-2 md:col-span-1">
             <Link href="/" className="text-xl font-headline font-bold text-primary">
               Visionary Digital
             </Link>
-            <p className="text-sm text-muted-foreground mt-1">&copy; {new Date().getFullYear()} All Rights Reserved.</p>
           </div>
-          <div className="flex items-center space-x-4">
+
+          <div className="flex items-center justify-center md:justify-end space-x-4 order-2 md:order-3 md:col-span-1">
             {socialLinks.map((social) => (
               <a 
                 key={social.href} 
