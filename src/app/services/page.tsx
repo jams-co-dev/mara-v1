@@ -56,18 +56,8 @@ export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <PageWrapper>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <section className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-            Our Services
-          </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            We offer a comprehensive suite of services to elevate your brand's digital presence.
-          </p>
-        </section>
-
-        <div className="flex flex-col md:flex-row h-[60vh] md:h-[70vh] w-full max-w-6xl mx-auto">
+    <PageWrapper className="h-full">
+      <div className="flex flex-col md:flex-row w-full h-full min-h-[calc(100vh_-_theme(spacing.20))]">
           {services.map((service, index) => (
             <div
               key={index}
@@ -110,10 +100,7 @@ export default function ServicesPage() {
               </div>
             </div>
           ))}
-        </div>
       </div>
     </PageWrapper>
   );
 }
-
-    
