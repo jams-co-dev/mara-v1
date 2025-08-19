@@ -1,4 +1,5 @@
 
+
 import { MoodBoard } from '@/components/mood-board';
 import { PageWrapper } from "@/components/page-wrapper";
 
@@ -60,7 +61,7 @@ const projects = [
 ];
 
 const workRows = [];
-for (let i = 0; i < projects.length; i) {
+for (let i = 0; i < projects.length; ) {
   // Add a row with one item
   if (projects[i]) {
     workRows.push({ items: [projects[i]] });
