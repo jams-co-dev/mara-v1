@@ -1,7 +1,11 @@
 
+'use client';
 
-import { MoodBoard } from '@/components/mood-board';
+import Image from "next/image";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
+import { PlayCircle } from "lucide-react";
 
 const projects = [
   {
@@ -60,24 +64,6 @@ const projects = [
   }
 ];
 
-const workRows = [];
-for (let i = 0; i < projects.length; ) {
-  // Add a row with one item
-  if (projects[i]) {
-    workRows.push({ items: [projects[i]] });
-    i++;
-  }
-  // Add a row with two items
-  if (projects[i] && projects[i+1]) {
-    workRows.push({ items: [projects[i], projects[i+1]] });
-    i += 2;
-  } else if (projects[i]) { // if there's an odd one left
-    workRows.push({ items: [projects[i]] });
-    i++;
-  }
-}
-
-
 export default function OurWorkPage() {
   return (
     <PageWrapper>
@@ -91,7 +77,32 @@ export default function OurWorkPage() {
           </p>
         </section>
         
-        <MoodBoard rows={workRows} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <Link key={project.id} href="#" className="group block">
+              <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <CardContent className="p-0 relative">
+                  <Image
+                    src={project.thumbnail}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover aspect-video"
+                    data-ai-hint={project.hint}
+                  />
+                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <PlayCircle className="w-16 h-16 text-white/80" />
+                    </div>
+                </CardContent>
+                <CardHeader>
+                  <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                  <CardDescription as="p" className="text-sm">{project.category}</CardDescription>
+                  <CardDescription as="p" className="text-sm text-muted-foreground mt-2">{project.description}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </div>
     </PageWrapper>
   );
