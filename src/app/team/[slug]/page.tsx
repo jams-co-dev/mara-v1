@@ -2,6 +2,9 @@
 import Image from "next/image";
 import { notFound } from 'next/navigation';
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 // In a real app, you'd fetch this from a CMS or database
 const teamMembers = [
@@ -65,14 +68,13 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <div>
+    <div className="pb-24">
       <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
         <Image
           src={member.headerImage}
           alt={`Header image for ${member.name}`}
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0"
+          fill
+          className="absolute inset-0 object-cover"
           data-ai-hint={member.headerHint}
           priority
         />
@@ -97,6 +99,15 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
             </CardContent>
           </Card>
         </div>
+      </div>
+
+       <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+        <Button asChild variant="outline" className="shadow-lg bg-background/80 backdrop-blur-sm">
+          <Link href="/about">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            go back to the roster
+          </Link>
+        </Button>
       </div>
     </div>
   );
