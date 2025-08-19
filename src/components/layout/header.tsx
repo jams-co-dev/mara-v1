@@ -7,6 +7,7 @@ import { Menu, X, Instagram, Facebook } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -72,8 +73,8 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center space-x-4">
-             <div className="hidden md:flex items-center space-x-2">
+          <div className="flex items-center space-x-2">
+             <div className="hidden md:flex items-center space-x-1">
                 {socialLinks.map((social) => (
                   <Button key={social.href} variant="ghost" size="icon" asChild>
                     <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
@@ -82,6 +83,7 @@ export function Header() {
                   </Button>
                 ))}
              </div>
+             <ThemeSwitcher />
             <div className="md:hidden">
               <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu">
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
