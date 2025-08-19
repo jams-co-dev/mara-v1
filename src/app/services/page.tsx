@@ -57,7 +57,7 @@ export default function ServicesPage() {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col md:flex-row w-full min-h-[calc(100vh_-_theme(spacing.20))]">
+      <div className="flex flex-col md:flex-row w-full min-h-[calc(100vh_-_5rem)]">
           {services.map((service, index) => (
             <div
               key={index}
