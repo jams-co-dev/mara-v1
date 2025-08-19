@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Video, Megaphone, Camera, PenTool, BarChart3, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent } from '@/components/ui/card';
+import { PageWrapper } from '@/components/page-wrapper';
 
 const services = [
   {
@@ -55,61 +56,63 @@ export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section className="text-center mb-12">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-          Our Services
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We offer a comprehensive suite of services to elevate your brand's digital presence.
-        </p>
-      </section>
+    <PageWrapper>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+            Our Services
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            We offer a comprehensive suite of services to elevate your brand's digital presence.
+          </p>
+        </section>
 
-      <div className="flex flex-col md:flex-row h-[60vh] md:h-[70vh] w-full max-w-6xl mx-auto">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className={cn(
-              "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
-              "flex items-center justify-center",
-              activeService === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_5)]',
-              service.color
-            )}
-            onClick={() => setActiveService(index)}
-          >
+        <div className="flex flex-col md:flex-row h-[60vh] md:h-[70vh] w-full max-w-6xl mx-auto">
+          {services.map((service, index) => (
             <div
+              key={index}
               className={cn(
-                "absolute inset-0 transition-opacity duration-500",
-                activeService === index ? 'opacity-100' : 'opacity-0'
+                "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
+                "flex items-center justify-center",
+                activeService === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_5)]',
+                service.color
               )}
+              onClick={() => setActiveService(index)}
             >
-              <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
-                <CardContent className="p-8 text-center">
-                    <service.icon className={cn("w-16 h-16 mx-auto mb-6", service.textColor)} />
-                    <h2 className={cn("text-3xl font-headline font-bold mb-4", service.textColor)}>{service.title}</h2>
-                    <p className="text-lg text-muted-foreground max-w-md mx-auto">{service.description}</p>
-                </CardContent>
-              </Card>
-            </div>
-            <div
+              <div
                 className={cn(
-                    "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
-                    activeService !== index ? 'opacity-100' : 'opacity-0'
+                  "absolute inset-0 transition-opacity duration-500",
+                  activeService === index ? 'opacity-100' : 'opacity-0'
                 )}
-            >
-                <h3 
-                    className={cn(
-                        "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
-                        service.textColor
-                    )}
-                >
-                    {service.title}
-                </h3>
+              >
+                <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
+                  <CardContent className="p-8 text-center">
+                      <service.icon className={cn("w-16 h-16 mx-auto mb-6", service.textColor)} />
+                      <h2 className={cn("text-3xl font-headline font-bold mb-4", service.textColor)}>{service.title}</h2>
+                      <p className="text-lg text-muted-foreground max-w-md mx-auto">{service.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
+              <div
+                  className={cn(
+                      "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
+                      activeService !== index ? 'opacity-100' : 'opacity-0'
+                  )}
+              >
+                  <h3 
+                      className={cn(
+                          "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                          service.textColor
+                      )}
+                  >
+                      {service.title}
+                  </h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }
 

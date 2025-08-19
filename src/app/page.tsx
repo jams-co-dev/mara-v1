@@ -1,4 +1,5 @@
 import { MoodBoard } from '@/components/mood-board';
+import { PageWrapper } from '@/components/page-wrapper';
 
 const moodBoardRows = [
   {
@@ -30,7 +31,7 @@ const moodBoardRows = [
 
 export default function Home() {
   return (
-    <div>
+    <PageWrapper>
       <section className="text-center my-12 md:my-16 px-4">
         <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
           Crafting Digital Experiences
@@ -41,6 +42,6 @@ export default function Home() {
       </section>
 
       <MoodBoard rows={moodBoardRows} />
-    </div>
+    </PageWrapper>
   );
 }

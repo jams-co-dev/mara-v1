@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { PageWrapper } from "@/components/page-wrapper";
 
 const projects = [
   {
@@ -49,37 +50,39 @@ const projects = [
 
 export default function OurWorkPage() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <section className="text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-          Our Work
-        </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We take pride in our creations. Explore a selection of our recent projects.
-        </p>
-      </section>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-xl">
-            <CardContent className="p-0">
-              <Image
-                src={project.imageUrl}
-                alt={project.title}
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover aspect-video"
-                data-ai-hint={project.hint}
-              />
-            </CardContent>
-            <CardHeader>
-              <Badge variant="secondary" className="w-fit mb-2">{project.category}</Badge>
-              <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+    <PageWrapper>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+            Our Work
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            We take pride in our creations. Explore a selection of our recent projects.
+          </p>
+        </section>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <CardContent className="p-0">
+                <Image
+                  src={project.imageUrl}
+                  alt={project.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-auto object-cover aspect-video"
+                  data-ai-hint={project.hint}
+                />
+              </CardContent>
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">{project.category}</Badge>
+                <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }
