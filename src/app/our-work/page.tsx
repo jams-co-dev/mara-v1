@@ -76,7 +76,7 @@ export default function OurWorkPage() {
               </CardContent>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">{project.category}</Badge>
-                <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
+                <CardTitle as="h3" className="font-headline text-2xl">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
             </Card>

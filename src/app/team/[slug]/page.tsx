@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import { notFound } from 'next/navigation';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -88,12 +88,12 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
             <Card className="overflow-hidden shadow-2xl">
               <CardContent className="p-6 md:p-12">
                 <div className="text-center">
-                  <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+                  <CardTitle as="h1" className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
                     {member.name}
-                  </h1>
-                  <p className="mt-2 text-xl md:text-2xl font-semibold text-accent">
+                  </CardTitle>
+                  <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
                     {member.role}
-                  </p>
+                  </CardDescription>
                 </div>
                 <div className="prose prose-lg max-w-4xl mx-auto mt-8 text-muted-foreground">
                   <p>{member.bio}</p>

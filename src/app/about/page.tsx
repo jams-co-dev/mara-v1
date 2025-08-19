@@ -114,7 +114,7 @@ export default function AboutPage() {
                               </Avatar>
                           </CardContent>
                           <CardHeader>
-                              <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
+                              <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
                               <CardDescription>{member.role}</CardDescription>
                           </CardHeader>
                       </Card>
