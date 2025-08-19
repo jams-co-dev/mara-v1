@@ -96,10 +96,38 @@ export default function AboutPage() {
             </CardContent>
         </Card>
       </div>
+      
+      <section className="mt-24">
+        <h2 className="text-3xl font-headline text-primary mb-12 text-center">
+          Meet the Team (Card Version)
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member) => (
+                <Link key={member.slug} href={`/team/${member.slug}`}>
+                    <Card className="overflow-hidden h-full group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                        <CardContent className="p-0">
+                            <Image
+                                src={member.imageUrl}
+                                alt={member.name}
+                                width={400}
+                                height={400}
+                                className="w-full h-auto object-cover aspect-square"
+                                data-ai-hint={member.hint}
+                            />
+                        </CardContent>
+                        <CardHeader>
+                            <CardTitle className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
+                            <CardDescription>{member.role}</CardDescription>
+                        </CardHeader>
+                    </Card>
+                </Link>
+            ))}
+        </div>
+      </section>
 
       <section className="mt-24">
         <h2 className="text-3xl font-headline text-primary mb-12 text-center">
-          Meet the Team
+          Meet the Team (Interactive Version)
         </h2>
         <div className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full max-w-6xl mx-auto">
           {teamMembers.map((member, index) => (
