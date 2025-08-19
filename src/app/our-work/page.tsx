@@ -1,52 +1,81 @@
-import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
+import { MoodBoard } from '@/components/mood-board';
 import { PageWrapper } from "@/components/page-wrapper";
 
 const projects = [
   {
+    id: "1",
     title: "Project Alpha",
     category: "Corporate Branding",
     description: "A complete rebranding for a major tech firm, focusing on a modern and clean aesthetic.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "office teamwork"
+    thumbnail: "https://placehold.co/1600x900.png",
+    hint: "office teamwork",
+    videoId: "824804225"
   },
   {
+    id: "2",
     title: "Project Beta",
     category: "Product Launch",
     description: "Dynamic video commercial for a new consumer gadget, highlighting its innovative features.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "modern smartphone"
+    thumbnail: "https://placehold.co/800x600.png",
+    hint: "modern smartphone",
+    videoId: "824804225"
   },
   {
+    id: "3",
     title: "Project Gamma",
     category: "Social Media Campaign",
     description: "Viral marketing campaign across multiple platforms for a lifestyle brand.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "fashion model"
+    thumbnail: "https://placehold.co/800x600.png",
+    hint: "fashion model",
+    videoId: "824804225"
   },
   {
+    id: "4",
     title: "Project Delta",
     category: "E-commerce Photography",
     description: "High-quality product shots for an online fashion retailer's new collection.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "clothing rack"
+    thumbnail: "https://placehold.co/1600x900.png",
+    hint: "clothing rack",
+    videoId: "824804225"
   },
   {
+    id: "5",
     title: "Project Epsilon",
     category: "Food & Beverage Ad",
     description: "A mouth-watering video ad for a new line of gourmet snacks.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "gourmet food"
+    thumbnail: "https://placehold.co/800x600.png",
+    hint: "gourmet food",
+    videoId: "824804225"
   },
   {
+    id: "6",
     title: "Project Zeta",
     category: "Automotive Commercial",
     description: "A high-octane commercial showcasing the speed and luxury of a new sports car.",
-    imageUrl: "https://placehold.co/600x400.png",
-    hint: "sports car"
+    thumbnail: "https://placehold.co/800x600.png",
+    hint: "sports car",
+    videoId: "824804225"
   }
 ];
+
+const workRows = [];
+for (let i = 0; i < projects.length; i) {
+  // Add a row with one item
+  if (projects[i]) {
+    workRows.push({ items: [projects[i]] });
+    i++;
+  }
+  // Add a row with two items
+  if (projects[i] && projects[i+1]) {
+    workRows.push({ items: [projects[i], projects[i+1]] });
+    i += 2;
+  } else if (projects[i]) { // if there's an odd one left
+    workRows.push({ items: [projects[i]] });
+    i++;
+  }
+}
+
 
 export default function OurWorkPage() {
   return (
@@ -61,27 +90,7 @@ export default function OurWorkPage() {
           </p>
         </section>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-xl">
-              <CardContent className="p-0">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-auto object-cover aspect-video"
-                  data-ai-hint={project.hint}
-                />
-              </CardContent>
-              <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2">{project.category}</Badge>
-                <CardTitle as="h3" className="font-headline text-2xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-            </Card>
-          ))}
-        </div>
+        <MoodBoard rows={workRows} />
       </div>
     </PageWrapper>
   );
