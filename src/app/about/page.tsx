@@ -137,28 +137,27 @@ export default function AboutPage() {
               )}
               onMouseEnter={() => setActiveMember(index)}
             >
+              <Link href={`/team/${member.slug}`} className="absolute inset-0 z-10" aria-label={`View profile for ${member.name}`} />
               <div
                 className={cn(
-                  "absolute inset-0 transition-opacity duration-500",
+                  "absolute inset-0 transition-opacity duration-500 pointer-events-none",
                   activeMember === index ? 'opacity-100' : 'opacity-0'
                 )}
               >
                 <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
                   <CardContent className="p-8 text-center">
-                    <Link href={`/team/${member.slug}`} className="group">
-                        <Avatar className="w-32 h-32 mx-auto border-4 border-transparent group-hover:border-accent transition-colors duration-300 mb-4">
-                            <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
-                            <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
-                        </Avatar>
-                        <h2 className={cn("text-3xl font-headline font-bold mb-2", member.textColor)}>{member.name}</h2>
-                        <p className="text-lg text-muted-foreground max-w-md mx-auto">{member.role}</p>
-                    </Link>
+                    <Avatar className="w-32 h-32 mx-auto border-4 border-transparent mb-4">
+                        <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
+                        <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
+                    </Avatar>
+                    <h2 className={cn("text-3xl font-headline font-bold mb-2", member.textColor)}>{member.name}</h2>
+                    <p className="text-lg text-muted-foreground max-w-md mx-auto">{member.role}</p>
                   </CardContent>
                 </Card>
               </div>
               <div
                   className={cn(
-                      "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
+                      "absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none",
                       activeMember !== index ? 'opacity-100' : 'opacity-0'
                   )}
               >
