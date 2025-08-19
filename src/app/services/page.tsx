@@ -56,8 +56,8 @@ export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <PageWrapper className="h-full">
-      <div className="flex flex-col md:flex-row w-full h-full min-h-[calc(100vh_-_theme(spacing.20))]">
+    <PageWrapper>
+      <div className="flex flex-col md:flex-row w-full min-h-[calc(100vh_-_theme(spacing.20))]">
           {services.map((service, index) => (
             <div
               key={index}
