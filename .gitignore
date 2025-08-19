@@ -43,3 +43,6 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+
+# Ignora archivos grandes
+project.tar.gz
