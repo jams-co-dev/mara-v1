@@ -18,7 +18,6 @@ interface MoodBoardProps {
 const VideoItem = memo(function VideoItem({ item, onVideoSelect }: { item: VideoData; onVideoSelect: (video: VideoData) => void; }) {
   return (
     <div className='flex-1 relative'>
-      <motion.div layoutId={`card-${item.id}`} className="h-full">
         <Card
           className="overflow-hidden rounded-none border-0 h-full cursor-pointer group"
           onClick={() => onVideoSelect(item)}
@@ -40,16 +39,12 @@ const VideoItem = memo(function VideoItem({ item, onVideoSelect }: { item: Video
               aria-label={`Open video ${item.title}`}
             />
             <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
-              <motion.h3
-                layoutId={`title-${item.id}`}
-                className="text-white text-sm font-semibold"
-              >
+              <h3 className="text-white text-sm font-semibold">
                 {item.title}
-              </motion.h3>
+              </h3>
             </div>
           </CardContent>
         </Card>
-      </motion.div>
     </div>
   );
 });

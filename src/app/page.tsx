@@ -44,7 +44,7 @@ export default function Home() {
         onVideoSelect={handleVideoSelect}
       />
       <VideoPopup 
-        selectedVideo={selectedVideo}
+        video={selectedVideo}
         onClose={handleClose}
       />
     </PageWrapper>
