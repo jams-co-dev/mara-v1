@@ -57,7 +57,7 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/" className="block">
               <Image 
-                src="/images/logo.png"
+                src="/logo.png"
                 alt="MARA Logo"
                 width={120}
                 height={27}
