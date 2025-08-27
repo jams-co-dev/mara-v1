@@ -2,10 +2,9 @@
 'use client';
 
 import { useState } from 'react';
-import { MoodBoard } from '@/components/mood-board';
+import { MoodBoard, VideoPopup } from '@/components/mood-board';
 import { PageWrapper } from '@/components/page-wrapper';
 import { allVideos, type VideoData } from '@/lib/video-data';
-import { VideoPopup } from '@/components/mood-board';
 
 const moodBoardRows = [
   {
@@ -30,8 +29,12 @@ export default function Home() {
 
   return (
     <PageWrapper>
-      <MoodBoard rows={moodBoardRows} onVideoSelect={setSelectedVideo} />
-      <VideoPopup selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
+      <MoodBoard 
+        rows={moodBoardRows} 
+        onVideoSelect={setSelectedVideo}
+        selectedVideo={selectedVideo}
+        setSelectedVideo={setSelectedVideo}
+      />
     </PageWrapper>
   );
 }

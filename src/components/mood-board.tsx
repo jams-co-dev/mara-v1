@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -15,14 +15,11 @@ interface MoodBoardRow {
 interface MoodBoardProps {
   rows: MoodBoardRow[];
   onVideoSelect: (video: VideoData) => void;
-}
-
-interface VideoPopupProps {
   selectedVideo: VideoData | null;
   setSelectedVideo: (video: VideoData | null) => void;
 }
 
-export function VideoPopup({ selectedVideo, setSelectedVideo }: VideoPopupProps) {
+export function VideoPopup({ selectedVideo, setSelectedVideo }: { selectedVideo: VideoData | null; setSelectedVideo: (video: VideoData | null) => void; }) {
     return (
         <AnimatePresence>
         {selectedVideo && (
@@ -70,8 +67,9 @@ export function VideoPopup({ selectedVideo, setSelectedVideo }: VideoPopupProps)
     );
 }
 
-const VideoGrid = React.memo(function VideoGrid({ rows, onVideoSelect }: MoodBoardProps) {
+export function MoodBoard({ rows, onVideoSelect, selectedVideo, setSelectedVideo }: MoodBoardProps) {
   return (
+    <div className="w-full">
       <div className="flex flex-col">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-col md:flex-row">
@@ -114,13 +112,7 @@ const VideoGrid = React.memo(function VideoGrid({ rows, onVideoSelect }: MoodBoa
           </div>
         ))}
       </div>
-  );
-});
-
-export function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
-  return (
-    <div className="w-full">
-      <VideoGrid rows={rows} onVideoSelect={onVideoSelect} />
+      <VideoPopup selectedVideo={selectedVideo} setSelectedVideo={setSelectedVideo} />
     </div>
   );
 }
