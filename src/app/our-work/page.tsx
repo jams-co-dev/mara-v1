@@ -1,11 +1,12 @@
 
 'use client';
 
+import { useState } from 'react';
 import Image from "next/image";
-import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { PlayCircle } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const projects = [
   {
@@ -59,6 +60,13 @@ const projects = [
 ];
 
 export default function OurWorkPage() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  const openVideo = (videoId: string) => setSelectedVideo(videoId);
+  const closeVideo = () => setSelectedVideo(null);
+
+  const selectedProject = projects.find(p => p.videoId === selectedVideo);
+
   return (
     <PageWrapper>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -73,7 +81,7 @@ export default function OurWorkPage() {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Link key={project.id} href="#" className="group block">
+            <div key={project.id} className="group block cursor-pointer" onClick={() => openVideo(project.videoId)}>
               <Card className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <CardContent className="p-0 relative">
                   <Image
@@ -92,10 +100,31 @@ export default function OurWorkPage() {
                   <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                 </CardHeader>
               </Card>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
+
+      <Dialog open={!!selectedVideo} onOpenChange={(isOpen) => !isOpen && closeVideo()}>
+        <DialogContent className="p-0 border-0 max-w-4xl bg-transparent">
+          <DialogHeader className="sr-only">
+             <DialogTitle>{selectedProject?.title}</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video relative">
+            {selectedVideo && (
+              <iframe
+                src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&title=0&byline=0&portrait=0`}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                className="w-full h-full absolute top-0 left-0"
+                title={selectedProject?.title}
+              ></iframe>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </PageWrapper>
   );
 }
