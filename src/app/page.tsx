@@ -1,11 +1,9 @@
 
 'use client';
 
-import { useState, useCallback } from 'react';
 import { MoodBoard } from '@/components/mood-board';
-import { VideoPopup } from '@/components/video-popup';
 import { PageWrapper } from '@/components/page-wrapper';
-import { allVideos, type VideoData } from '@/lib/video-data';
+import { allVideos } from '@/lib/video-data';
 
 const moodBoardRows = [
   {
@@ -26,26 +24,10 @@ const moodBoardRows = [
 ];
 
 export default function Home() {
-  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
-  
-  const handleVideoSelect = useCallback((video: VideoData) => {
-    setSelectedVideo(video);
-  }, []);
-
-  const handleClose = useCallback(() => {
-    setSelectedVideo(null);
-  }, []);
-
-
   return (
     <PageWrapper>
       <MoodBoard 
         rows={moodBoardRows} 
-        onVideoSelect={handleVideoSelect}
-      />
-      <VideoPopup 
-        video={selectedVideo}
-        onClose={handleClose}
       />
     </PageWrapper>
   );
