@@ -91,6 +91,28 @@
     --input: 0 0% 14.9%;
     --ring: 358 90% 55%;
   }
+
+  .mara {
+    --background: 0 0% 8%; /* Near Black */
+    --foreground: 60 20% 90%; /* Off-white */
+    --card: 0 0% 12%;
+    --card-foreground: 60 20% 90%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 60 20% 90%;
+    --primary: 359 41% 39%; /* Dark Red */
+    --primary-foreground: 60 20% 90%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 60 20% 90%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 60 20% 60%;
+    --accent: 0 52% 52%; /* Bright Red */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 52% 52%;
+  }
 }
 
 @layer base {

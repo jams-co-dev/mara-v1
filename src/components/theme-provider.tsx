@@ -9,8 +9,8 @@ function ThemeWatcher() {
 
   React.useEffect(() => {
     const html = document.documentElement;
-    html.classList.remove('vibrant', 'coke');
-    if (theme === 'vibrant' || theme === 'coke') {
+    html.classList.remove('vibrant', 'coke', 'mara');
+    if (theme === 'vibrant' || theme === 'coke' || theme === 'mara') {
       html.classList.add(theme);
     }
   }, [theme]);
