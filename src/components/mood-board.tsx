@@ -1,18 +1,16 @@
 
 "use client";
 
+import { useState } from 'react';
+import Image from 'next/image';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-
-interface MoodBoardItem {
-  id: string;
-  videoId: string;
-  title: string;
-  widthClass?: string;
-}
+import { X } from 'lucide-react';
+import type { VideoData } from '@/lib/video-data';
 
 interface MoodBoardRow {
-  items: MoodBoardItem[];
+  items: VideoData[];
 }
 
 interface MoodBoardProps {
@@ -20,6 +18,8 @@ interface MoodBoardProps {
 }
 
 export function MoodBoard({ rows }: MoodBoardProps) {
+  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+
   return (
     <div className="w-full">
       <div className="flex flex-col">
@@ -27,29 +27,81 @@ export function MoodBoard({ rows }: MoodBoardProps) {
           <div key={rowIndex} className="flex flex-col md:flex-row">
             {row.items.map((item) => (
               <div key={item.id} className={cn('flex-1 relative', item.widthClass)}>
-                <Card className="overflow-hidden rounded-none border-0 h-full">
-                  <CardContent className="p-0 relative h-full aspect-video">
-                    <iframe
-                      src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0`}
-                      width="100%"
-                      height="100%"
-                      frameBorder="0"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      className="w-full h-full absolute top-0 left-0"
-                      title={item.title}
-                    ></iframe>
-                     <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/50 to-transparent w-full">
-                        <h3 className="text-white text-sm font-semibold">
+                <motion.div layoutId={`card-${item.id}`}>
+                  <Card 
+                    className="overflow-hidden rounded-none border-0 h-full cursor-pointer group"
+                    onClick={() => setSelectedVideo(item)}
+                  >
+                    <CardContent className="p-0 relative h-full aspect-video">
+                      <Image
+                        src={item.thumbnail}
+                        alt={item.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={rowIndex < 2}
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                      <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full">
+                        <motion.h3 
+                          layoutId={`title-${item.id}`}
+                          className="text-white text-sm font-semibold"
+                        >
                           {item.title}
-                        </h3>
+                        </motion.h3>
                       </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </motion.div>
               </div>
             ))}
           </div>
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedVideo && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+              onClick={() => setSelectedVideo(null)}
+            />
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setSelectedVideo(null)}>
+              <motion.div 
+                layoutId={`card-${selectedVideo.id}`} 
+                className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
+                onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the video
+              >
+                  <div className="absolute top-0 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/60 to-transparent">
+                     <motion.h3 layoutId={`title-${selectedVideo.id}`} className="text-white font-bold text-lg">
+                       {selectedVideo.title}
+                     </motion.h3>
+                  </div>
+                  <iframe
+                      src={`https://player.vimeo.com/video/${selectedVideo.videoId}?autoplay=1&title=0&byline=0&portrait=0`}
+                      width="100%"
+                      height="100%"
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      className="w-full h-full"
+                      title={selectedVideo.title}
+                  ></iframe>
+                 <button 
+                    onClick={() => setSelectedVideo(null)} 
+                    className="absolute top-4 right-4 z-20 text-white/70 hover:text-white transition-colors"
+                    aria-label="Close video"
+                  >
+                    <X className="w-6 h-6" />
+                 </button>
+              </motion.div>
+            </div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
