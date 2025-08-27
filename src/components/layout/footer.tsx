@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Facebook } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -46,8 +47,13 @@ export function Footer() {
           </div>
 
           <div className="flex justify-center order-1 md:order-2 md:col-span-1">
-            <Link href="/" className="text-xl font-headline font-bold text-primary">
-              Visionary Digital
+            <Link href="/" className="block">
+               <Image 
+                src="/images/logo.png"
+                alt="MARA Logo"
+                width={120}
+                height={27}
+              />
             </Link>
           </div>
 

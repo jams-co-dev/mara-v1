@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
@@ -54,8 +55,14 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-headline font-bold text-primary">
-              Visionary Digital
+            <Link href="/" className="block">
+              <Image 
+                src="/images/logo.png"
+                alt="MARA Logo"
+                width={120}
+                height={27}
+                priority
+              />
             </Link>
           </div>
 
