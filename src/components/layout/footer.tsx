@@ -53,6 +53,7 @@ export function Footer() {
                 alt="MARA Logo"
                 width={120}
                 height={27}
+                className="dark:invert"
               />
             </Link>
           </div>
