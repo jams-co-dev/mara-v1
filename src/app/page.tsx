@@ -5,7 +5,7 @@ import { PageWrapper } from '@/components/page-wrapper';
 const moodBoardRows = [
   {
     items: [
-      { id: '1', title: 'Corporate Flow', videoId: '824804225', thumbnail: 'https://placehold.co/1600x900.png', hint: 'corporate video' },
+      { id: '1', title: 'Corporate Flow', videoId: '824804225', thumbnail: 'https://placehold.co/1600x800.png', hint: 'corporate video' },
     ]
   },
   {
