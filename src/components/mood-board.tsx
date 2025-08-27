@@ -27,22 +27,28 @@ export function MoodBoard({ rows }: MoodBoardProps) {
           <div key={rowIndex} className="flex flex-col md:flex-row">
             {row.items.map((item) => (
               <div key={item.id} className={cn('flex-1 relative', item.widthClass)}>
-                <motion.div layoutId={`card-${item.id}`}>
+                <motion.div layoutId={`card-${item.id}`} className="h-full">
                   <Card 
                     className="overflow-hidden rounded-none border-0 h-full cursor-pointer group"
                     onClick={() => setSelectedVideo(item)}
                   >
                     <CardContent className="p-0 relative h-full aspect-video">
-                      <Image
-                        src={item.thumbnail}
-                        alt={item.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={rowIndex < 2}
+                       <iframe
+                        src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
+                        width="100%"
+                        height="100%"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        className="w-full h-full absolute top-0 left-0 object-cover"
+                        title={item.title}
+                      ></iframe>
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+                      <div 
+                        className="absolute inset-0 z-10"
+                        onClick={() => setSelectedVideo(item)}
+                        aria-label={`Open video ${item.title}`}
                       />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-                      <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full">
+                      <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
                         <motion.h3 
                           layoutId={`title-${item.id}`}
                           className="text-white text-sm font-semibold"
@@ -76,13 +82,13 @@ export function MoodBoard({ rows }: MoodBoardProps) {
                 className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
                 onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on the video
               >
-                  <div className="absolute top-0 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/60 to-transparent">
+                  <div className="absolute top-0 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/60 to-transparent pointer-events-none">
                      <motion.h3 layoutId={`title-${selectedVideo.id}`} className="text-white font-bold text-lg">
                        {selectedVideo.title}
                      </motion.h3>
                   </div>
                   <iframe
-                      src={`https://player.vimeo.com/video/${selectedVideo.videoId}?autoplay=1&title=0&byline=0&portrait=0`}
+                      src={`https://player.vimeo.com/video/${selectedVideo.videoId}?autoplay=1&muted=0&title=0&byline=0&portrait=0`}
                       width="100%"
                       height="100%"
                       frameBorder="0"
