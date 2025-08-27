@@ -5,7 +5,7 @@ import React, { useState, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import type { VideoData } from '@/lib/video-data';
-import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 interface MoodBoardRow {
   items: VideoData[];
@@ -50,7 +50,7 @@ export function MoodBoard({ rows }: MoodBoardProps) {
     <div className="w-full relative">
       <div className="flex flex-col">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:aspect-auto">
+          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:aspect-auto md:h-[50vh]">
             {row.items.map((item) => (
               <BackgroundVideoItem key={item.id} item={item} onVideoSelect={setSelectedVideo} />
             ))}
@@ -58,6 +58,7 @@ export function MoodBoard({ rows }: MoodBoardProps) {
         ))}
       </div>
 
+      
       <AnimatePresence>
         {selectedVideo && (
           <motion.div
@@ -69,9 +70,7 @@ export function MoodBoard({ rows }: MoodBoardProps) {
             onClick={() => setSelectedVideo(null)}
           >
             <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              layoutId={`video-card-${selectedVideo.id}`}
               className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
