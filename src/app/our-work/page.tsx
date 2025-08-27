@@ -113,7 +113,7 @@ export default function OurWorkPage() {
           <div className="aspect-video relative">
             {selectedVideo && (
               <iframe
-                src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&title=0&byline=0&portrait=0`}
+                src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&muted=1&title=0&byline=0&portrait=0`}
                 width="100%"
                 height="100%"
                 frameBorder="0"
