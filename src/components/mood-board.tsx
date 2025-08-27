@@ -8,6 +8,8 @@ import Image from 'next/image';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { PlayCircle } from 'lucide-react';
@@ -30,7 +32,7 @@ interface MoodBoardProps {
 }
 
 export function MoodBoard({ rows }: MoodBoardProps) {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [selectedVideo, setSelectedVideo] = useState<{id: string, title: string} | null>(null);
 
   return (
     <div className="w-full">
@@ -42,7 +44,7 @@ export function MoodBoard({ rows }: MoodBoardProps) {
                  <DialogTrigger key={item.id} asChild>
                     <div 
                       className={cn('flex-1 relative group', item.widthClass)}
-                      onClick={() => setSelectedVideo(item.videoId)}
+                      onClick={() => setSelectedVideo({id: item.videoId, title: item.title})}
                     >
                       <Card
                         className="overflow-hidden cursor-pointer rounded-none border-0 h-full"
@@ -75,9 +77,11 @@ export function MoodBoard({ rows }: MoodBoardProps) {
         </div>
         {selectedVideo && (
             <DialogContent className="max-w-4xl h-auto p-0 border-0 bg-transparent">
+                <DialogTitle className="sr-only">{selectedVideo.title}</DialogTitle>
+                <DialogDescription className="sr-only">A video player playing {selectedVideo.title}</DialogDescription>
                 <div className="aspect-video">
                     <iframe
-                        src={`https://player.vimeo.com/video/${selectedVideo}?autoplay=1&loop=1&autopause=0&byline=0&title=0&t=0s`}
+                        src={`https://player.vimeo.com/video/${selectedVideo.id}?autoplay=1&loop=1&autopause=0&byline=0&title=0&t=0s`}
                         width="100%"
                         height="100%"
                         frameBorder="0"
