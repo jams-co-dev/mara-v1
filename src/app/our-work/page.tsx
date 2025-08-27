@@ -12,7 +12,7 @@ const projects = [
     id: "1",
     title: "POLET BAILEYS",
     category: "Video Production",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1853602639-7c9d7dcc9fff57f99a4729de5fc66800613ea863f5768bb6af1bfacb246f0a04-d_640x360",
     hint: "promotional video",
     videoId: "947159183"
   },
@@ -20,7 +20,7 @@ const projects = [
     id: "2",
     title: "WOM NAVIDAD",
     category: "Commercial",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1853597262-2cd983c710d8fda554a2c544c767695437aaa3659437af1170a3428017aecd72-d_640x360",
     hint: "christmas ad",
     videoId: "947154619"
   },
@@ -28,7 +28,7 @@ const projects = [
     id: "3",
     title: "WOM 4 MILLONES",
     category: "Campaign",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1853566022-6608dc718a37b9c0e06121590f54d0c4a522d063efbdb85c9426c16e156f3d69-d_640x360",
     hint: "celebration campaign",
     videoId: "947134517"
   },
@@ -36,7 +36,7 @@ const projects = [
     id: "4",
     title: "CORONA EXTRA LIME",
     category: "Beverage Ad",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1683615591-89dd70261c60c78f0e376eee181abdb4ba0aa2c81b5d5ff8004d5f71046ab6d0-d_640x360",
     hint: "beer commercial",
     videoId: "835939795"
   },
@@ -44,7 +44,7 @@ const projects = [
     id: "5",
     title: "WOM ANTIMANIFIESTO",
     category: "Brand Film",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1613221300-3f07c8bdec1d8ddfd6ecdaa60169e02721966c643509cf2e730282588ae47371-d_640x360",
     hint: "brand manifesto",
     videoId: "799986844"
   },
@@ -52,7 +52,7 @@ const projects = [
     id: "6",
     title: "KFC / ICON",
     category: "Fast Food Ad",
-    thumbnail: "https://placehold.co/800x600.png",
+    thumbnail: "https://i.vimeocdn.com/video/1235483575-b36546fb00c5b0bd1cf4817c1c883e24da85c489f71f761026929559021ae58f-d_640x360",
     hint: "fast food commercial",
     videoId: "586553312"
   }
@@ -79,8 +79,8 @@ export default function OurWorkPage() {
                   <Image
                     src={project.thumbnail}
                     alt={project.title}
-                    width={800}
-                    height={600}
+                    width={640}
+                    height={360}
                     className="w-full h-auto object-cover aspect-video"
                     data-ai-hint={project.hint}
                   />
