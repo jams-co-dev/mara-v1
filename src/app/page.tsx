@@ -3,6 +3,7 @@
 
 import { useState, useCallback } from 'react';
 import { MoodBoard } from '@/components/mood-board';
+import { VideoPopup } from '@/components/video-popup';
 import { PageWrapper } from '@/components/page-wrapper';
 import { allVideos, type VideoData } from '@/lib/video-data';
 
@@ -41,6 +42,8 @@ export default function Home() {
       <MoodBoard 
         rows={moodBoardRows} 
         onVideoSelect={handleVideoSelect}
+      />
+      <VideoPopup 
         selectedVideo={selectedVideo}
         onClose={handleClose}
       />
