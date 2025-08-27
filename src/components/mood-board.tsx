@@ -30,9 +30,9 @@ export function MoodBoard({ rows }: MoodBoardProps) {
   return (
     <>
       <div className="w-full">
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-0">
           {rows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex flex-col md:flex-row gap-1">
+            <div key={rowIndex} className="flex flex-col md:flex-row gap-0">
               {row.items.map((item) => (
                 <div key={item.id} className={cn('flex-1', item.widthClass)}>
                   <Card
