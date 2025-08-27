@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -57,7 +58,7 @@ export function Header() {
           <div className="flex items-center">
             <Link href="/" className="block">
               <Image 
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="MARA Logo"
                 width={120}
                 height={27}

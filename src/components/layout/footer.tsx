@@ -49,7 +49,7 @@ export function Footer() {
           <div className="flex justify-center order-1 md:order-2 md:col-span-1">
             <Link href="/" className="block">
                <Image 
-                src="/logo.png"
+                src="/images/logo.png"
                 alt="MARA Logo"
                 width={120}
                 height={27}
