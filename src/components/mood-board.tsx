@@ -20,8 +20,6 @@ const BackgroundVideoItem = memo(function BackgroundVideoItem({ item, onVideoSel
     <div className='flex-1 relative h-full group'>
         <iframe
           src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
-          width="100%"
-          height="100%"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           className="w-full h-full absolute top-0 left-0 object-cover pointer-events-none"
@@ -70,7 +68,10 @@ export function MoodBoard({ rows }: MoodBoardProps) {
             onClick={() => setSelectedVideo(null)}
           >
             <motion.div
-              layoutId={`video-card-${selectedVideo.id}`}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
               className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
