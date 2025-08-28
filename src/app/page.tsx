@@ -6,21 +6,31 @@ import { VideoPopup } from '@/components/video-popup';
 import { allVideos, VideoData } from '@/lib/video-data';
 import { useState, useCallback } from 'react';
 
-const moodBoardRows = [
+export interface MoodBoardRow {
+  items: VideoData[];
+  layout: '50/50' | '60/40' | '40/60';
+}
+
+const moodBoardRows: MoodBoardRow[] = [
   {
-    items: [allVideos[0], allVideos[1], allVideos[2]]
+    items: [allVideos[0], allVideos[1]],
+    layout: '50/50'
   },
   {
-    items: [allVideos[3], allVideos[4]]
+    items: [allVideos[2], allVideos[3]],
+    layout: '60/40'
   },
   {
-    items: [allVideos[5]]
+    items: [allVideos[4], allVideos[5]],
+    layout: '40/60'
   },
   {
-    items: [allVideos[6], allVideos[7], allVideos[8]]
+    items: [allVideos[6], allVideos[7]],
+    layout: '50/50'
   },
   {
-    items: [allVideos[9], allVideos[0]]
+    items: [allVideos[8], allVideos[9]],
+    layout: '60/40'
   }
 ];
 
