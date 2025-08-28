@@ -92,7 +92,7 @@ export default function ServicesPage() {
                         </h3>
                     </div>
                     <div 
-                        className="w-3/4 flex items-center justify-center"
+                        className="w-3/4 flex items-center justify-start pl-16"
                         onMouseLeave={() => setHoveredName(null)}
                     >
                       {service.names && (
