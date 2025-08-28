@@ -140,59 +140,61 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <PageWrapper>
-      <div className="pb-24">
-        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-black">
-          {(member as any).headerVideoId ? (
-            <iframe
-              src={`https://player.vimeo.com/video/${(member as any).headerVideoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              className="absolute w-full h-full object-cover"
-              title={`${member.name} header video`}
-            ></iframe>
-          ) : (
-            <Image
-              src={member.headerImage}
-              alt={`Header image for ${member.name}`}
-              fill
-              className="absolute inset-0 object-cover"
-              data-ai-hint={member.headerHint}
-              priority
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-        </section>
+    <>
+      <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-black">
+        {(member as any).headerVideoId ? (
+          <iframe
+            src={`https://player.vimeo.com/video/${(member as any).headerVideoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            className="absolute w-full h-full object-cover"
+            title={`${member.name} header video`}
+          ></iframe>
+        ) : (
+          <Image
+            src={member.headerImage}
+            alt={`Header image for ${member.name}`}
+            fill
+            className="absolute inset-0 object-cover"
+            data-ai-hint={member.headerHint}
+            priority
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+      </section>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative -mt-24 md:-mt-32">
-            <Card className="overflow-hidden shadow-2xl">
-              <CardContent className="p-6 md:p-12">
-                <div className="text-center">
-                  <CardTitle as="h1" className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-                    {member.name}
-                  </CardTitle>
-                  <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
-                    {member.role}
-                  </CardDescription>
-                </div>
-                <div className="prose prose-lg max-w-4xl mx-auto mt-8 text-muted-foreground">
-                  <p>{member.bio}</p>
-                </div>
-              </CardContent>
-            </Card>
+      <PageWrapper>
+        <div className="pb-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative -mt-24 md:-mt-32">
+              <Card className="overflow-hidden shadow-2xl">
+                <CardContent className="p-6 md:p-12">
+                  <div className="text-center">
+                    <CardTitle as="h1" className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+                      {member.name}
+                    </CardTitle>
+                    <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
+                      {member.role}
+                    </CardDescription>
+                  </div>
+                  <div className="prose prose-lg max-w-4xl mx-auto mt-8 text-muted-foreground">
+                    <p>{member.bio}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+            <Button asChild variant="outline" className="shadow-lg bg-background/80 backdrop-blur-sm">
+              <Link href="/services">
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                go back to services
+              </Link>
+            </Button>
           </div>
         </div>
-
-        <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
-          <Button asChild variant="outline" className="shadow-lg bg-background/80 backdrop-blur-sm">
-            <Link href="/services">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              go back to services
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </PageWrapper>
+      </PageWrapper>
+    </>
   );
 }
