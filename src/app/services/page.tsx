@@ -71,7 +71,7 @@ export default function ServicesPage() {
               className={cn(
                 "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
                 "flex items-center justify-center",
-                activeService === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_2)]',
+                activeService === index ? 'flex-grow w-full md:w-[80%]' : 'flex-shrink w-full md:w-[calc(20%_/_2)]',
                 service.color
               )}
               onClick={() => setActiveService(index)}
