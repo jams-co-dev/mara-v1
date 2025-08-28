@@ -76,7 +76,7 @@ export default function ServicesPage() {
               </div>
               <div
                 className={cn(
-                  "absolute inset-0 flex items-center justify-start transition-opacity duration-500 p-8",
+                  "absolute inset-0 flex items-start justify-start transition-opacity duration-500 p-8",
                   activeService === index ? 'opacity-100' : 'opacity-0'
                 )}
               >
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                         </h3>
                     </div>
                     <div 
-                        className="w-3/4 flex items-center justify-start pl-16"
+                        className="w-3/4 flex items-start justify-start pl-16"
                         onMouseLeave={() => setHoveredName(null)}
                     >
                       {service.names && (
