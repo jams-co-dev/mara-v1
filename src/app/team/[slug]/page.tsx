@@ -162,9 +162,8 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
       </section>
-
-      <PageWrapper>
-        <div className="pb-24">
+      
+      <div className="pb-24 pt-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative -mt-24 md:-mt-32">
               <Card className="overflow-hidden shadow-2xl">
@@ -194,7 +193,6 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
             </Button>
           </div>
         </div>
-      </PageWrapper>
     </>
   );
 }

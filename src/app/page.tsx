@@ -48,7 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <main className="pt-20">
       <MoodBoard 
         key={moodboardKey}
         rows={moodBoardRows} 
@@ -58,6 +58,6 @@ export default function Home() {
         video={selectedVideo}
         onClose={handleClosePopup}
       />
-    </>
+    </main>
   );
 }
