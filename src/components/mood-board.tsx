@@ -17,43 +17,18 @@ interface MoodBoardProps {
 }
 
 function VideoTile({ item, onVideoSelect }: { item: VideoData; onVideoSelect: (video: VideoData) => void; }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 100); // Stagger loading slightly
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <motion.div
       onClick={() => onVideoSelect(item)}
       className='flex-1 relative h-full w-full group overflow-hidden cursor-pointer'
     >
-      {!isLoaded ? (
-         <Image
-            src={item.thumbnail}
-            alt={item.title}
-            width={640}
-            height={360}
-            className="w-full h-full object-cover"
-            priority
-          />
-      ) : (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full h-full"
-        >
-          <iframe
-              src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              className="w-full h-full absolute top-0 left-0 object-cover pointer-events-none"
-              title={item.title}
-          ></iframe>
-        </motion.div>
-      )}
+      <iframe
+          src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          className="w-full h-full absolute top-0 left-0 object-cover pointer-events-none"
+          title={item.title}
+      ></iframe>
 
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
       <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
