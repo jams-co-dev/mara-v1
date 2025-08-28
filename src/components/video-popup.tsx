@@ -16,23 +16,35 @@ export function VideoPopup() {
         
         const handleClose = () => {
             if (popupIframe) {
+                // Stop the video by clearing the src, which is important
                 popupIframe.src = '';
             }
             popup.style.display = 'none';
         }
 
+        // Close when clicking the close button
+        closeButton?.addEventListener('click', handleClose);
+        
+        // Close when clicking on the background overlay
         const handleContainerClick = (event: MouseEvent) => {
             if (event.target === popup) {
                 handleClose();
             }
         }
-        
-        closeButton?.addEventListener('click', handleClose);
         popup.addEventListener('click', handleContainerClick);
+
+        // Close when pressing the Escape key
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                handleClose();
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
 
         return () => {
             closeButton?.removeEventListener('click', handleClose);
             popup.removeEventListener('click', handleContainerClick);
+            window.removeEventListener('keydown', handleKeyDown);
         };
 
     }, []);
