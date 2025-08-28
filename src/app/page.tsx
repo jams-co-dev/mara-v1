@@ -30,11 +30,11 @@ export default function Home() {
 
   const handleVideoSelect = useCallback((video: VideoData) => {
     setSelectedVideo(video);
-    setMoodboardKey(prevKey => prevKey + 1);
   }, []);
 
   const handleClosePopup = useCallback(() => {
     setSelectedVideo(null);
+    setMoodboardKey(prevKey => prevKey + 1);
   }, []);
 
   return (
