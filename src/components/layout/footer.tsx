@@ -39,7 +39,7 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-card border-t">
+    <footer className="bg-card border-t-2 border-primary">
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
           <div className="text-sm text-muted-foreground order-3 md:order-1 md:col-span-1">

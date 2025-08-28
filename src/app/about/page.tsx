@@ -80,7 +80,7 @@ export default function AboutPage() {
             <div>
                 <h2 className="text-3xl font-headline text-primary mb-4">Our Mission</h2>
                 <p className="text-lg text-muted-foreground mb-4">
-                    At Visionary Digital, our mission is to blend artistry with strategy to create digital content that not only looks beautiful but also achieves business goals. We believe in the power of storytelling to connect brands with their audiences in meaningful ways.
+                We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                 </p>
                 <p className="text-lg text-muted-foreground">
                     Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
