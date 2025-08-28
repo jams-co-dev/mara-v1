@@ -1,11 +1,10 @@
 
-
 'use client';
 
 import { MoodBoard } from '@/components/mood-board';
-import { PageWrapper } from '@/components/page-wrapper';
 import { VideoPopup } from '@/components/video-popup';
-import { allVideos } from '@/lib/video-data';
+import { allVideos, VideoData } from '@/lib/video-data';
+import { useState } from 'react';
 
 const moodBoardRows = [
   {
@@ -26,10 +25,25 @@ const moodBoardRows = [
 ];
 
 export default function Home() {
+  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+  const [moodboardKey, setMoodboardKey] = useState(0);
+
+  const handleClosePopup = () => {
+    setSelectedVideo(null);
+    setMoodboardKey(prevKey => prevKey + 1);
+  };
+
   return (
-    <PageWrapper>
-      <MoodBoard rows={moodBoardRows} />
-      <VideoPopup />
-    </PageWrapper>
+    <>
+      <MoodBoard 
+        key={moodboardKey}
+        rows={moodBoardRows} 
+        onVideoSelect={setSelectedVideo} 
+      />
+      <VideoPopup 
+        video={selectedVideo}
+        onClose={handleClosePopup}
+      />
+    </>
   );
 }
