@@ -14,13 +14,10 @@ const moodBoardRows = [
     items: [allVideos[3], allVideos[4]]
   },
   {
-    items: [allVideos[5]]
-  },
-  {
     items: [allVideos[6], allVideos[7], allVideos[8]]
   },
   {
-    items: [allVideos[9], allVideos[0]]
+    items: [allVideos[9], allVideos[0], allVideos[5]]
   }
 ];
 
