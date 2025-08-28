@@ -80,8 +80,8 @@ export default function ServicesPage() {
                   activeService === index ? 'opacity-100' : 'opacity-0'
                 )}
               >
-                  <div className="flex h-full w-full">
-                    <div className="w-1/4 flex items-center justify-center">
+                  <div className="flex h-full w-full items-start justify-start">
+                    <div className="flex items-center h-full mr-16">
                         <h3 
                             className={cn(
                                 "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                         </h3>
                     </div>
                     <div 
-                        className="w-3/4 flex items-start justify-start pl-16"
+                        className="flex-grow flex items-start justify-start"
                         onMouseLeave={() => setHoveredName(null)}
                     >
                       {service.names && (
