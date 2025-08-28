@@ -2,53 +2,32 @@
 'use client';
 
 import { useState } from 'react';
-import { Video, Megaphone, Camera, PenTool, BarChart3, Users } from 'lucide-react';
+import { PenTool, Palette, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageWrapper } from '@/components/page-wrapper';
 
 const services = [
   {
-    icon: Video,
-    title: "Video Production",
+    icon: PenTool,
+    title: "EDIT",
     description: "From concept to final cut, we produce high-quality commercials, corporate videos, and branded content that captivate and engage.",
-    color: "bg-teal-300/70",
-    textColor: "text-teal-900"
+    color: "bg-rose-300/70",
+    textColor: "text-rose-900"
   },
   {
-    icon: Megaphone,
-    title: "Digital Marketing",
+    icon: Palette,
+    title: "COLOR",
     description: "Strategic campaigns across social media, search engines, and more to grow your audience and drive sales. We make your message heard.",
     color: "bg-amber-300/70",
     textColor: "text-amber-900"
   },
   {
-    icon: Camera,
-    title: "Commercial Photography",
+    icon: Sparkles,
+    title: "VFX",
     description: "Stunning product, lifestyle, and corporate photography that captures the essence of your brand and tells a compelling story.",
     color: "bg-sky-300/70",
     textColor: "text-sky-900"
-  },
-  {
-    icon: PenTool,
-    title: "Branding & Identity",
-    description: "We craft memorable brand identities, including logos, style guides, and messaging that resonates with your target audience.",
-    color: "bg-rose-300/70",
-    textColor: "text-rose-900"
-  },
-  {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description: "Data-driven insights to measure campaign performance and optimize for success. We turn data into actionable intelligence.",
-    color: "bg-indigo-300/70",
-    textColor: "text-indigo-900"
-  },
-  {
-    icon: Users,
-    title: "Social Media Management",
-    description: "Engaging content creation and community management to build a loyal following and foster brand advocacy.",
-    color: "bg-lime-300/70",
-    textColor: "text-lime-900"
   },
 ];
 
@@ -92,7 +71,7 @@ export default function ServicesPage() {
               className={cn(
                 "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
                 "flex items-center justify-center",
-                activeService === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_5)]',
+                activeService === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_2)]',
                 service.color
               )}
               onClick={() => setActiveService(index)}
