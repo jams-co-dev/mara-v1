@@ -4,14 +4,18 @@
 import { useState } from 'react';
 import { PenTool, Palette, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageWrapper } from '@/components/page-wrapper';
 
 const services = [
   {
     icon: PenTool,
     title: "EDIT",
-    description: "From concept to final cut, we produce high-quality commercials, corporate videos, and branded content that captivate and engage.",
+    names: [
+        "JAVIER PINILLA",
+        "JORGE BELTRAN",
+        "CARLOS LEON",
+        "DANIEL VARGAS"
+    ],
     color: "bg-rose-300/70",
     textColor: "text-rose-900"
   },
@@ -33,38 +37,17 @@ const services = [
 
 export default function ServicesPage() {
   const [activeService, setActiveService] = useState(0);
+  const [hoveredName, setHoveredName] = useState<string | null>(null);
 
   return (
     <PageWrapper>
-      {/* Mobile and Tablet View: Stacked Cards */}
+      {/* Mobile and Tablet View: TODO */}
       <div className="md:hidden">
-        <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-                    Our Services
-                </h1>
-                <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    What we can do for you.
-                </p>
-            </div>
-            <div className="grid grid-cols-1 gap-8">
-                {services.map((service, index) => (
-                    <Card key={index} className={cn("text-center overflow-hidden", service.color)}>
-                        <CardHeader className="pt-8">
-                            <service.icon className={cn("w-12 h-12 mx-auto mb-4", service.textColor)} />
-                            <CardTitle as="h3" className={cn("font-headline text-2xl", service.textColor)}>{service.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="pb-8">
-                            <p className="text-muted-foreground max-w-md mx-auto">{service.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
-        </section>
+        {/* This view needs to be adapted for the new content */}
       </div>
       
       {/* Desktop View: Interactive Panels */}
-      <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)] -mt-20">
+      <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)]">
           {services.map((service, index) => (
             <div
               key={index}
@@ -97,14 +80,40 @@ export default function ServicesPage() {
                   activeService === index ? 'opacity-100' : 'opacity-0'
                 )}
               >
-                  <h3 
-                      className={cn(
-                          "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
-                          service.textColor
+                  <div className="flex h-full w-full">
+                    <div className="w-1/4 flex items-center justify-center">
+                        <h3 
+                            className={cn(
+                                "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                                service.textColor
+                            )}
+                        >
+                            {service.title}
+                        </h3>
+                    </div>
+                    <div 
+                        className="w-3/4 flex items-center justify-center"
+                        onMouseLeave={() => setHoveredName(null)}
+                    >
+                      {service.names && (
+                          <div className="flex flex-col text-left">
+                            {service.names.map(name => (
+                                <span 
+                                    key={name}
+                                    className={cn(
+                                        "text-4xl font-headline font-bold uppercase cursor-pointer transition-opacity duration-300",
+                                        service.textColor,
+                                        hoveredName === null ? 'opacity-70' : (hoveredName === name ? 'opacity-100' : 'opacity-50')
+                                    )}
+                                    onMouseEnter={() => setHoveredName(name)}
+                                >
+                                    {name}
+                                </span>
+                            ))}
+                          </div>
                       )}
-                  >
-                      {service.title}
-                  </h3>
+                      </div>
+                  </div>
               </div>
             </div>
           ))}
