@@ -20,7 +20,7 @@ function BackgroundVideoItem({ item, onVideoSelect }: { item: VideoData; onVideo
     return (
         <motion.div
             onClick={() => onVideoSelect(item)}
-            className="flex-1 relative h-full w-full group overflow-hidden cursor-pointer"
+            className="flex-1 w-full relative h-full group overflow-hidden cursor-pointer"
         >
             <iframe
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
