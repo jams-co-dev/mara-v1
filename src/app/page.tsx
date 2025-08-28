@@ -3,7 +3,9 @@
 
 import { MoodBoard } from '@/components/mood-board';
 import { PageWrapper } from '@/components/page-wrapper';
-import { allVideos } from '@/lib/video-data';
+import { VideoPopup } from '@/components/video-popup';
+import { allVideos, VideoData } from '@/lib/video-data';
+import { useState, useCallback } from 'react';
 
 const moodBoardRows = [
   {
@@ -24,10 +26,25 @@ const moodBoardRows = [
 ];
 
 export default function Home() {
+  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+
+  const handleSelectVideo = useCallback((video: VideoData) => {
+    setSelectedVideo(video);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setSelectedVideo(null);
+  }, []);
+
   return (
     <PageWrapper>
       <MoodBoard 
-        rows={moodBoardRows} 
+        rows={moodBoardRows}
+        onVideoSelect={handleSelectVideo}
+      />
+      <VideoPopup
+        video={selectedVideo}
+        onClose={handleClose}
       />
     </PageWrapper>
   );
