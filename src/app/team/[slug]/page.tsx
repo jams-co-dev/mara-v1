@@ -88,6 +88,36 @@ const teamMembers = [
     bio: "Daniel aporta una perspectiva fresca y moderna a la sala de edición. Con experiencia en gráficos en movimiento y efectos visuales, a menudo integra estos elementos en su trabajo para crear piezas visualmente ricas y cautivadoras.",
     headerImage: "https://placehold.co/1920x1080.png",
     headerHint: "motion graphics display"
+  },
+  {
+    name: "ARTURO PEREZ",
+    slug: "arturo-perez",
+    role: "Colorist",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "man in front of screens",
+    bio: "Arturo es un artista del color. Su dominio de la corrección y el etalonaje de color transforma el metraje crudo en atmósferas visuales que evocan emociones y mejoran la narrativa. Su trabajo da a cada proyecto una firma visual única.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "color grading vectorscopes"
+  },
+  {
+    name: "CRISTIAN PICO",
+    slug: "cristian-pico",
+    role: "VFX Artist",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "man working on vfx",
+    bio: "Cristian es un mago de los efectos visuales. Desde la composición y el rotoscoping hasta la creación de mundos digitales complejos, su trabajo añade una capa de asombro y realismo imposible de lograr de otra manera. Su creatividad no tiene límites.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "visual effects breakdown"
+  },
+  {
+    name: "JUAN CONTRERAS",
+    slug: "juan-contreras",
+    role: "VFX Artist",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "man with graphics tablet",
+    bio: "Juan se especializa en la integración perfecta de elementos generados por computadora en metraje de acción en vivo. Su precisión técnica y su ojo artístico aseguran que los efectos visuales sean siempre creíbles y sirvan a la historia.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "3d modeling software"
   }
 ];
 

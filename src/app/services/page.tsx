@@ -23,14 +23,19 @@ const services = [
   {
     icon: Palette,
     title: "COLOR",
-    description: "Strategic campaigns across social media, search engines, and more to grow your audience and drive sales. We make your message heard.",
+    names: [
+        { name: "ARTURO PEREZ", slug: "arturo-perez" },
+    ],
     color: "bg-amber-300/70",
     textColor: "text-amber-900"
   },
   {
     icon: Sparkles,
     title: "VFX",
-    description: "Stunning product, lifestyle, and corporate photography that captures the essence of your brand and tells a compelling story.",
+    names: [
+        { name: "CRISTIAN PICO", slug: "cristian-pico" },
+        { name: "JUAN CONTRERAS", slug: "juan-contreras" },
+    ],
     color: "bg-sky-300/70",
     textColor: "text-sky-900"
   },
