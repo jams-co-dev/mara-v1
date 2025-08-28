@@ -53,4 +53,3 @@ export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps & { 
     </div>
   );
 }
-
