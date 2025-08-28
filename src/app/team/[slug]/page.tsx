@@ -117,6 +117,7 @@ const teamMembers = [
     hint: "man with graphics tablet",
     bio: "I am passionate about breaking the limits of what is considered possible or realistic. That’s why I found in visual effects the perfect tool to capture those ideas that seem impossible to materialize. VFX gives me the freedom to experiment with new techniques and tools to create worlds and situations that seem unreal, taking the exploration between the real and the imaginary to another level.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816723625",
     headerHint: "3d modeling software"
   }
 ];
@@ -141,15 +142,25 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
   return (
     <PageWrapper>
       <div className="pb-24">
-        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
-          <Image
-            src={member.headerImage}
-            alt={`Header image for ${member.name}`}
-            fill
-            className="absolute inset-0 object-cover"
-            data-ai-hint={member.headerHint}
-            priority
-          />
+        <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-black">
+          {(member as any).headerVideoId ? (
+            <iframe
+              src={`https://player.vimeo.com/video/${(member as any).headerVideoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              className="absolute w-full h-full object-cover"
+              title={`${member.name} header video`}
+            ></iframe>
+          ) : (
+            <Image
+              src={member.headerImage}
+              alt={`Header image for ${member.name}`}
+              fill
+              className="absolute inset-0 object-cover"
+              data-ai-hint={member.headerHint}
+              priority
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
         </section>
 
