@@ -26,7 +26,7 @@ function BackgroundVideoItem({ item, onVideoSelect }: { item: VideoData; onVideo
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
-                className="absolute top-1/2 left-1/2 min-w-full min-h-full h-auto w-auto object-cover -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-0 left-0 w-full h-full object-cover"
                 title={item.title}
             ></iframe>
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
@@ -44,7 +44,7 @@ export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps & { 
     <div className="w-full relative" {...props}>
       <div className="flex flex-col">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:aspect-auto md:h-[50vh]">
+          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh]">
             {row.items.map((item) => (
               <BackgroundVideoItem key={item.id} item={item} onVideoSelect={onVideoSelect} />
             ))}
