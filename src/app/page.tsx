@@ -18,11 +18,11 @@ const moodBoardRows: MoodBoardRow[] = [
   },
   {
     items: [allVideos[2], allVideos[3]],
-    layout: '60/40'
+    layout: '50/50'
   },
   {
     items: [allVideos[4], allVideos[5]],
-    layout: '40/60'
+    layout: '50/50'
   },
   {
     items: [allVideos[6], allVideos[7]],
@@ -30,7 +30,7 @@ const moodBoardRows: MoodBoardRow[] = [
   },
   {
     items: [allVideos[8], allVideos[9]],
-    layout: '60/40'
+    layout: '50/50'
   }
 ];
 
