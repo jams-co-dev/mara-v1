@@ -70,31 +70,32 @@ export default function ServicesPage() {
               key={index}
               className={cn(
                 "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
-                "flex items-center justify-center",
+                "flex items-center",
                 activeService === index ? 'flex-grow w-full md:w-[90%]' : 'flex-shrink w-full md:w-[calc(10%_/_2)]',
                 service.color
               )}
               onClick={() => setActiveService(index)}
             >
               <div
-                className={cn(
-                  "absolute inset-0 transition-opacity duration-500",
-                  activeService === index ? 'opacity-100' : 'opacity-0'
-                )}
-              >
-                <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
-                  <CardContent className="p-8 text-center">
-                      <service.icon className={cn("w-16 h-16 mx-auto mb-6", service.textColor)} />
-                      <h2 className={cn("text-3xl font-headline font-bold mb-4", service.textColor)}>{service.title}</h2>
-                      <p className="text-lg text-muted-foreground max-w-md mx-auto">{service.description}</p>
-                  </CardContent>
-                </Card>
-              </div>
-              <div
                   className={cn(
                       "absolute inset-0 flex items-center justify-center transition-opacity duration-500",
                       activeService !== index ? 'opacity-100' : 'opacity-0'
                   )}
+              >
+                  <h3 
+                      className={cn(
+                          "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                          service.textColor
+                      )}
+                  >
+                      {service.title}
+                  </h3>
+              </div>
+              <div
+                className={cn(
+                  "absolute inset-0 flex items-center justify-start transition-opacity duration-500 p-8",
+                  activeService === index ? 'opacity-100' : 'opacity-0'
+                )}
               >
                   <h3 
                       className={cn(
