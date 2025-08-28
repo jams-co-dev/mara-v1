@@ -8,20 +8,14 @@ import { useState, useCallback } from 'react';
 
 const moodBoardRows = [
   {
-    items: [allVideos[7], allVideos[8], allVideos[0]]
+    items: [allVideos[0], allVideos[1], allVideos[2]]
   },
   {
-    items: [allVideos[9], allVideos[1]]
+    items: [allVideos[3], allVideos[4]]
   },
   {
-    items: [allVideos[2]]
+    items: [allVideos[5], allVideos[6], allVideos[7], allVideos[8]]
   },
-  {
-    items: [allVideos[3], allVideos[4], allVideos[5]]
-  },
-  {
-    items: [allVideos[6]]
-  }
 ];
 
 export default function Home() {
