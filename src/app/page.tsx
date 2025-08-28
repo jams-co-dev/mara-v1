@@ -36,7 +36,6 @@ const moodBoardRows: MoodBoardRow[] = [
 
 export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
-  const [moodboardKey, setMoodboardKey] = useState(0);
 
   const handleVideoSelect = useCallback((video: VideoData) => {
     setSelectedVideo(video);
@@ -44,13 +43,11 @@ export default function Home() {
 
   const handleClosePopup = useCallback(() => {
     setSelectedVideo(null);
-    setMoodboardKey(prevKey => prevKey + 1);
   }, []);
 
   return (
     <main className="pt-20">
       <MoodBoard 
-        key={moodboardKey}
         rows={moodBoardRows} 
         onVideoSelect={handleVideoSelect} 
       />
