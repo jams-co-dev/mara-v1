@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { PenTool, Palette, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageWrapper } from '@/components/page-wrapper';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const services = [
   {
@@ -48,13 +54,35 @@ export default function ServicesPage() {
   return (
     <PageWrapper>
       <main className="pt-20">
-        {/* Mobile and Tablet View: TODO */}
-        <div className="md:hidden">
-          {/* This view needs to be adapted for the new content */}
+        {/* Mobile and Tablet View: Accordion */}
+        <div className="md:hidden px-4 py-8">
+            <h1 className="text-3xl font-headline text-primary mb-8 text-center">Services</h1>
+            <Accordion type="single" collapsible className="w-full">
+              {services.map((service) => (
+                <AccordionItem key={service.title} value={service.title}>
+                  <AccordionTrigger className="text-xl font-headline hover:no-underline text-primary">
+                    {service.title}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="flex flex-col items-start space-y-4 pt-2">
+                        {service.names.map((member) => (
+                            <Link
+                                key={member.slug}
+                                href={`/team/${member.slug}`}
+                                className="font-body text-muted-foreground hover:text-primary transition-colors"
+                            >
+                                {member.name}
+                            </Link>
+                        ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
         </div>
         
         {/* Desktop View: Interactive Panels */}
-        <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_10rem)]">
+        <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)]">
             {services.map((service, index) => (
               <div
                 key={index}
