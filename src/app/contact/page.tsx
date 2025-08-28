@@ -2,7 +2,7 @@
 "use client";
 
 import { Mail, Phone, MapPin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Separator } from "@/components/ui/separator";
 
@@ -66,6 +66,6 @@ export default function ContactPage() {
         </div>
 
       </div>
-    </Page-wrapper>
+    </PageWrapper>
   );
 }
