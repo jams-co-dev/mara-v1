@@ -27,6 +27,7 @@ const teamMembers = [
     hint: "man with camera",
     bio: "John tiene un ojo cinematográfico incomparable. Es un experto en capturar la esencia de una historia a través de la lente, transformando conceptos en obras de arte visuales. Domina desde comerciales de alto octanaje hasta documentales emotivos. Su trabajo ha sido presentado en festivales de cine internacionales y ha colaborado con algunas de las marcas más reconocidas a nivel mundial. Cuando no está detrás de la cámara, está explorando nuevas rutas de senderismo o experimentando con técnicas de cocina gourmet.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816721195",
     headerHint: "video production set"
   },
   {
@@ -37,6 +38,7 @@ const teamMembers = [
     hint: "woman at whiteboard",
     bio: "Emily es la mente analítica del equipo. Combina la creatividad con datos para diseñar campañas de marketing digital que no solo generan engagement, sino que también impulsan resultados medibles. Su especialidad es conectar marcas con sus audiencias ideales. Posee certificaciones en todas las principales plataformas de publicidad digital y es una experta en SEO y marketing de contenidos. Fuera del trabajo, es una ávida jugadora de ajedrez y organiza torneos locales.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816721195",
     headerHint: "marketing data charts"
   },
    {
@@ -47,6 +49,7 @@ const teamMembers = [
     hint: "man editing video",
     bio: "Michael es donde la magia de la postproducción cobra vida. Con una meticulosa atención al detalle, ensambla el metraje, el sonido y los efectos para crear un producto final pulido y potente que deja una impresión duradera. Es un maestro del color grading y el diseño de sonido, y su trabajo ha sido fundamental para el éxito de muchas de nuestras campañas premiadas. En su tiempo libre, compone música electrónica y es un apasionado del cine clásico.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816721195",
     headerHint: "editing suite monitors"
   },
   {
@@ -55,8 +58,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man editing film",
-    bio: "Javier es un editor de video con una pasión por contar historias. Su habilidad para tejer narrativas visuales coherentes y emocionantes es insuperable. Tiene un profundo conocimiento de las herramientas de edición y siempre está buscando nuevas formas de innovar.",
+    bio: "As Director of Postproduction, I have based my career on the excellence I bring to each commercial. I am passionate about what I do, specializing in connecting and expressing through images what I see and feel. I enjoy understanding and interpreting each idea that comes to us from agencies and producers in order to give it a comprehensive and powerful structure according to the campaign concept. I have 16 years of experience in the advertising audiovisual industry where I have managed to create a solid company and a talented team, always seeking to ensure that our workflow achieves the effectiveness and impact necessary for each of the pieces.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "803603427",
     headerHint: "video editing timeline"
   },
   {
@@ -65,8 +69,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "focused editor",
-    bio: "Jorge combina precisión técnica con un instinto creativo. Se especializa en la edición de ritmo rápido y dinámico, aportando energía y vitalidad a cada proyecto. Su atención al detalle garantiza que cada corte y transición sea impecable.",
+    bio: "My goal is to contribute with my skills and knowledge to create high-quality content and meet the needs of the audience, but it sounds cliché. What is true, however, is that we create content that makes people dream and inspires others, and because I keep dreaming, I am here.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "800012862",
     headerHint: "sound mixing board"
   },
   {
@@ -75,8 +80,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man at computer",
-    bio: "Carlos es un maestro en el arte del montaje. Su capacidad para encontrar el pulso emocional de una escena y amplificarlo a través de la edición es lo que lo distingue. Colabora estrechamente con directores para hacer realidad su visión.",
+    bio: "I consider myself a highly creative person, with a great ability to imagine and carry out innovative ideas. I firmly believe that imagination is a key tool in the field of post-production, as it allows us to create special effects, edit images and sounds, and generate fresh and original ideas for the projects we work on. From the moment I started working in this industry, I discovered the importance of letting my imagination run wild and being able to visualize the final result even before starting to work on it.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "803618978",
     headerHint: "color grading suite"
   },
   {
@@ -85,8 +91,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "creative professional",
-    bio: "Daniel aporta una perspectiva fresca y moderna a la sala de edición. Con experiencia en gráficos en movimiento y efectos visuales, a menudo integra estos elementos en su trabajo para crear piezas visualmente ricas y cautivadoras.",
+    bio: "I have always been passionate about storytelling in all its forms, but I specialize in its visual variant. I believe that the image, both in motion and still, is the most versatile and influential medium of expression in a time when attention and recall have become scarce and valuable resources.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "803616178",
     headerHint: "motion graphics display"
   },
   {
@@ -95,8 +102,9 @@ const teamMembers = [
     role: "Colorist",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man in front of screens",
-    bio: "Arturo es un artista del color. Su dominio de la corrección y el etalonaje de color transforma el metraje crudo en atmósferas visuales que evocan emociones y mejoran la narrativa. Su trabajo da a cada proyecto una firma visual única.",
+    bio: "As a colorist, my work is a unique blend of art and science. My goal is to create a visually stunning atmosphere in each frame to bring a story to life, through the use of color and light. My meticulous attention to every detail allows me to create a unique and cohesive color palette that transports the viewer to another world. In every project, I seek to challenge myself and surpass my creative abilities to produce something that captures and holds the audience’s attention, generating an emotional experience that makes them feel part of the story.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816724345",
     headerHint: "color grading vectorscopes"
   },
   {
@@ -107,6 +115,7 @@ const teamMembers = [
     hint: "man working on vfx",
     bio: "As a VFX composer, I feel a burning passion for my work. I love diving into the creative process, from conceptualization to final execution. Each project is an opportunity to challenge myself and explore new techniques and approaches. It excites me to see how my skills and knowledge can transform a simple image into a visually stunning masterpiece. The satisfaction I feel when I see my work on the big screen is incomparable and inspires me to keep improving and pushing my limits on every project.",
     headerImage: "https://placehold.co/1920x1080.png",
+    headerVideoId: "816721195",
     headerHint: "visual effects breakdown"
   },
   {
