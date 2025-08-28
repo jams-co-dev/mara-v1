@@ -17,8 +17,8 @@ const services = [
         { name: "CARLOS LEON", slug: "carlos-leon" },
         { name: "DANIEL VARGAS", slug: "daniel-vargas" }
     ],
-    color: "bg-rose-300/70",
-    textColor: "text-rose-900"
+    color: "bg-gray-900",
+    textColor: "text-gray-200"
   },
   {
     icon: Palette,
@@ -26,8 +26,8 @@ const services = [
     names: [
         { name: "ARTURO PEREZ", slug: "arturo-perez" },
     ],
-    color: "bg-amber-300/70",
-    textColor: "text-amber-900"
+    color: "bg-sky-200/70",
+    textColor: "text-sky-900"
   },
   {
     icon: Sparkles,
@@ -36,8 +36,8 @@ const services = [
         { name: "CRISTIAN PICO", slug: "cristian-pico" },
         { name: "JUAN CONTRERAS", slug: "juan-contreras" },
     ],
-    color: "bg-sky-300/70",
-    textColor: "text-sky-900"
+    color: "bg-violet-200/70",
+    textColor: "text-violet-900"
   },
 ];
 
