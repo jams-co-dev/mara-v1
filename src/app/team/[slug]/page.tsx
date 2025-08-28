@@ -105,7 +105,7 @@ const teamMembers = [
     role: "VFX Artist",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man working on vfx",
-    bio: "Cristian es un mago de los efectos visuales. Desde la composición y el rotoscoping hasta la creación de mundos digitales complejos, su trabajo añade una capa de asombro y realismo imposible de lograr de otra manera. Su creatividad no tiene límites.",
+    bio: "As a VFX composer, I feel a burning passion for my work. I love diving into the creative process, from conceptualization to final execution. Each project is an opportunity to challenge myself and explore new techniques and approaches. It excites me to see how my skills and knowledge can transform a simple image into a visually stunning masterpiece. The satisfaction I feel when I see my work on the big screen is incomparable and inspires me to keep improving and pushing my limits on every project.",
     headerImage: "https://placehold.co/1920x1080.png",
     headerHint: "visual effects breakdown"
   },
@@ -115,7 +115,7 @@ const teamMembers = [
     role: "VFX Artist",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man with graphics tablet",
-    bio: "Juan se especializa en la integración perfecta de elementos generados por computadora en metraje de acción en vivo. Su precisión técnica y su ojo artístico aseguran que los efectos visuales sean siempre creíbles y sirvan a la historia.",
+    bio: "I am passionate about breaking the limits of what is considered possible or realistic. That’s why I found in visual effects the perfect tool to capture those ideas that seem impossible to materialize. VFX gives me the freedom to experiment with new techniques and tools to create worlds and situations that seem unreal, taking the exploration between the real and the imaginary to another level.",
     headerImage: "https://placehold.co/1920x1080.png",
     headerHint: "3d modeling software"
   }
