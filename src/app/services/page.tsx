@@ -2,6 +2,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { PenTool, Palette, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageWrapper } from '@/components/page-wrapper';
@@ -11,10 +12,10 @@ const services = [
     icon: PenTool,
     title: "EDIT",
     names: [
-        "JAVIER PINILLA",
-        "JORGE BELTRAN",
-        "CARLOS LEON",
-        "DANIEL VARGAS"
+        { name: "JAVIER PINILLA", slug: "javier-pinilla" },
+        { name: "JORGE BELTRAN", slug: "jorge-beltran" },
+        { name: "CARLOS LEON", slug: "carlos-leon" },
+        { name: "DANIEL VARGAS", slug: "daniel-vargas" }
     ],
     color: "bg-rose-300/70",
     textColor: "text-rose-900"
@@ -97,18 +98,19 @@ export default function ServicesPage() {
                     >
                       {service.names && (
                           <div className="flex flex-col text-left">
-                            {service.names.map(name => (
-                                <span 
-                                    key={name}
-                                    className={cn(
-                                        "text-4xl font-headline font-bold uppercase cursor-pointer transition-opacity duration-300",
-                                        service.textColor,
-                                        hoveredName === null ? 'opacity-70' : (hoveredName === name ? 'opacity-100' : 'opacity-50')
-                                    )}
-                                    onMouseEnter={() => setHoveredName(name)}
-                                >
-                                    {name}
-                                </span>
+                            {service.names.map(member => (
+                                <Link key={member.slug} href={`/team/${member.slug}`}>
+                                    <span 
+                                        className={cn(
+                                            "text-4xl font-headline font-bold uppercase cursor-pointer transition-opacity duration-300 block",
+                                            service.textColor,
+                                            hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
+                                        )}
+                                        onMouseEnter={() => setHoveredName(member.name)}
+                                    >
+                                        {member.name}
+                                    </span>
+                                </Link>
                             ))}
                           </div>
                       )}

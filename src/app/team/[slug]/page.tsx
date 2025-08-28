@@ -48,6 +48,46 @@ const teamMembers = [
     bio: "Michael es donde la magia de la postproducción cobra vida. Con una meticulosa atención al detalle, ensambla el metraje, el sonido y los efectos para crear un producto final pulido y potente que deja una impresión duradera. Es un maestro del color grading y el diseño de sonido, y su trabajo ha sido fundamental para el éxito de muchas de nuestras campañas premiadas. En su tiempo libre, compone música electrónica y es un apasionado del cine clásico.",
     headerImage: "https://placehold.co/1920x1080.png",
     headerHint: "editing suite monitors"
+  },
+  {
+    name: "JAVIER PINILLA",
+    slug: "javier-pinilla",
+    role: "Editor",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "man editing film",
+    bio: "Javier es un editor de video con una pasión por contar historias. Su habilidad para tejer narrativas visuales coherentes y emocionantes es insuperable. Tiene un profundo conocimiento de las herramientas de edición y siempre está buscando nuevas formas de innovar.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "video editing timeline"
+  },
+  {
+    name: "JORGE BELTRAN",
+    slug: "jorge-beltran",
+    role: "Editor",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "focused editor",
+    bio: "Jorge combina precisión técnica con un instinto creativo. Se especializa en la edición de ritmo rápido y dinámico, aportando energía y vitalidad a cada proyecto. Su atención al detalle garantiza que cada corte y transición sea impecable.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "sound mixing board"
+  },
+  {
+    name: "CARLOS LEON",
+    slug: "carlos-leon",
+    role: "Editor",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "man at computer",
+    bio: "Carlos es un maestro en el arte del montaje. Su capacidad para encontrar el pulso emocional de una escena y amplificarlo a través de la edición es lo que lo distingue. Colabora estrechamente con directores para hacer realidad su visión.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "color grading suite"
+  },
+  {
+    name: "DANIEL VARGAS",
+    slug: "daniel-vargas",
+    role: "Editor",
+    imageUrl: "https://placehold.co/200x200.png",
+    hint: "creative professional",
+    bio: "Daniel aporta una perspectiva fresca y moderna a la sala de edición. Con experiencia en gráficos en movimiento y efectos visuales, a menudo integra estos elementos en su trabajo para crear piezas visualmente ricas y cautivadoras.",
+    headerImage: "https://placehold.co/1920x1080.png",
+    headerHint: "motion graphics display"
   }
 ];
 
@@ -105,9 +145,9 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
 
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
           <Button asChild variant="outline" className="shadow-lg bg-background/80 backdrop-blur-sm">
-            <Link href="/about">
+            <Link href="/services">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              go back to the roster
+              go back to services
             </Link>
           </Button>
         </div>
