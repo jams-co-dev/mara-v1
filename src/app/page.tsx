@@ -4,7 +4,7 @@
 import { MoodBoard } from '@/components/mood-board';
 import { VideoPopup } from '@/components/video-popup';
 import { allVideos, VideoData } from '@/lib/video-data';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const moodBoardRows = [
   {
@@ -28,17 +28,21 @@ export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
   const [moodboardKey, setMoodboardKey] = useState(0);
 
-  const handleClosePopup = () => {
-    setSelectedVideo(null);
+  const handleVideoSelect = useCallback((video: VideoData) => {
+    setSelectedVideo(video);
     setMoodboardKey(prevKey => prevKey + 1);
-  };
+  }, []);
+
+  const handleClosePopup = useCallback(() => {
+    setSelectedVideo(null);
+  }, []);
 
   return (
     <>
       <MoodBoard 
         key={moodboardKey}
         rows={moodBoardRows} 
-        onVideoSelect={setSelectedVideo} 
+        onVideoSelect={handleVideoSelect} 
       />
       <VideoPopup 
         video={selectedVideo}
