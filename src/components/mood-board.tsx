@@ -1,10 +1,9 @@
 
 'use client';
 
-import React, { useCallback } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { VideoData } from '@/lib/video-data';
-import Image from 'next/image';
 
 interface MoodBoardRow {
   items: VideoData[];
@@ -19,7 +18,7 @@ function BackgroundVideoItem({ item, onVideoSelect }: { item: VideoData; onVideo
     return (
         <motion.div
             onClick={() => onVideoSelect(item)}
-            className="relative h-full group overflow-hidden cursor-pointer flex-grow w-full"
+            className="relative h-full group overflow-hidden cursor-pointer flex-grow"
         >
             <iframe
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
@@ -38,6 +37,7 @@ function BackgroundVideoItem({ item, onVideoSelect }: { item: VideoData; onVideo
     );
 }
 
+
 export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps & { key?: number }) {
   return (
     <div className="w-full relative" {...props}>
@@ -53,3 +53,4 @@ export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps & { 
     </div>
   );
 }
+
