@@ -52,9 +52,9 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoDa
 export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps) {
   return (
     <div className="w-full relative" {...props}>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full gap-1">
+          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full">
             {row.items.map((item) => (
               <BackgroundVideoItem 
                 key={item.id} 
