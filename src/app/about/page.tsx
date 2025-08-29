@@ -65,118 +65,120 @@ export default function AboutPage() {
 
   return (
     <PageWrapper>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
-            About Us
-          </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            The creative force behind Visionary Digital.
-          </p>
-        </section>
+      <main className="pt-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <section className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+              About Us
+            </h1>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+              The creative force behind Visionary Digital.
+            </p>
+          </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-          <div>
-              <h2 className="text-3xl font-headline text-primary mb-4">Our Mission</h2>
-              <p className="text-lg text-muted-foreground mb-4">
-                  At Visionary Digital, our mission is to blend artistry with strategy to create digital content that not only looks beautiful but also achieves business goals. We believe in the power of storytelling to connect brands with their audiences in meaningful ways.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                  Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+            <div>
+                <h2 className="text-3xl font-headline text-primary mb-4">Our Mission</h2>
+                <p className="text-lg text-muted-foreground mb-4">
+                We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
+                </p>
+                <p className="text-lg text-muted-foreground">
+                    Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
+                </p>
+            </div>
+            <Card className="overflow-hidden rounded-lg shadow-lg">
+                <CardContent className="p-0">
+                    <Image 
+                        src="https://placehold.co/800x600.png"
+                        alt="Our team at work"
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                        data-ai-hint="creative team meeting"
+                    />
+                </CardContent>
+            </Card>
           </div>
-          <Card className="overflow-hidden rounded-lg shadow-lg">
-              <CardContent className="p-0">
-                  <Image 
-                      src="https://placehold.co/800x600.png"
-                      alt="Our team at work"
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover"
-                      data-ai-hint="creative team meeting"
-                  />
-              </CardContent>
-          </Card>
-        </div>
-        
-        <section className="mt-24">
-          <h2 className="text-3xl font-headline text-primary mb-12 text-center">
-            Meet the Team (Card Version)
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {teamMembers.map((member) => (
-                  <Link key={member.slug} href={`/team/${member.slug}`} className="group">
-                      <Card className="h-full text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 pt-8 pb-4">
-                          <CardContent className="p-0 flex flex-col items-center">
-                              <Avatar className="w-32 h-32 border-4 border-transparent group-hover:border-accent transition-colors duration-300">
-                                  <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
-                                  <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
-                              </Avatar>
-                          </CardContent>
-                          <CardHeader>
-                              <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
-                              <CardDescription>{member.role}</CardDescription>
-                          </CardHeader>
-                      </Card>
-                  </Link>
-              ))}
-          </div>
-        </section>
+          
+          <section className="mt-24">
+            <h2 className="text-3xl font-headline text-primary mb-12 text-center">
+              Meet the Team (Card Version)
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {teamMembers.map((member) => (
+                    <Link key={member.slug} href={`/team/${member.slug}`} className="group">
+                        <Card className="h-full text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1 pt-8 pb-4">
+                            <CardContent className="p-0 flex flex-col items-center">
+                                <Avatar className="w-32 h-32 border-4 border-transparent group-hover:border-accent transition-colors duration-300">
+                                    <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
+                                    <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
+                                </Avatar>
+                            </CardContent>
+                            <CardHeader>
+                                <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{member.name}</CardTitle>
+                                <CardDescription>{member.role}</CardDescription>
+                            </CardHeader>
+                        </Card>
+                    </Link>
+                ))}
+            </div>
+          </section>
 
-        <section className="mt-24">
-          <h2 className="text-3xl font-headline text-primary mb-12 text-center">
-            Meet the Team (Interactive Version)
-          </h2>
-          <div className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full max-w-6xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
-                  "flex items-center justify-center",
-                  activeMember === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_3)]',
-                  member.color
-                )}
-                onMouseEnter={() => setActiveMember(index)}
-              >
-                <Link href={`/team/${member.slug}`} className="absolute inset-0 z-10" aria-label={`View profile for ${member.name}`} />
+          <section className="mt-24">
+            <h2 className="text-3xl font-headline text-primary mb-12 text-center">
+              Meet the Team (Interactive Version)
+            </h2>
+            <div className="flex flex-col md:flex-row h-auto md:h-[70vh] w-full max-w-6xl mx-auto">
+              {teamMembers.map((member, index) => (
                 <div
+                  key={index}
                   className={cn(
-                    "absolute inset-0 transition-opacity duration-500 pointer-events-none",
-                    activeMember === index ? 'opacity-100' : 'opacity-0'
+                    "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
+                    "flex items-center justify-center",
+                    activeMember === index ? 'flex-grow w-full md:w-[60%]' : 'flex-shrink w-full md:w-[calc(40%_/_3)]',
+                    member.color
                   )}
+                  onMouseEnter={() => setActiveMember(index)}
                 >
-                  <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
-                    <CardContent className="p-8 text-center">
-                      <Avatar className="w-32 h-32 mx-auto border-4 border-transparent mb-4">
-                          <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
-                          <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
-                      </Avatar>
-                      <h2 className={cn("text-3xl font-headline font-bold mb-2", member.textColor)}>{member.name}</h2>
-                      <p className="text-lg text-muted-foreground max-w-md mx-auto">{member.role}</p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div
+                  <Link href={`/team/${member.slug}`} className="absolute inset-0 z-10" aria-label={`View profile for ${member.name}`} />
+                  <div
                     className={cn(
-                        "absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none",
-                        activeMember !== index ? 'opacity-100' : 'opacity-0'
+                      "absolute inset-0 transition-opacity duration-500 pointer-events-none",
+                      activeMember === index ? 'opacity-100' : 'opacity-0'
                     )}
-                >
-                    <h3 
-                        className={cn(
-                            "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
-                            member.textColor
-                        )}
-                    >
-                        {member.name}
-                    </h3>
+                  >
+                    <Card className="h-full w-full bg-transparent border-0 rounded-none text-foreground flex flex-col justify-center">
+                      <CardContent className="p-8 text-center">
+                        <Avatar className="w-32 h-32 mx-auto border-4 border-transparent mb-4">
+                            <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.hint} />
+                            <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
+                        </Avatar>
+                        <h2 className={cn("text-3xl font-headline font-bold mb-2", member.textColor)}>{member.name}</h2>
+                        <p className="text-lg text-muted-foreground max-w-md mx-auto">{member.role}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  <div
+                      className={cn(
+                          "absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none",
+                          activeMember !== index ? 'opacity-100' : 'opacity-0'
+                      )}
+                  >
+                      <h3 
+                          className={cn(
+                              "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                              member.textColor
+                          )}
+                      >
+                          {member.name}
+                      </h3>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
     </PageWrapper>
   );
 }

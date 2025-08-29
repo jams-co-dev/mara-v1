@@ -1,39 +1,58 @@
 
-import { MoodBoard } from '@/components/mood-board';
-import { PageWrapper } from '@/components/page-wrapper';
+'use client';
 
-const moodBoardRows = [
-  {
-    items: [
-      { id: '1', title: 'Corporate Flow', videoId: '824804225', thumbnail: 'https://placehold.co/1600x900.png', hint: 'corporate video' },
-    ]
-  },
-  {
-    items: [
-      { id: '2', title: 'Product Launch', videoId: '824804225', thumbnail: 'https://placehold.co/800x600.png', hint: 'product commercial' },
-      { id: '3', title: 'Fashion Film', videoId: '824804225', thumbnail: 'https://placehold.co/800x600.png', hint: 'fashion film' },
-    ]
-  },
-  {
-    items: [
-      { id: '4', title: 'Gourmet Ads', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'food advertisement' },
-      { id: '5', title: 'Travel Diary', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'travel vlog' },
-      { id: '6', title: 'Tech Showcase', videoId: '824804225', thumbnail: 'https://placehold.co/600x400.png', hint: 'tech review' },
-    ]
-  },
-  {
-    items: [
-      { id: '7', title: 'Automotive', videoId: '824804225', thumbnail: 'https://placehold.co/1280x720.png', hint: 'car driving', widthClass: 'w-full md:w-8/12' },
-      { id: '8', title: 'Behind the Scenes', videoId: '824804225', thumbnail: 'https://placehold.co/720x720.png', hint: 'camera crew', widthClass: 'w-full md:w-4/12' },
-    ]
+import { MoodBoard } from '@/components/mood-board';
+import { VideoPopup } from '@/components/video-popup';
+import { allVideos, VideoData } from '@/lib/video-data';
+import { useState, useCallback, useMemo } from 'react';
+
+export interface MoodBoardRow {
+  items: VideoData[];
+}
+
+const generateMoodBoardRows = (videos: VideoData[]): MoodBoardRow[] => {
+  const rows: MoodBoardRow[] = [];
+  const pattern = [2, 1, 3];
+  let videoIndex = 0;
+  let patternIndex = 0;
+
+  while (videoIndex < videos.length) {
+    const numItems = pattern[patternIndex % pattern.length];
+    const rowItems = videos.slice(videoIndex, videoIndex + numItems);
+    if (rowItems.length > 0) {
+      rows.push({ items: rowItems });
+    }
+    videoIndex += numItems;
+    patternIndex++;
   }
-];
+
+  return rows;
+};
 
 
 export default function Home() {
+  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+
+  const moodBoardRows = useMemo(() => generateMoodBoardRows(allVideos), []);
+
+  const handleVideoSelect = useCallback((video: VideoData) => {
+    setSelectedVideo(video);
+  }, []);
+
+  const handleClosePopup = useCallback(() => {
+    setSelectedVideo(null);
+  }, []);
+
   return (
-    <PageWrapper>
-      <MoodBoard rows={moodBoardRows} />
-    </PageWrapper>
+    <main className="pt-20">
+      <MoodBoard 
+        rows={moodBoardRows} 
+        onVideoSelect={handleVideoSelect} 
+      />
+      <VideoPopup 
+        video={selectedVideo}
+        onClose={handleClosePopup}
+      />
+    </main>
   );
 }
