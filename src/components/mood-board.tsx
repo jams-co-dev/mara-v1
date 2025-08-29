@@ -35,10 +35,9 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoDa
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
-                className="absolute w-full h-full object-cover"
+                className="absolute w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 title={item.title}
             ></iframe>
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
             <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white text-sm font-semibold">
                     {item.title}
