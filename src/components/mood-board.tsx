@@ -2,7 +2,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { VideoData } from '@/lib/video-data';
 import { cn } from '@/lib/utils';
 import { MoodBoardRow } from '@/app/page';
@@ -31,7 +30,7 @@ interface BackgroundVideoItemProps {
     className?: string;
 }
 
-function BackgroundVideoItem({ item, onVideoSelect, className }: BackgroundVideoItemProps) {
+const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVideoSelect, className }: BackgroundVideoItemProps) {
     return (
         <div
             className={cn("relative h-full group overflow-hidden cursor-pointer", className)}
@@ -55,10 +54,9 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: BackgroundVideo
             </div>
         </div>
     );
-}
+});
 
-
-export function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
+export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
   return (
     <div className="w-full relative">
       <div className="flex flex-col">
@@ -77,4 +75,4 @@ export function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
       </div>
     </div>
   );
-}
+});
