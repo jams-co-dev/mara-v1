@@ -38,7 +38,7 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoDa
                 className="absolute w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                 title={item.title}
             ></iframe>
-            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
                 <h3 className="text-white text-sm font-semibold">
                     {item.title}
                 </h3>
