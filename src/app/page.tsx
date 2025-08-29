@@ -4,38 +4,36 @@
 import { MoodBoard } from '@/components/mood-board';
 import { VideoPopup } from '@/components/video-popup';
 import { allVideos, VideoData } from '@/lib/video-data';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 
 export interface MoodBoardRow {
   items: VideoData[];
-  layout: '50/50' | '60/40' | '40/60';
 }
 
-const moodBoardRows: MoodBoardRow[] = [
-  {
-    items: [allVideos[0], allVideos[1]],
-    layout: '50/50'
-  },
-  {
-    items: [allVideos[2], allVideos[3]],
-    layout: '50/50'
-  },
-  {
-    items: [allVideos[4], allVideos[5]],
-    layout: '50/50'
-  },
-  {
-    items: [allVideos[6], allVideos[7]],
-    layout: '50/50'
-  },
-  {
-    items: [allVideos[8], allVideos[9]],
-    layout: '50/50'
+const generateMoodBoardRows = (videos: VideoData[]): MoodBoardRow[] => {
+  const rows: MoodBoardRow[] = [];
+  const pattern = [2, 1, 3];
+  let videoIndex = 0;
+  let patternIndex = 0;
+
+  while (videoIndex < videos.length) {
+    const numItems = pattern[patternIndex % pattern.length];
+    const rowItems = videos.slice(videoIndex, videoIndex + numItems);
+    if (rowItems.length > 0) {
+      rows.push({ items: rowItems });
+    }
+    videoIndex += numItems;
+    patternIndex++;
   }
-];
+
+  return rows;
+};
+
 
 export default function Home() {
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+
+  const moodBoardRows = useMemo(() => generateMoodBoardRows(allVideos), []);
 
   const handleVideoSelect = useCallback((video: VideoData) => {
     setSelectedVideo(video);

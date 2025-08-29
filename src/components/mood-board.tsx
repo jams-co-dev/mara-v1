@@ -12,17 +12,17 @@ interface MoodBoardProps {
   onVideoSelect: (video: VideoData) => void;
 }
 
-function getLayoutClasses(layout: MoodBoardRow['layout'], index: number) {
-    if (layout === '50/50') {
-        return 'basis-1/2';
+function getLayoutClasses(itemCount: number) {
+    switch (itemCount) {
+        case 1:
+            return 'basis-full';
+        case 2:
+            return 'basis-1/2';
+        case 3:
+            return 'basis-1/3';
+        default:
+            return 'basis-full';
     }
-    if (layout === '60/40') {
-        return index === 0 ? 'basis-3/5' : 'basis-2/5';
-    }
-    if (layout === '40/60') {
-        return index === 0 ? 'basis-2/5' : 'basis-3/5';
-    }
-    return '';
 }
 
 function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoData; onVideoSelect: (video: VideoData) => void; className?: string; }) {
@@ -39,7 +39,7 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoDa
                 title={item.title}
             ></iframe>
             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
-            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
+            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 className="text-white text-sm font-semibold">
                     {item.title}
                 </h3>
@@ -49,18 +49,18 @@ function BackgroundVideoItem({ item, onVideoSelect, className }: { item: VideoDa
 }
 
 
-export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps & { key?: number }) {
+export function MoodBoard({ rows, onVideoSelect, ...props }: MoodBoardProps) {
   return (
     <div className="w-full relative" {...props}>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-1">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full">
-            {row.items.map((item, itemIndex) => (
+          <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full gap-1">
+            {row.items.map((item) => (
               <BackgroundVideoItem 
                 key={item.id} 
                 item={item} 
                 onVideoSelect={onVideoSelect} 
-                className={getLayoutClasses(row.layout, itemIndex)}
+                className={getLayoutClasses(row.items.length)}
               />
             ))}
           </div>
