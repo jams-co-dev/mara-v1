@@ -9,6 +9,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 export const metadata: Metadata = {
   title: 'Visionary Digital',
   description: 'Digital Advertising and Marketing Agency',
+  icons: null,
 };
 
 export default function RootLayout({
