@@ -1,14 +1,9 @@
-import type {NextConfig} from 'next';
+// next.config.ts
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -21,8 +16,37 @@ const nextConfig: NextConfig = {
         hostname: 'i.vimeocdn.com',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // ✅ Eliminamos `experimental.ppr` y `serverComponents`
+  // Si necesitas PPR, usa: npm install next@canary
+  experimental: {
+    // ppr: true, // 🔴 Solo en `next@canary`
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: require.resolve('path-browserify'),
+        os: require.resolve('os-browserify'),
+        crypto: require.resolve('crypto-browserify'),
+        stream: require.resolve('stream-browserify'),
+      };
+
+      config.ignoreWarnings = [
+        ...(config.ignoreWarnings || []),
+        { module: /node:/ },
+      ];
+    }
+    return config;
   },
 };
 
