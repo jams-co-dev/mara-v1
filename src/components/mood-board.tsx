@@ -44,7 +44,6 @@ const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVi
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
-                loading="lazy"
                 className="absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:scale-105 pointer-events-none"
                 title={item.title}
             ></iframe>
