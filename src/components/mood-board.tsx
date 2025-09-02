@@ -1,7 +1,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useCallback } from 'react';
 import { VideoData } from '@/lib/video-data';
 import { cn } from '@/lib/utils';
 import { MoodBoardRow } from '@/app/page';
@@ -55,6 +55,8 @@ const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVi
         </div>
     );
 });
+BackgroundVideoItem.displayName = "BackgroundVideoItem";
+
 
 export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
   return (
@@ -76,3 +78,4 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
     </div>
   );
 });
+MoodBoard.displayName = "MoodBoard";

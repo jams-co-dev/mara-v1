@@ -5,30 +5,37 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Instagram } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
+const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.197 0-3.57.012-4.815.07-2.738.124-3.999 1.39-4.122 4.122-.058 1.245-.069 1.615-.069 4.815s.011 3.57.069 4.815c.123 2.731 1.384 3.999 4.122 4.122 1.245.058 1.618.069 4.815.069s3.57-.011 4.815-.069c2.732-.123 3.999-1.391 4.122-4.122.058-1.245.069-1.615.069-4.815s-.011-3.57-.069-4.815c-.123-2.732-1.39-3.999-4.122-4.122C15.57 3.615 15.197 3.604 12 3.604zm0 4.238c-2.404 0-4.35 1.946-4.35 4.35s1.946 4.35 4.35 4.35 4.35-1.946 4.35-4.35-1.946-4.35-4.35-4.35zm0 7.25c-1.598 0-2.9-1.302-2.9-2.9s1.302-2.9 2.9-2.9 2.9 1.302 2.9 2.9-1.302 2.9-2.9 2.9zm5.338-8.204a1.08 1.08 0 1 0 0-2.16 1.08 1.08 0 0 0 0 2.16z" />
+    </svg>
+);
+
 const VimeoIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M23.5 6.2c-.3-1.4-1-2.6-2-3.6-1-1-2.3-1.6-3.8-1.7-3.3-.2-8.2.1-12 .7C2 2.6.6 4.9.5 5.8c-.1.9.4 3.7 1.5 8.2 1.1 4.5 1.7 6.8 1.9 6.9.2.1 1.7-1.7 3.3-3.9 1.6-2.2 2.9-4 3-4.1.1-.1-1.3 2.2-3 4.8-.8 1.3-1.5 2.5-1.5 2.7 0 .2 2.1-2.4 4.7-5.9 2.6-3.5 4.6-6.4 4.6-6.6 0-.2-1.9 1.4-4.2 3.6-2.3 2.2-4.1 4-4.1 4s.4-1.7 1-3.6c.6-1.9 1.1-3.5 1.1-3.6 0-.1-1.3 1.9-3 4.3-1.7 2.4-3.1 4.4-3.1 4.5 0 .1.3-1.2.8-2.7s.9-2.8 1-2.9c.1-.1.9 1.5 2.1 3.7 1.2 2.2 2.2 4 2.2 4.1.1.1 2.3-2.4 5-5.3 2.7-2.9 4.9-5.2 4.9-5.3 0-.1-1.1.7-2.4 1.5s-2.4 1.5-2.4 1.5.8-2.6 1.8-5.3c1-2.7 1.5-4.1 1.5-4.1s-.2 0-.5.1c-.3.1-.6.2-.6.2.8-1.5 2-2.7 3.5-3.6.8-.5 2.2-.8 4.1-.9 1.9-.1 3.1.2 3.6.8.5.6.8 1.5.8 2.8-.1 1.3-.4 2.4-1 3.3-.6.9-1.4 1.6-2.4 2.2-1 .6-1.8.9-2.5 1-.7.1-1.2-.2-1.6-.7s-.5-1-.5-1.5c0-.6.1-1.1.4-1.5.3-.4.8-.6 1.4-.6.6 0 1.2.3 1.7.9.5.6.8 1.4.8 2.5 0 .8-.2 1.5-.5 2.1-.3.6-.8 1.1-1.4 1.5-.6.4-1.3.6-2.1.6-.8 0-1.5-.2-2.1-.5-.6-.3-1.1-.8-1.5-1.4-.4-.6-.6-1.3-.6-2.1 0-1.1.4-2 1.2-2.7.8-.7 1.8-1.1 3-1.1 1.2 0 2.2.4 3 1.1s1.2 1.7 1.2 2.9c0 .7-.1 1.3-.4 1.8-.3.5-.7.9-1.2 1.2s-1 .5-1.6.5c-.6 0-1.1-.1-1.5-.4-.4-.3-.7-.7-.8-1.1s-.2-.9-.2-1.3c0-1.1.5-1.9 1.4-2.5.5-.3 1.1-.5 1.7-.5.6 0 1.1.2 1.5.5.4.3.7.7.8 1.2.1.5.2 1 .2 1.5z"/>
+      <path d="M9.8,16.1c-1.4,1.8-3.1,2.7-5.1,2.7C2.2,18.8,1,17.4,1,15.2c0-2.4,1.8-5.3,5.1-8.7c3.1-3.2,5-4.8,5.8-4.8 c0.6,0,1,0.5,1,1.4c0,1-0.7,2.5-2,4.6c-1.4,2.1-2.1,3.2-2.1,3.2s1.4-0.2,3.4-0.5c3.5-0.6,4.8,0.7,4.1,3.8 C15.7,17.7,13.4,18.8,12,18.8c-0.8,0-1.5-0.2-2.2-0.6V16.1z"/>
     </svg>
 );
 
 const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
     </svg>
 );
 
 const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M22 7h-7v-2h7v2zm-7 4h5.5c-1.16 2.454-3.261 4.414-5.5 5.5v-5.5zm-15 4h6.5c-.441 1.099-1.012 2.255-1.731 3h-4.769v-3zm0-1h6c.404-1 .874-2.079 1.348-3h-7.348v3zm10-3h-7v-2h7v2zm8.384-6h-14.757c.606-1.021 1.347-2.062 2.15-3h10.439c.691.939 1.309 1.961 1.83 3h.338zm-3.384 10v.011c0 2.185-1.802 3.989-3.993 3.989h-5.007v-3.065c1.946-.223 3.497-1.579 3.864-3.435h-3.864v-3h7c.022 2.723-1.698 5.428-4.228 6.551 1.144.254 2.228.163 2.228-1.551v-.5h4z"/>
+        <path d="M14.33 10.36h3.96v1.73h-3.96v-1.73zM9.91 14.85h2.9c.14-1.8 1.1-2.81 2.89-2.81.9 0 1.45.38 1.45.98 0 .73-.78 1-1.28 1.18-.9.34-1.91.6-1.91 1.88h3.91v.96c0 2.26-1.63 3.32-3.8 3.32-2.3 0-3.96-1.28-3.96-3.83 0-1.75.98-2.65 2.76-3.14l1.9-.53zm.18-3.34h3.58V8.9H10.1v2.61zm-4.57 0h3.58V8.9H5.52v2.61zM0 0h24v24H0z" fill="none"/>
+        <path d="M12.8 10.05h-1.3V8.8h1.3c.6 0 .98-.3.98-.82 0-.54-.38-.82-.98-.82H8.38v4.66h4.58c.6 0 .98-.28.98-.82 0-.54-.38-.82-.98-.82zM17.48 7.15c0-.62-.48-1-1.25-1H14v2.03h2.22c.78 0 1.26-.38 1.26-1.03z"/>
+        <path d="M14.33 10.36h3.96v1.73h-3.96zM9.91 14.85h2.9c.14-1.8 1.1-2.81 2.89-2.81.9 0 1.45.38 1.45.98 0 .73-.78 1-1.28 1.18-.9.34-1.91.6-1.91 1.88h3.91v.96c0 2.26-1.63 3.32-3.8 3.32-2.3 0-3.96-1.28-3.96-3.83 0-1.75.98-2.65 2.76-3.14l1.9-.53z"/>
     </svg>
 );
-
 
 const navLinks = [
   { href: "/our-work", label: "OUR WORK" },
@@ -38,7 +45,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { name: "Instagram", href: "https://instagram.com/marapost.co", icon: Instagram },
+    { name: "Instagram", href: "https://instagram.com/marapost.co", icon: InstagramIcon },
     { name: "Vimeo", href: "https://vimeo.com/marapost", icon: VimeoIcon },
     { name: "LinkedIn", href: "https://linkedin.com/company/mara-post", icon: LinkedInIcon },
     { name: "Behance", href: "https://www.behance.net/marapost", icon: BehanceIcon },
@@ -85,13 +92,18 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-2">
-             <div className="hidden md:flex items-center space-x-1">
+             <div className="hidden md:flex items-center space-x-2">
                 {socialLinks.map((social) => (
-                  <Button key={social.href} variant="ghost" size="icon" asChild>
-                    <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                      <social.icon className="h-5 w-5" />
-                    </a>
-                  </Button>
+                   <a 
+                    key={social.href} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-6 w-6" />
+                  </a>
                 ))}
              </div>
              <ThemeSwitcher />
@@ -126,11 +138,16 @@ export function Header() {
           ))}
           <div className="flex items-center space-x-4 pt-4">
             {socialLinks.map((social) => (
-                <Button key={social.href} variant="ghost" size="icon" asChild>
-                  <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                    <social.icon className="h-6 w-6" />
-                  </a>
-                </Button>
+                <a 
+                  key={social.href} 
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-accent transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-8 w-8" />
+                </a>
               ))}
           </div>
         </nav>

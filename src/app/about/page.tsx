@@ -72,13 +72,13 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              The creative force behind Visionary Digital.
+              The creative force behind Mara Post.
             </p>
           </section>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
             <div>
-                <h2 className="text-3xl font-headline text-primary mb-4">Our Mission</h2>
+                <h2 className="text-3xl font-headline text-primary mb-4">LIMITLESS C R E A T I V I T Y </h2>
                 <p className="text-lg text-muted-foreground mb-4">
                 We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                 </p>
