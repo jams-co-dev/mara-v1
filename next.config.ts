@@ -25,11 +25,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // ✅ Eliminamos `experimental.ppr` y `serverComponents`
-  // Si necesitas PPR, usa: npm install next@canary
-  experimental: {
-    // ppr: true, // 🔴 Solo en `next@canary`
-  },
+  // ✅ Eliminado: experimental.serverComponents y ppr
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.resolve.fallback = {
