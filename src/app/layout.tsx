@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Visionary Digital',
+  title: 'Mara Post',
   description: 'Digital Advertising and Marketing Agency',
   icons: null,
 };
