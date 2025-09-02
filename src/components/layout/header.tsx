@@ -85,11 +85,13 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-2">
-             <div className="hidden md:flex items-center space-x-1">
+             <div className="hidden md:flex items-center space-x-2">
                 {socialLinks.map((social) => (
                   <Button key={social.href} variant="ghost" size="icon" asChild>
                     <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                      <social.icon className="h-5 w-5" />
+                       <div className="bg-primary rounded-full p-1">
+                          <social.icon className="h-5 w-5 text-primary-foreground" />
+                       </div>
                     </a>
                   </Button>
                 ))}
@@ -128,7 +130,9 @@ export function Header() {
             {socialLinks.map((social) => (
                 <Button key={social.href} variant="ghost" size="icon" asChild>
                   <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
-                    <social.icon className="h-6 w-6" />
+                    <div className="bg-primary rounded-full p-1.5">
+                        <social.icon className="h-6 w-6 text-primary-foreground" />
+                    </div>
                   </a>
                 </Button>
               ))}
