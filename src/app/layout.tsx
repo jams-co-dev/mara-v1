@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Mara Post',
-  description: 'Digital Advertising and Marketing Agency',
+  description: 'Mara Post LIMITLESS CREATIVITY',
   icons: null,
 };
 
