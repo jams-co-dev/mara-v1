@@ -12,10 +12,8 @@ import { Button } from "@/components/ui/button";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.197 0-3.57.012-4.815.07-2.738.124-3.999 1.39-4.122 4.122-.058 1.245-.069 1.615-.069 4.815s.011 3.57.069 4.815c.123 2.731 1.384 3.999 4.122 4.122 1.245.058 1.618.069 4.815.069s3.57-.011 4.815-.069c2.732-.123 3.999-1.391 4.122-4.122.058-1.245.069-1.615.069-4.815s-.011-3.57-.069-4.815c-.123-2.732-1.39-3.999-4.122-4.122C15.57 3.615 15.197 3.604 12 3.604zm0 4.238c-2.404 0-4.35 1.946-4.35 4.35s1.946 4.35 4.35 4.35 4.35-1.946 4.35-4.35-1.946-4.35-4.35-4.35zm0 7.25c-1.598 0-2.9-1.302-2.9-2.9s1.302-2.9 2.9-2.9 2.9 1.302 2.9 2.9-1.302 2.9-2.9 2.9zm5.338-8.204a1.08 1.08 0 1 0 0-2.16 1.08 1.08 0 0 0 0 2.16z" />
     </svg>
 );
 
@@ -101,7 +99,7 @@ export function Header() {
                     href={social.href} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-foreground hover:text-accent transition-colors"
+                    className="text-muted-foreground hover:text-accent transition-colors"
                     aria-label={social.name}
                   >
                     <social.icon className="h-6 w-6" />
@@ -145,7 +143,7 @@ export function Header() {
                   href={social.href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground hover:text-accent transition-colors"
                   aria-label={social.name}
                 >
                   <social.icon className="h-8 w-8" />
