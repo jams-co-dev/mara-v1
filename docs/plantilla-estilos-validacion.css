@@ -1,0 +1,107 @@
+/*
+  Plantilla de estilos para validación de fuentes, tamaños de texto y colores
+  Este archivo NO afecta el proyecto, es solo para revisión con el usuario.
+  Autor: jams-co-dev
+  Fecha: 25/09/2025
+*/
+
+/* ==================== FUENTES ==================== */
+:root {
+  /* Fuentes usadas en mara */
+  --font-primary: 'Montserrat', 'Inter', Arial, sans-serif;
+  --font-secondary: 'Roboto', Arial, sans-serif;
+  --font-accent: 'Playfair Display', serif;
+}
+
+.font-primary {
+  font-family: var(--font-primary);
+}
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* ==================== TAMAÑOS DE TEXTO ==================== */
+/* Tamaños sugeridos para mara */
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-base { font-size: 1rem; }
+.text-md { font-size: 1.125rem; }
+.text-lg { font-size: 1.25rem; }
+.text-xl { font-size: 1.5rem; }
+.text-2xl { font-size: 2rem; }
+.text-3xl { font-size: 2.5rem; }
+.text-4xl { font-size: 3rem; }
+.text-5xl { font-size: 4rem; }
+
+/* ==================== COLORES ==================== */
+:root {
+  /* Colores basados en la base .mara */
+  --color-background: hsl(0, 0%, 8%); /* Near Black */
+  --color-foreground: hsl(60, 20%, 90%); /* Off-white */
+  --color-card: hsl(0, 0%, 12%);
+  --color-card-foreground: hsl(60, 20%, 90%);
+  --color-primary: hsl(359, 41%, 39%); /* Dark Red */
+  --color-primary-foreground: hsl(60, 20%, 90%);
+  --color-secondary: hsl(0, 0%, 14.9%);
+  --color-secondary-foreground: hsl(60, 20%, 90%);
+  --color-muted: hsl(0, 0%, 14.9%);
+  --color-muted-foreground: hsl(60, 20%, 60%);
+  --color-accent: hsl(0, 52%, 52%); /* Bright Red */
+  --color-accent-foreground: hsl(0, 0%, 98%);
+  --color-destructive: hsl(0, 62.8%, 30.6%);
+  --color-destructive-foreground: hsl(0, 0%, 98%);
+  --color-border: hsl(0, 0%, 14.9%);
+  --color-input: hsl(0, 0%, 14.9%);
+  --color-ring: hsl(0, 52%, 52%);
+}
+
+.bg-primary { background-color: var(--color-primary); color: #fff; }
+.bg-secondary { background-color: var(--color-secondary); color: #fff; }
+.bg-accent { background-color: var(--color-accent); color: #fff; }
+.bg-bg { background-color: var(--color-bg); color: var(--color-text); }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-accent { color: var(--color-accent); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+.text-error { color: var(--color-error); }
+
+/* Ejemplo de clases para mostrar los colores */
+.bg-background { background-color: var(--color-background); color: var(--color-foreground); }
+.bg-card { background-color: var(--color-card); color: var(--color-card-foreground); }
+.bg-primary { background-color: var(--color-primary); color: var(--color-primary-foreground); }
+.bg-secondary { background-color: var(--color-secondary); color: var(--color-secondary-foreground); }
+.bg-muted { background-color: var(--color-muted); color: var(--color-muted-foreground); }
+.bg-accent { background-color: var(--color-accent); color: var(--color-accent-foreground); }
+.bg-destructive { background-color: var(--color-destructive); color: var(--color-destructive-foreground); }
+.bg-border { background-color: var(--color-border); }
+.bg-input { background-color: var(--color-input); }
+.bg-ring { background-color: var(--color-ring); }
+.text-background { color: var(--color-background); }
+.text-foreground { color: var(--color-foreground); }
+.text-card { color: var(--color-card); }
+.text-card-foreground { color: var(--color-card-foreground); }
+.text-primary { color: var(--color-primary); }
+.text-primary-foreground { color: var(--color-primary-foreground); }
+.text-secondary { color: var(--color-secondary); }
+.text-secondary-foreground { color: var(--color-secondary-foreground); }
+.text-muted { color: var(--color-muted); }
+.text-muted-foreground { color: var(--color-muted-foreground); }
+.text-accent { color: var(--color-accent); }
+.text-accent-foreground { color: var(--color-accent-foreground); }
+.text-destructive { color: var(--color-destructive); }
+.text-destructive-foreground { color: var(--color-destructive-foreground); }
+.text-border { color: var(--color-border); }
+.text-input { color: var(--color-input); }
+.text-ring { color: var(--color-ring); }
+
+/* ==================== EJEMPLOS DE USO ==================== */
+/*
+<div class="font-primary text-2xl text-primary">Texto con fuente principal y color primario</div>
+<div class="font-secondary text-lg text-accent">Texto con fuente secundaria y color de acento</div>
+<div class="font-accent text-sm text-success">Texto con fuente de acento y color éxito</div>
+*/

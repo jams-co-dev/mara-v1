@@ -1,0 +1,747 @@
+<!--
+  Vista previa de la plantilla de estilos para validación de fuentes, tamaños de texto y colores
+  Este archivo NO afecta el proyecto, es solo para revisión con el usuario.
+  Autor: jams-co-dev
+  Fecha: 25/09/2025
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Previa: Fuentes, Tamaños y Colores</title>
+  <link rel="stylesheet" href="plantilla-estilos-validacion.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7fafc; margin: 0; padding: 2rem; }
+    h1, h2 { margin-top: 2rem; }
+    .preview-block { margin-bottom: 2rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
+    .color-sample { display: flex; align-items: center; margin-bottom: 0.5rem; }
+    .color-box { width: 40px; height: 40px; border-radius: 6px; margin-right: 1rem; border: 1px solid #ddd; }
+    .font-sample { margin-bottom: 0.5rem; }
+    .size-sample { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Plantilla de Validación de Estilos</h1>
+  <p>Esta vista previa muestra las fuentes, tamaños de texto y colores definidos en la plantilla para revisión con el usuario.</p>
+
+  <h2>Fuentes</h2>
+    <div class="preview-block">
+      <div class="font-sample font-primary text-xl" style="font-family:'Montserrat',sans-serif;">Fuente Principal: Montserrat</div>
+      <div class="font-sample font-secondary text-xl" style="font-family:'Roboto',sans-serif;">Fuente Secundaria: Roboto</div>
+    </div>
+
+    <h2>Ejemplos de Uso</h2>
+      <div class="preview-block">
+          <div style="margin-bottom:0.5rem;">
+            <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+            <div style="display:flex;align-items:center;">
+              <select onchange="updateFont(this, 'ejemplo1')" id="select-ejemplo1">
+                       <option value="Roboto">Roboto</option>
+                       <option value="Open Sans">Open Sans</option>
+                       <option value="Lato">Lato</option>
+                       <option value="Montserrat" selected>Montserrat</option>
+                       <option value="Oswald">Oswald</option>
+                       <option value="Source Sans Pro">Source Sans Pro</option>
+                       <option value="Slabo 27px">Slabo 27px</option>
+                       <option value="Raleway">Raleway</option>
+                       <option value="PT Sans">PT Sans</option>
+                       <option value="Merriweather">Merriweather</option>
+                       <option value="Nunito">Nunito</option>
+                       <option value="Poppins">Poppins</option>
+                       <option value="Ubuntu">Ubuntu</option>
+                       <option value="Playfair Display">Playfair Display</option>
+                       <option value="Titillium Web">Titillium Web</option>
+                       <option value="Quicksand">Quicksand</option>
+                       <option value="Fira Sans">Fira Sans</option>
+                       <option value="Cabin">Cabin</option>
+                       <option value="Dosis">Dosis</option>
+                       <option value="Arimo">Arimo</option>
+                       <option value="Josefin Sans">Josefin Sans</option>
+                       <option value="Bebas Neue">Bebas Neue</option>
+                       <option value="Anton">Anton</option>
+                       <option value="Exo 2">Exo 2</option>
+                       <option value="Pacifico">Pacifico</option>
+                       <option value="Muli">Muli</option>
+                       <option value="Rubik">Rubik</option>
+                       <option value="Indie Flower">Indie Flower</option>
+                       <option value="Archivo Narrow">Archivo Narrow</option>
+                       <option value="Bitter">Bitter</option>
+                       <option value="Hind">Hind</option>
+                       <option value="Karla">Karla</option>
+                       <option value="Inconsolata">Inconsolata</option>
+                       <option value="Lobster">Lobster</option>
+                       <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                       <option value="Prompt">Prompt</option>
+                       <option value="Maven Pro">Maven Pro</option>
+                       <option value="Bangers">Bangers</option>
+                       <option value="Cairo">Cairo</option>
+                       <option value="Barlow">Barlow</option>
+                       <option value="Varela Round">Varela Round</option>
+                       <option value="Noto Sans">Noto Sans</option>
+                       <option value="Signika">Signika</option>
+                       <option value="Abel">Abel</option>
+                       <option value="Righteous">Righteous</option>
+                       <option value="Teko">Teko</option>
+                       <option value="Heebo">Heebo</option>
+                       <option value="Work Sans">Work Sans</option>
+                       <option value="Inter">Inter</option>
+              </select>
+              <span id="ejemplo1" class="font-headline text-4xl md:text-6xl text-primary font-bold tracking-tight" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Título principal: font-headline + text-4xl/md:text-6xl</span>
+            </div>
+          </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo2')" id="select-ejemplo2">
+                 <option value="Roboto">Roboto</option>
+                 <option value="Open Sans">Open Sans</option>
+                 <option value="Lato">Lato</option>
+                 <option value="Montserrat" selected>Montserrat</option>
+                 <option value="Oswald">Oswald</option>
+                 <option value="Source Sans Pro">Source Sans Pro</option>
+                 <option value="Slabo 27px">Slabo 27px</option>
+                 <option value="Raleway">Raleway</option>
+                 <option value="PT Sans">PT Sans</option>
+                 <option value="Merriweather">Merriweather</option>
+                 <option value="Nunito">Nunito</option>
+                 <option value="Poppins">Poppins</option>
+                 <option value="Ubuntu">Ubuntu</option>
+                 <option value="Playfair Display">Playfair Display</option>
+                 <option value="Titillium Web">Titillium Web</option>
+                 <option value="Quicksand">Quicksand</option>
+                 <option value="Fira Sans">Fira Sans</option>
+                 <option value="Cabin">Cabin</option>
+                 <option value="Dosis">Dosis</option>
+                 <option value="Arimo">Arimo</option>
+                 <option value="Josefin Sans">Josefin Sans</option>
+                 <option value="Bebas Neue">Bebas Neue</option>
+                 <option value="Anton">Anton</option>
+                 <option value="Exo 2">Exo 2</option>
+                 <option value="Pacifico">Pacifico</option>
+                 <option value="Muli">Muli</option>
+                 <option value="Rubik">Rubik</option>
+                 <option value="Indie Flower">Indie Flower</option>
+                 <option value="Archivo Narrow">Archivo Narrow</option>
+                 <option value="Bitter">Bitter</option>
+                 <option value="Hind">Hind</option>
+                 <option value="Karla">Karla</option>
+                 <option value="Inconsolata">Inconsolata</option>
+                 <option value="Lobster">Lobster</option>
+                 <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                 <option value="Prompt">Prompt</option>
+                 <option value="Maven Pro">Maven Pro</option>
+                 <option value="Bangers">Bangers</option>
+                 <option value="Cairo">Cairo</option>
+                 <option value="Barlow">Barlow</option>
+                 <option value="Varela Round">Varela Round</option>
+                 <option value="Noto Sans">Noto Sans</option>
+                 <option value="Signika">Signika</option>
+                 <option value="Abel">Abel</option>
+                 <option value="Righteous">Righteous</option>
+                 <option value="Teko">Teko</option>
+                 <option value="Heebo">Heebo</option>
+                 <option value="Work Sans">Work Sans</option>
+                 <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo2" class="font-headline text-3xl text-primary mb-8 text-center" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Título de sección: font-headline + text-3xl</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo3')" id="select-ejemplo3">
+                 <option value="Roboto">Roboto</option>
+                 <option value="Open Sans">Open Sans</option>
+                 <option value="Lato">Lato</option>
+                 <option value="Montserrat" selected>Montserrat</option>
+                 <option value="Oswald">Oswald</option>
+                 <option value="Source Sans Pro">Source Sans Pro</option>
+                 <option value="Slabo 27px">Slabo 27px</option>
+                 <option value="Raleway">Raleway</option>
+                 <option value="PT Sans">PT Sans</option>
+                 <option value="Merriweather">Merriweather</option>
+                 <option value="Nunito">Nunito</option>
+                 <option value="Poppins">Poppins</option>
+                 <option value="Ubuntu">Ubuntu</option>
+                 <option value="Playfair Display">Playfair Display</option>
+                 <option value="Titillium Web">Titillium Web</option>
+                 <option value="Quicksand">Quicksand</option>
+                 <option value="Fira Sans">Fira Sans</option>
+                 <option value="Cabin">Cabin</option>
+                 <option value="Dosis">Dosis</option>
+                 <option value="Arimo">Arimo</option>
+                 <option value="Josefin Sans">Josefin Sans</option>
+                 <option value="Bebas Neue">Bebas Neue</option>
+                 <option value="Anton">Anton</option>
+                 <option value="Exo 2">Exo 2</option>
+                 <option value="Pacifico">Pacifico</option>
+                 <option value="Muli">Muli</option>
+                 <option value="Rubik">Rubik</option>
+                 <option value="Indie Flower">Indie Flower</option>
+                 <option value="Archivo Narrow">Archivo Narrow</option>
+                 <option value="Bitter">Bitter</option>
+                 <option value="Hind">Hind</option>
+                 <option value="Karla">Karla</option>
+                 <option value="Inconsolata">Inconsolata</option>
+                 <option value="Lobster">Lobster</option>
+                 <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                 <option value="Prompt">Prompt</option>
+                 <option value="Maven Pro">Maven Pro</option>
+                 <option value="Bangers">Bangers</option>
+                 <option value="Cairo">Cairo</option>
+                 <option value="Barlow">Barlow</option>
+                 <option value="Varela Round">Varela Round</option>
+                 <option value="Noto Sans">Noto Sans</option>
+                 <option value="Signika">Signika</option>
+                 <option value="Abel">Abel</option>
+                 <option value="Righteous">Righteous</option>
+                 <option value="Teko">Teko</option>
+                 <option value="Heebo">Heebo</option>
+                 <option value="Work Sans">Work Sans</option>
+                 <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo3" class="font-headline text-xl text-primary" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Título de acordeón: font-headline + text-xl</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Roboto</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo4')" id="select-ejemplo4">
+                 <option value="Roboto" selected>Roboto</option>
+                 <option value="Open Sans">Open Sans</option>
+                 <option value="Lato">Lato</option>
+                 <option value="Montserrat">Montserrat</option>
+                 <option value="Oswald">Oswald</option>
+                 <option value="Source Sans Pro">Source Sans Pro</option>
+                 <option value="Slabo 27px">Slabo 27px</option>
+                 <option value="Raleway">Raleway</option>
+                 <option value="PT Sans">PT Sans</option>
+                 <option value="Merriweather">Merriweather</option>
+                 <option value="Nunito">Nunito</option>
+                 <option value="Poppins">Poppins</option>
+                 <option value="Ubuntu">Ubuntu</option>
+                 <option value="Playfair Display">Playfair Display</option>
+                 <option value="Titillium Web">Titillium Web</option>
+                 <option value="Quicksand">Quicksand</option>
+                 <option value="Fira Sans">Fira Sans</option>
+                 <option value="Cabin">Cabin</option>
+                 <option value="Dosis">Dosis</option>
+                 <option value="Arimo">Arimo</option>
+                 <option value="Josefin Sans">Josefin Sans</option>
+                 <option value="Bebas Neue">Bebas Neue</option>
+                 <option value="Anton">Anton</option>
+                 <option value="Exo 2">Exo 2</option>
+                 <option value="Pacifico">Pacifico</option>
+                 <option value="Muli">Muli</option>
+                 <option value="Rubik">Rubik</option>
+                 <option value="Indie Flower">Indie Flower</option>
+                 <option value="Archivo Narrow">Archivo Narrow</option>
+                 <option value="Bitter">Bitter</option>
+                 <option value="Hind">Hind</option>
+                 <option value="Karla">Karla</option>
+                 <option value="Inconsolata">Inconsolata</option>
+                 <option value="Lobster">Lobster</option>
+                 <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                 <option value="Prompt">Prompt</option>
+                 <option value="Maven Pro">Maven Pro</option>
+                 <option value="Bangers">Bangers</option>
+                 <option value="Cairo">Cairo</option>
+                 <option value="Barlow">Barlow</option>
+                 <option value="Varela Round">Varela Round</option>
+                 <option value="Noto Sans">Noto Sans</option>
+                 <option value="Signika">Signika</option>
+                 <option value="Abel">Abel</option>
+                 <option value="Righteous">Righteous</option>
+                 <option value="Teko">Teko</option>
+                 <option value="Heebo">Heebo</option>
+                 <option value="Work Sans">Work Sans</option>
+                 <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo4" class="font-semibold text-xl md:text-2xl text-accent" style="margin-left:1rem; font-family:'Roboto',sans-serif;">Rol destacado: font-semibold + text-xl/md:text-2xl</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo5')" id="select-ejemplo5">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo5" class="prose prose-lg text-muted-foreground" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Descripción/Bio: prose-lg + text-muted-foreground</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo6')" id="select-ejemplo6">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo6" class="font-bold text-lg text-primary" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Subtítulo/Texto destacado: font-bold + text-lg</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo7')" id="select-ejemplo7">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo7" class="font-medium text-sm text-muted-foreground" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Botón/Etiqueta: font-medium + text-sm</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo8')" id="select-ejemplo8">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo8" class="font-medium text-xs text-muted-foreground" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Etiqueta pequeña: font-medium + text-xs</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo9')" id="select-ejemplo9">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo9" class="font-body text-base text-muted-foreground" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Texto general: font-body + text-base</span>
+          </div>
+        </div>
+        <div style="margin-bottom:0.5rem;">
+          <div style="font-size:0.9rem;color:#666;">Fuente actual del proyecto: <b>Montserrat</b></div>
+          <div style="display:flex;align-items:center;">
+            <select onchange="updateFont(this, 'ejemplo10')" id="select-ejemplo10">
+                   <option value="Roboto">Roboto</option>
+                   <option value="Open Sans">Open Sans</option>
+                   <option value="Lato">Lato</option>
+                   <option value="Montserrat" selected>Montserrat</option>
+                   <option value="Oswald">Oswald</option>
+                   <option value="Source Sans Pro">Source Sans Pro</option>
+                   <option value="Slabo 27px">Slabo 27px</option>
+                   <option value="Raleway">Raleway</option>
+                   <option value="PT Sans">PT Sans</option>
+                   <option value="Merriweather">Merriweather</option>
+                   <option value="Nunito">Nunito</option>
+                   <option value="Poppins">Poppins</option>
+                   <option value="Ubuntu">Ubuntu</option>
+                   <option value="Playfair Display">Playfair Display</option>
+                   <option value="Titillium Web">Titillium Web</option>
+                   <option value="Quicksand">Quicksand</option>
+                   <option value="Fira Sans">Fira Sans</option>
+                   <option value="Cabin">Cabin</option>
+                   <option value="Dosis">Dosis</option>
+                   <option value="Arimo">Arimo</option>
+                   <option value="Josefin Sans">Josefin Sans</option>
+                   <option value="Bebas Neue">Bebas Neue</option>
+                   <option value="Anton">Anton</option>
+                   <option value="Exo 2">Exo 2</option>
+                   <option value="Pacifico">Pacifico</option>
+                   <option value="Muli">Muli</option>
+                   <option value="Rubik">Rubik</option>
+                   <option value="Indie Flower">Indie Flower</option>
+                   <option value="Archivo Narrow">Archivo Narrow</option>
+                   <option value="Bitter">Bitter</option>
+                   <option value="Hind">Hind</option>
+                   <option value="Karla">Karla</option>
+                   <option value="Inconsolata">Inconsolata</option>
+                   <option value="Lobster">Lobster</option>
+                   <option value="Yanone Kaffeesatz">Yanone Kaffeesatz</option>
+                   <option value="Prompt">Prompt</option>
+                   <option value="Maven Pro">Maven Pro</option>
+                   <option value="Bangers">Bangers</option>
+                   <option value="Cairo">Cairo</option>
+                   <option value="Barlow">Barlow</option>
+                   <option value="Varela Round">Varela Round</option>
+                   <option value="Noto Sans">Noto Sans</option>
+                   <option value="Signika">Signika</option>
+                   <option value="Abel">Abel</option>
+                   <option value="Righteous">Righteous</option>
+                   <option value="Teko">Teko</option>
+                   <option value="Heebo">Heebo</option>
+                   <option value="Work Sans">Work Sans</option>
+                   <option value="Inter">Inter</option>
+            </select>
+            <span id="ejemplo10" class="font-mono text-base text-foreground" style="margin-left:1rem; font-family:'Montserrat',sans-serif;">Valor numérico: font-mono + text-base</span>
+          </div>
+        </div>
+      </div>
+
+  <h2>Tamaños de Texto</h2>
+  <div class="preview-block">
+    <div class="size-sample text-xs">Texto XS (0.75rem)</div>
+    <div class="size-sample text-sm">Texto SM (0.875rem)</div>
+    <div class="size-sample text-base">Texto BASE (1rem)</div>
+    <div class="size-sample text-md">Texto MD (1.125rem)</div>
+    <div class="size-sample text-lg">Texto LG (1.25rem)</div>
+    <div class="size-sample text-xl">Texto XL (1.5rem)</div>
+    <div class="size-sample text-2xl">Texto 2XL (2rem)</div>
+    <div class="size-sample text-3xl">Texto 3XL (2.5rem)</div>
+    <div class="size-sample text-4xl">Texto 4XL (3rem)</div>
+    <div class="size-sample text-5xl">Texto 5XL (4rem)</div>
+  </div>
+
+  <h2>Colores</h2>
+  <div class="preview-block">
+      <div class="color-sample">
+        <div class="color-box bg-primary"></div>
+        <span class="text-primary">Primario (#a83232, hsl(359,41%,39%))</span>
+        <input type="color" value="#a83232" onchange="showPickedColor(this, 'picked-primary')" style="margin-left:1rem;">
+        <span id="picked-primary" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-background"></div>
+        <span class="text-background">Background (#151515, hsl(0,0%,8%))</span>
+        <input type="color" value="#151515" onchange="showPickedColor(this, 'picked-background')" style="margin-left:1rem;">
+        <span id="picked-background" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-foreground"></div>
+        <span class="text-foreground">Foreground (#f7fafc, hsl(60,20%,90%))</span>
+    <input type="color" value="#f7fafc" onchange="showPickedColor(this, 'picked-foreground')" style="margin-left:1rem;">
+    <span id="picked-foreground" style="margin-left:0.5rem; background:#222; color:#f7fafc; border:1px solid #eee; padding:0.25em 0.75em; border-radius:4px;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-card"></div>
+        <span class="text-card">Card (#1e1e1e, hsl(0,0%,12%))</span>
+        <input type="color" value="#1e1e1e" onchange="showPickedColor(this, 'picked-card')" style="margin-left:1rem;">
+        <span id="picked-card" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-primary"></div>
+        <span class="text-primary">Primario (#a83232, hsl(359,41%,39%))</span>
+        <input type="color" value="#a83232" onchange="showPickedColor(this, 'picked-primary2')" style="margin-left:1rem;">
+        <span id="picked-primary2" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-secondary"></div>
+        <span class="text-secondary">Secundario (#262626, hsl(0,0%,14.9%))</span>
+        <input type="color" value="#262626" onchange="showPickedColor(this, 'picked-secondary')" style="margin-left:1rem;">
+        <span id="picked-secondary" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-muted"></div>
+        <span class="text-muted">Muted (#262626, hsl(0,0%,14.9%))</span>
+        <input type="color" value="#262626" onchange="showPickedColor(this, 'picked-muted')" style="margin-left:1rem;">
+        <span id="picked-muted" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-accent"></div>
+        <span class="text-accent">Acento (#e63946, hsl(0,52%,52%))</span>
+        <input type="color" value="#e63946" onchange="showPickedColor(this, 'picked-accent')" style="margin-left:1rem;">
+        <span id="picked-accent" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-destructive"></div>
+        <span class="text-destructive">Destructivo (#b71c1c, hsl(0,62.8%,30.6%))</span>
+        <input type="color" value="#b71c1c" onchange="showPickedColor(this, 'picked-destructive')" style="margin-left:1rem;">
+        <span id="picked-destructive" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-border"></div>
+        <span class="text-border">Border (#262626, hsl(0,0%,14.9%))</span>
+        <input type="color" value="#262626" onchange="showPickedColor(this, 'picked-border')" style="margin-left:1rem;">
+        <span id="picked-border" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-input"></div>
+        <span class="text-input">Input (#262626, hsl(0,0%,14.9%))</span>
+        <input type="color" value="#262626" onchange="showPickedColor(this, 'picked-input')" style="margin-left:1rem;">
+        <span id="picked-input" style="margin-left:0.5rem;"></span>
+      </div>
+      <div class="color-sample">
+        <div class="color-box bg-ring"></div>
+        <span class="text-ring">Ring (#e63946, hsl(0,52%,52%))</span>
+        <input type="color" value="#e63946" onchange="showPickedColor(this, 'picked-ring')" style="margin-left:1rem;">
+        <span id="picked-ring" style="margin-left:0.5rem;"></span>
+      </div>
+  </div>
+</body>
+
+<script>
+function showPickedColor(input, spanId) {
+  const span = document.getElementById(spanId);
+  span.textContent = input.value;
+  if(spanId === 'picked-foreground') {
+    span.style.background = '#222';
+    span.style.color = input.value;
+    span.style.border = '1px solid #eee';
+  } else {
+    span.style.background = input.value;
+    span.style.color = '#fff';
+    span.style.border = '';
+  }
+  span.style.padding = '0.25em 0.75em';
+  span.style.borderRadius = '4px';
+}
+const googleFonts = {
+  'Montserrat': 'Montserrat:400,700',
+  'Inter': 'Inter:400,700',
+  'Roboto': 'Roboto:400,700',
+  'Lato': 'Lato:400,700',
+  'Oswald': 'Oswald:400,700',
+  'Poppins': 'Poppins:400,700',
+  'Merriweather': 'Merriweather:400,700',
+  'Nunito': 'Nunito:400,700',
+  'Raleway': 'Raleway:400,700',
+  'Quicksand': 'Quicksand:400,700',
+  'Source Sans Pro': 'Source+Sans+Pro:400,700',
+  'Open Sans': 'Open+Sans:400,700',
+  'Ubuntu': 'Ubuntu:400,700'
+};
+
+function updateFont(select, ejemploId) {
+  const font = select.value;
+  const span = document.getElementById(ejemploId);
+  span.style.fontFamily = `'${font}', sans-serif`;
+  // Cargar la fuente de Google si no está cargada
+  let fontKey = font.replace(/\s/g, '');
+  if (!document.getElementById('font-' + fontKey)) {
+    const link = document.createElement('link');
+    link.id = 'font-' + fontKey;
+    link.rel = 'stylesheet';
+    let fontUrl = googleFonts[font] || font.replace(/ /g, '+') + ':400,700';
+    link.href = `https://fonts.googleapis.com/css?family=${fontUrl}`;
+    document.head.appendChild(link);
+  }
+}
+</script>
+</html>
