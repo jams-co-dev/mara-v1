@@ -128,11 +128,10 @@ export function Header() {
         </div>
       </header>
         
-      {isMounted && (
+      {isMounted && isMobileMenuOpen && (
         <div
             className={cn(
-            "fixed inset-0 z-40 bg-black/90 backdrop-blur-sm md:hidden transition-opacity duration-300 ease-in-out",
-            isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+            "fixed inset-0 z-40 bg-black/90 backdrop-blur-sm md:hidden"
             )}
             onClick={toggleMobileMenu}
         >
