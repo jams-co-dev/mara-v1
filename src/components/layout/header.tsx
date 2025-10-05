@@ -38,8 +38,8 @@ const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const navLinks = [
-  { href: "/our-work", label: "OUR WORK" },
-  { href: "/services", label: "SERVICES" },
+  //{ href: "/our-work", label: "OUR WORK" },
+  { href: "/services", label: "CREATIVE TALENT" },
   { href: "/about", label: "ABOUT" },
   { href: "/contact", label: "CONTACT" },
 ];
