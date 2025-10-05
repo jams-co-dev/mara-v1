@@ -74,99 +74,101 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center bg-black/50 rounded-full px-3 py-1">
-            <Link href="/" className="block">
-              <Image 
-                src="/images/logo.png"
-                alt="MARA Logo"
-                width={120}
-                height={27}
-                priority
-                className="dark:invert"
-              />
-            </Link>
-          </div>
+          {isMounted && (
+            <>
+              <div className="flex items-center bg-black/50 rounded-full px-3 py-1">
+                <Link href="/" className="block">
+                  <Image
+                    src="/images/logo.png"
+                    alt="MARA Logo"
+                    width={120}
+                    height={27}
+                    priority
+                    className="dark:invert"
+                  />
+                </Link>
+              </div>
 
-          <nav className="hidden md:flex items-center space-x-2">
+              <nav className="hidden md:flex items-center space-x-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "text-sm font-medium transition-colors hover:text-accent bg-black/50 rounded-full px-3 py-1",
+                      pathname === link.href ? "text-accent" : "text-primary-foreground"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+
+              <div className="flex items-center space-x-2">
+                <div className="hidden md:flex items-center space-x-2 bg-black/50 rounded-full px-2 py-1">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.href}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-accent transition-colors p-1"
+                      aria-label={social.name}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </a>
+                  ))}
+                </div>
+                <div className="md:hidden">
+                  <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu" className="bg-black/50 text-primary-foreground hover:bg-black/70 hover:text-white">
+                    {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </header>
+
+      {isMounted && isMobileMenuOpen && (
+        <div
+          className={cn(
+            "fixed inset-0 z-40 bg-black/90 backdrop-blur-sm md:hidden"
+          )}
+          onClick={toggleMobileMenu}
+        >
+          <nav
+            className="flex flex-col items-center justify-center h-full space-y-6"
+            onClick={(e) => e.stopPropagation()}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-accent bg-black/50 rounded-full px-3 py-1",
+                  "text-2xl font-medium transition-colors hover:text-accent w-full text-center py-2 text-primary-foreground",
                   pathname === link.href ? "text-accent" : "text-primary-foreground"
                 )}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-          </nav>
-
-          <div className="flex items-center space-x-2">
-             <div className="hidden md:flex items-center space-x-2 bg-black/50 rounded-full px-2 py-1">
-                {socialLinks.map((social) => (
-                   <a 
-                    key={social.href} 
-                    href={social.href} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-accent transition-colors p-1"
-                    aria-label={social.name}
-                  >
-                    <social.icon className="h-5 w-5" />
-                  </a>
-                ))}
-             </div>
-             {isMounted && (
-                <div className="md:hidden">
-                    <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu" className="bg-black/50 text-primary-foreground hover:bg-black/70 hover:text-white">
-                        {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                    </Button>
-                </div>
-             )}
-          </div>
-        </div>
-      </header>
-        
-      {isMounted && isMobileMenuOpen && (
-        <div
-            className={cn(
-            "fixed inset-0 z-40 bg-black/90 backdrop-blur-sm md:hidden"
-            )}
-            onClick={toggleMobileMenu}
-        >
-            <nav 
-              className="flex flex-col items-center justify-center h-full space-y-6"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {navLinks.map((link) => (
-                  <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                      "text-2xl font-medium transition-colors hover:text-accent w-full text-center py-2 text-primary-foreground",
-                      pathname === link.href ? "text-accent" : "text-primary-foreground"
-                  )}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                  {link.label}
-                  </Link>
+            <div className="flex items-center space-x-4 pt-8">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.href}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-accent transition-colors"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-8 w-8" />
+                </a>
               ))}
-              <div className="flex items-center space-x-4 pt-8">
-                  {socialLinks.map((social) => (
-                      <a 
-                      key={social.href} 
-                      href={social.href} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      aria-label={social.name}
-                      >
-                      <social.icon className="h-8 w-8" />
-                      </a>
-                  ))}
-              </div>
-            </nav>
+            </div>
+          </nav>
         </div>
       )}
     </>
