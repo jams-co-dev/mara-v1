@@ -25,7 +25,7 @@ export default function ContactPage() {
 
   return (
     <PageWrapper>
-      <main className="flex flex-col min-h-[calc(100vh_-_10rem)]">
+      <main className="flex flex-col min-h-[calc(100vh_-_5rem)]">
         <div className="flex-grow flex items-center justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
             <section className="text-center mb-16">

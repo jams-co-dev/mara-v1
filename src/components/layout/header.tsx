@@ -52,11 +52,6 @@ const socialLinks = [
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -70,10 +65,6 @@ export function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   
-  if (!isMounted) {
-    return null;
-  }
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 h-20">
