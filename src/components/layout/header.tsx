@@ -9,7 +9,6 @@ import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -106,7 +105,6 @@ export function Header() {
                   </a>
                 ))}
              </div>
-             <ThemeSwitcher />
             <div className="md:hidden">
               <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu">
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
