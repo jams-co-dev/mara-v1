@@ -25,9 +25,9 @@ export default function ContactPage() {
 
   return (
     <PageWrapper>
-      <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
-        <main className="flex-grow pt-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="flex flex-col min-h-[calc(100vh_-_5rem)] pt-20">
+        <div className="flex-grow flex items-center justify-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
             <section className="text-center mb-16">
               <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
                 Get in Touch
@@ -66,10 +66,9 @@ export default function ContactPage() {
                     </CardContent>
                 </Card>
             </div>
-
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </PageWrapper>
   );
 }
