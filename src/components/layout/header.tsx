@@ -70,11 +70,14 @@ export function Header() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 h-20">
         <div className="container mx-auto flex h-full items-center justify-between px-4 sm:px-6 lg:px-8">
-          {isMounted && (
             <>
               <div className="flex items-center bg-black/50 rounded-full px-3 py-1">
                 <Link href="/" className="block">
@@ -126,11 +129,10 @@ export function Header() {
                 </div>
               </div>
             </>
-          )}
         </div>
       </header>
 
-      {isMounted && isMobileMenuOpen && (
+      {isMobileMenuOpen && (
         <div
           className={cn(
             "fixed inset-0 z-40 bg-black/90 backdrop-blur-sm md:hidden"

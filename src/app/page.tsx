@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="pt-20">
+    <main>
       <MoodBoard 
         rows={moodBoardRows} 
         onVideoSelect={handleVideoSelect} 

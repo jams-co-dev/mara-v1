@@ -53,7 +53,7 @@ export default function ServicesPage() {
 
   return (
     <PageWrapper>
-      <main className="pt-20">
+      <main>
         {/* Mobile and Tablet View: Accordion */}
         <div className="md:hidden px-4 py-8">
             <h1 className="text-3xl font-headline text-primary mb-8 text-center">Services</h1>
