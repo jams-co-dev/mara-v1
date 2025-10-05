@@ -34,7 +34,6 @@ export default function RootLayout({
             disableTransitionOnChange
         >
           <Header />
-          <div className="h-20" /> {/* Spacer for the fixed header */}
           {children}
           <Footer />
           <Toaster />
