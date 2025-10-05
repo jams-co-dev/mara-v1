@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'i.vimeocdn.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
