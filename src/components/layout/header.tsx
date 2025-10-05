@@ -74,7 +74,7 @@ export function Header() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center bg-black/50 rounded-full px-4 py-2">
+          <div className="flex items-center bg-black/50 rounded-full px-3 py-1">
             <Link href="/" className="block">
               <Image 
                 src="/images/logo.png"
@@ -93,7 +93,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-accent bg-black/50 rounded-full px-4 py-2",
+                  "text-sm font-medium transition-colors hover:text-accent bg-black/50 rounded-full px-3 py-1",
                   pathname === link.href ? "text-accent" : "text-primary-foreground"
                 )}
               >
@@ -103,7 +103,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center space-x-2">
-             <div className="hidden md:flex items-center space-x-2 bg-black/50 rounded-full px-3 py-2">
+             <div className="hidden md:flex items-center space-x-2 bg-black/50 rounded-full px-2 py-1">
                 {socialLinks.map((social) => (
                    <a 
                     key={social.href} 
