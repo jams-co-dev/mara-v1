@@ -56,7 +56,7 @@ export default function ServicesPage() {
       <main>
         {/* Mobile and Tablet View: Accordion */}
         <div className="md:hidden px-4 py-8">
-            <h1 className="text-3xl font-headline text-primary mb-8 text-center">Services</h1>
+            <h1 className="text-3xl font-headline text-primary mb-8 text-center">Creative Talent</h1>
             <Accordion type="single" collapsible className="w-full">
               {services.map((service) => (
                 <AccordionItem key={service.title} value={service.title}>
@@ -131,7 +131,7 @@ export default function ServicesPage() {
                           onMouseLeave={() => setHoveredName(null)}
                       >
                         {service.names && (
-                            <div className="flex flex-col text-left">
+                            <div className="flex flex-col text-left mt-8">
                               {service.names.map(member => (
                                   <Link key={member.slug} href={`/team/${member.slug}`}>
                                       <span 
