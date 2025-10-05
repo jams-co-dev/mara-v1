@@ -197,7 +197,7 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
             <Button asChild variant="outline" className="shadow-lg bg-background/80 backdrop-blur-sm">
               <Link href="/services">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                go back to services
+                go back to creative talent
               </Link>
             </Button>
           </div>
