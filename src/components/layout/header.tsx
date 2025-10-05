@@ -4,7 +4,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -53,6 +53,11 @@ const socialLinks = [
 export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -105,51 +110,55 @@ export function Header() {
                   </a>
                 ))}
              </div>
-            <div className="md:hidden">
-              <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu">
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
+             {isMounted && (
+                <div className="md:hidden">
+                    <Button onClick={toggleMobileMenu} variant="ghost" size="icon" aria-label="Toggle menu">
+                        {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </Button>
+                </div>
+             )}
           </div>
         </div>
       </header>
-
-      <div
-        className={cn(
-          "fixed top-20 left-0 right-0 z-40 bg-background shadow-md md:hidden transition-transform duration-300 ease-in-out",
-          isMobileMenuOpen ? "transform translate-y-0" : "transform -translate-y-[150%]"
-        )}
-      >
-        <nav className="flex flex-col items-center space-y-4 p-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-lg font-medium transition-colors hover:text-primary w-full text-center py-2",
-                pathname === link.href ? "text-primary bg-accent/50 rounded-md" : "text-foreground"
-              )}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="flex items-center space-x-4 pt-4">
-            {socialLinks.map((social) => (
-                <a 
-                  key={social.href} 
-                  href={social.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
-                  aria-label={social.name}
+        
+      {isMounted && (
+        <div
+            className={cn(
+            "fixed top-20 left-0 right-0 z-40 bg-background shadow-md md:hidden transition-transform duration-300 ease-in-out",
+            isMobileMenuOpen ? "transform translate-y-0" : "transform -translate-y-[150%]"
+            )}
+        >
+            <nav className="flex flex-col items-center space-y-4 p-4">
+            {navLinks.map((link) => (
+                <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary w-full text-center py-2",
+                    pathname === link.href ? "text-primary bg-accent/50 rounded-md" : "text-foreground"
+                )}
+                onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <social.icon className="h-8 w-8" />
-                </a>
-              ))}
-          </div>
-        </nav>
-      </div>
+                {link.label}
+                </Link>
+            ))}
+            <div className="flex items-center space-x-4 pt-4">
+                {socialLinks.map((social) => (
+                    <a 
+                    key={social.href} 
+                    href={social.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                    aria-label={social.name}
+                    >
+                    <social.icon className="h-8 w-8" />
+                    </a>
+                ))}
+            </div>
+            </nav>
+        </div>
+      )}
     </>
   );
 }
