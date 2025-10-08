@@ -21,7 +21,9 @@ const services = [
         { name: "JAVIER PINILLA", slug: "javier-pinilla" },
         { name: "JORGE BELTRAN", slug: "jorge-beltran" },
         { name: "CARLOS LEON", slug: "carlos-leon" },
-        { name: "DANIEL VARGAS", slug: "daniel-vargas" }
+        { name: "DANIEL VARGAS", slug: "daniel-vargas" },
+        { name: "HAROLD", slug: "harold" },
+        { name: "MATEO", slug: "mateo" },
     ],
     color: "bg-gray-900",
     textColor: "text-gray-200"
@@ -31,6 +33,8 @@ const services = [
     title: "COLOR",
     names: [
         { name: "ARTURO PEREZ", slug: "arturo-perez" },
+        { name: "DIEGO", slug: "diego" },
+        { name: "JOEL", slug: "joel" },
     ],
     color: "bg-sky-200/70",
     textColor: "text-sky-900"
