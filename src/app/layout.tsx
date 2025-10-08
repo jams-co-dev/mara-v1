@@ -35,12 +35,6 @@ const stegpro = localFont({
   display: 'swap',
 });
 
-const belleza = localFont({
-  src: '../fonts/Belleza-Regular.otf',
-  variable: '--font-headline',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
   title: 'Mara Post',
   description: 'Mara Post LIMITLESS CREATIVITY',
@@ -60,8 +54,7 @@ export default function RootLayout({
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        stegpro.variable,
-        belleza.variable
+        stegpro.variable
       )}>
         <ThemeProvider
             attribute="class"

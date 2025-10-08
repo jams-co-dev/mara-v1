@@ -178,7 +178,7 @@ export default function TeamMemberPage({ params }: { params: { slug: string } })
               <Card className="overflow-hidden shadow-2xl">
                 <CardContent className="p-6 md:p-12">
                   <div className="text-center">
-                    <CardTitle as="h1" className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+                    <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
                       {member.name}
                     </CardTitle>
                     <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
