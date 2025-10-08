@@ -6,12 +6,40 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
-import { Inter as FontSans } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+const ptSans = localFont({
+  src: [
+    {
+      path: '../fonts/PTSans-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/PTSans-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/PTSans-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/PTSans-BoldItalic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const belleza = localFont({
+  src: '../fonts/Belleza-Regular.otf',
+  variable: '--font-headline',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Mara Post',
@@ -32,7 +60,8 @@ export default function RootLayout({
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
+        ptSans.variable,
+        belleza.variable
       )}>
         <ThemeProvider
             attribute="class"
@@ -40,7 +69,6 @@ export default function RootLayout({
             enableSystem={false}
             disableTransitionOnChange
         >
-          <div className="h-20" />
           <Header />
           {children}
           <Footer />
