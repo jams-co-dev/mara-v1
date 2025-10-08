@@ -8,25 +8,25 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import localFont from 'next/font/local';
 
-const ptSans = localFont({
+const stegpro = localFont({
   src: [
     {
-      path: '../fonts/PTSans-Regular.otf',
+      path: '../fonts/StegPro-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../fonts/PTSans-Italic.otf',
+      path: '../fonts/StegPro-Italic.otf',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../fonts/PTSans-Bold.otf',
+      path: '../fonts/StegPro-Bold.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../fonts/PTSans-BoldItalic.otf',
+      path: '../fonts/StegPro-BoldItalic.otf',
       weight: '700',
       style: 'italic',
     },
@@ -60,7 +60,7 @@ export default function RootLayout({
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        ptSans.variable,
+        stegpro.variable,
         belleza.variable
       )}>
         <ThemeProvider
