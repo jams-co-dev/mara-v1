@@ -1,10 +1,26 @@
 Please place your .otf font files in this directory.
 Make sure the filenames match those specified in `src/app/layout.tsx`.
 For example:
-- StegPro-Regular.otf
+
+- StegPro-Black.otf
+- StegPro-BlackItalic.otf
 - StegPro-Italic.otf
 - StegPro-Bold.otf
 - StegPro-BoldItalic.otf
-- Belleza-Regular.otf
+- StegPro-Bold.otf
+- StegPro-BoldItalic.otf
+- StegPro-ExBold.otf
+- StegPro-ExBoldItalic.otf
+- StegPro-ExLight.otf
+- StegPro-ExLightItalic.otf
+- StegPro-Light.otf
+- StegPro-LightItalic.otf
+- StegPro-Medium.otf
+- StegPro-MediumItalic.otf
+- StegPro-Regular.otf
+- StegPro-SemiBold.otf
+- StegPro-SemiBoldItalic.otf
+- StegPro-Hairline.otf
+- StegPro-HairlineItalic.otf
 
 You can delete this placeholder file afterwards.
