@@ -2,12 +2,11 @@
 'use client';
 
 import Image from 'next/image';
-import { PageWrapper } from '@/components/page-wrapper';
 
 export default function AboutClientPage() {
 
   return (
-    <PageWrapper>
+    <div>
       <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
         <main className="relative flex items-center justify-center text-primary-foreground text-center overflow-hidden flex-grow">
           <div className="absolute inset-0">
@@ -44,6 +43,6 @@ export default function AboutClientPage() {
           </div>
         </main>
       </div>
-    </PageWrapper>
+    </div>
   );
 }
