@@ -11,6 +11,26 @@ import localFont from 'next/font/local';
 const stegpro = localFont({
   src: [
     {
+      path: '../fonts/StegPro-Hairline.otf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/StegPro-HairlineItalic.otf',
+      weight: '100',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/StegPro-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/StegPro-LightItalic.otf',
+      weight: '300',
+      style: 'italic',
+    },
+    {
       path: '../fonts/StegPro-Regular.otf',
       weight: '400',
       style: 'normal',
@@ -18,6 +38,16 @@ const stegpro = localFont({
     {
       path: '../fonts/StegPro-Italic.otf',
       weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/StegPro-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/StegPro-MediumItalic.otf',
+      weight: '500',
       style: 'italic',
     },
     {
