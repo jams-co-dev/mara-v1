@@ -6,7 +6,48 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
-import { ptSans, belleza } from '@/lib/fonts';
+import localFont from 'next/font/local';
+
+// Font definitions moved here to resolve path issues
+const ptSans = localFont({
+  src: [
+    {
+      path: '../fonts/PTSans-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/PTSans-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/PTSans-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/PTSans-BoldItalic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-pt-sans',
+  display: 'swap',
+});
+
+const belleza = localFont({
+  src: [
+    {
+      path: '../fonts/Belleza-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-belleza',
+  display: 'swap',
+});
+
 
 export const metadata: Metadata = {
   title: 'Mara Post',

@@ -1,0 +1,10 @@
+Please place your .otf font files in this directory.
+Make sure the filenames match those specified in `src/app/layout.tsx`.
+For example:
+- PTSans-Regular.otf
+- PTSans-Italic.otf
+- PTSans-Bold.otf
+- PTSans-BoldItalic.otf
+- Belleza-Regular.otf
+
+You can delete this placeholder file afterwards.
