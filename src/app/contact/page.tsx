@@ -5,6 +5,17 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Separator } from "@/components/ui/separator";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Mara Post. Have a project in mind? We would love to hear from you. Find our contact details and location.',
+  openGraph: {
+    title: 'Contact Us | Mara Post',
+    description: 'Get in touch with the Mara Post team.',
+  },
+};
+
 
 const contactPeople = [
     {

@@ -8,6 +8,16 @@ import { PageWrapper } from "@/components/page-wrapper";
 import { PlayCircle } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { allVideos } from '@/lib/video-data';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Work',
+  description: 'Explore a selection of recent projects by Mara Post. We take pride in our creations, from commercials to brand films.',
+  openGraph: {
+    title: 'Our Work | Mara Post',
+    description: 'Explore a selection of recent projects by Mara Post.',
+  },
+};
 
 export default function OurWorkPage() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);

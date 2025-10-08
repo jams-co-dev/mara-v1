@@ -45,6 +45,7 @@ export default function Home() {
 
   return (
     <main>
+       <h1 className="sr-only">Mara Post - Homepage Mood Board</h1>
       <MoodBoard 
         rows={moodBoardRows} 
         onVideoSelect={handleVideoSelect} 

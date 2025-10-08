@@ -12,6 +12,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Creative Talent',
+  description: 'Discover the creative talent at Mara Post. Our team consists of expert editors, colorists, and VFX artists ready to bring your vision to life.',
+  openGraph: {
+    title: 'Creative Talent | Mara Post',
+    description: 'Meet our team of expert editors, colorists, and VFX artists.',
+  },
+};
 
 const services = [
   {
@@ -87,6 +97,7 @@ export default function ServicesPage() {
         
         {/* Desktop View: Interactive Panels */}
         <div className="hidden md:flex flex-col md:flex-row w-full h-[calc(100vh_-_5rem)]">
+          <h1 className="sr-only">Creative Talent Services: Edit, Color, and VFX</h1>
             {services.map((service, index) => (
               <div
                 key={index}
@@ -104,14 +115,14 @@ export default function ServicesPage() {
                         activeService !== index ? 'opacity-100' : 'opacity-0'
                     )}
                 >
-                    <h3 
+                    <h2 
                         className={cn(
                             "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
                             service.textColor
                         )}
                     >
                         {service.title}
-                    </h3>
+                    </h2>
                 </div>
                 <div
                   className={cn(
@@ -121,14 +132,14 @@ export default function ServicesPage() {
                 >
                     <div className="flex h-full w-full items-start justify-start">
                       <div className="flex items-center h-full mr-16">
-                          <h3 
+                          <h2
                               className={cn(
                                   "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
                                   service.textColor
                               )}
                           >
                               {service.title}
-                          </h3>
+                          </h2>
                       </div>
                       <div 
                           className="flex-grow flex items-start justify-start"
