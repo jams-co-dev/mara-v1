@@ -22,7 +22,7 @@ export default function OurWorkPage() {
       <main>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <section className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+            <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
               Our Work
             </h1>
             <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -48,7 +48,7 @@ export default function OurWorkPage() {
                       </div>
                   </CardContent>
                   <CardHeader>
-                    <CardTitle as="h3" className="font-headline text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                    <CardTitle as="h3" className="font-sans text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                 </Card>
               </div>

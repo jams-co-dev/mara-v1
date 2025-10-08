@@ -5,6 +5,35 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
+import { cn } from '@/lib/utils';
+import localFont from 'next/font/local';
+
+const stegpro = localFont({
+  src: [
+    {
+      path: '../fonts/StegPro-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/StegPro-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../fonts/StegPro-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/StegPro-BoldItalic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-sans',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Mara Post',
@@ -21,12 +50,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="data:;base64,=" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://player.vimeo.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Belleza&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased">
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        stegpro.variable
+      )}>
         <ThemeProvider
             attribute="class"
             defaultTheme="mara"

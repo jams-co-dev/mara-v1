@@ -29,7 +29,7 @@ export default function ContactPage() {
         <div className="flex-grow flex items-center justify-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
             <section className="text-center mb-16">
-              <h1 className="text-4xl md:text-6xl font-headline font-bold tracking-tight text-primary">
+              <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
                 Get in Touch
               </h1>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -43,7 +43,7 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {contactPeople.map((person) => (
                                 <div key={person.name} className="flex flex-col items-center text-center md:items-start md:text-left">
-                                    <h2 className="text-2xl font-headline text-primary">{person.name}</h2>
+                                    <h2 className="text-2xl font-sans text-primary">{person.name}</h2>
                                     <p className="text-muted-foreground mb-4">{person.role}</p>
                                     <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
                                         <Phone className="w-4 h-4" />

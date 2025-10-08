@@ -56,11 +56,11 @@ export default function ServicesPage() {
       <main>
         {/* Mobile and Tablet View: Accordion */}
         <div className="md:hidden px-4 py-8">
-            <h1 className="text-3xl font-headline text-primary mb-8 text-center">Creative Talent</h1>
+            <h1 className="text-3xl font-sans text-primary mb-8 text-center">Creative Talent</h1>
             <Accordion type="single" collapsible className="w-full">
               {services.map((service) => (
                 <AccordionItem key={service.title} value={service.title}>
-                  <AccordionTrigger className="text-xl font-headline hover:no-underline text-primary">
+                  <AccordionTrigger className="text-xl font-sans hover:no-underline text-primary">
                     {service.title}
                   </AccordionTrigger>
                   <AccordionContent>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
                 >
                     <h3 
                         className={cn(
-                            "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                            "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
                             service.textColor
                         )}
                     >
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                       <div className="flex items-center h-full mr-16">
                           <h3 
                               className={cn(
-                                  "text-2xl font-headline font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                                  "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
                                   service.textColor
                               )}
                           >
@@ -136,7 +136,7 @@ export default function ServicesPage() {
                                   <Link key={member.slug} href={`/team/${member.slug}`}>
                                       <span 
                                           className={cn(
-                                              "text-4xl font-headline font-bold uppercase cursor-pointer transition-opacity duration-300 block",
+                                              "text-4xl font-sans font-bold uppercase cursor-pointer transition-opacity duration-300 block",
                                               service.textColor,
                                               hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
                                           )}
