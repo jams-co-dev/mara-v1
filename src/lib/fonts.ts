@@ -3,30 +3,29 @@ import localFont from 'next/font/local';
 
 // =================================================================================
 // NOTA IMPORTANTE:
-// Por favor, sube tus archivos de fuentes a la carpeta `public/fonts/`
-// y asegúrate de que los nombres de archivo coincidan con los que se usan aquí.
-// Puedes añadir o quitar pesos (weight) según los archivos que tengas.
+// Por favor, asegúrate de que tus archivos de fuentes (.otf) están en
+// la carpeta `src/assets/fonts/`.
 // =================================================================================
 
 export const ptSans = localFont({
   src: [
     {
-      path: '../../public/fonts/PTSans-Regular.otf',
+      path: '../assets/fonts/PTSans-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/PTSans-Italic.otf',
+      path: '../assets/fonts/PTSans-Italic.otf',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../../public/fonts/PTSans-Bold.otf',
+      path: '../assets/fonts/PTSans-Bold.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/PTSans-BoldItalic.otf',
+      path: '../assets/fonts/PTSans-BoldItalic.otf',
       weight: '700',
       style: 'italic',
     },
@@ -38,7 +37,7 @@ export const ptSans = localFont({
 export const belleza = localFont({
   src: [
     {
-      path: '../../public/fonts/Belleza-Regular.otf',
+      path: '../assets/fonts/Belleza-Regular.otf',
       weight: '400',
       style: 'normal',
     },
