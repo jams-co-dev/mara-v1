@@ -39,15 +39,14 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
 
     useEffect(() => {
         if (refreshKey > 0) {
-            // 1. Show the thumbnail immediately.
             setShowThumbnail(true);
             
-            // 2. After a delay, start fading it out.
+            // After a delay, start fading out the thumbnail.
             // This gives the iframe time to start loading, and the fade effect
             // masks the black flash. The duration of the fade is controlled by CSS.
             const timer = setTimeout(() => {
                 setShowThumbnail(false);
-            }, 2000); // Increased timeout to 2000ms
+            }, 3000); // Increased timeout to 3000ms
 
             return () => clearTimeout(timer);
         }
@@ -86,7 +85,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
                 objectFit="cover"
                 priority
                 className={cn(
-                    "absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 ease-in-out",
+                    "absolute inset-0 z-10 pointer-events-none transition-opacity duration-1000 ease-in-out",
                     showThumbnail ? "opacity-100" : "opacity-0"
                 )}
             />
