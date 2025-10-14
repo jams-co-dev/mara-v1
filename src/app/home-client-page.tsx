@@ -4,7 +4,7 @@
 import { MoodBoard } from '@/components/mood-board';
 import { VideoPopup } from '@/components/video-popup';
 import { allVideos, VideoData } from '@/lib/video-data';
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 
 export interface MoodBoardRow {
   items: VideoData[];
@@ -31,7 +31,6 @@ const generateMoodBoardRows = (videos: VideoData[]): MoodBoardRow[] => {
 
 export default function HomeClientPage() {
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
-  const [moodBoardKey, setMoodBoardKey] = useState(0);
 
   const moodBoardRows = useMemo(() => generateMoodBoardRows(allVideos), []);
 
@@ -41,14 +40,12 @@ export default function HomeClientPage() {
 
   const handleClosePopup = () => {
     setSelectedVideo(null);
-    setMoodBoardKey(prevKey => prevKey + 1);
   };
 
   return (
     <main>
       <h1 className="sr-only">Mara Post - Homepage Mood Board</h1>
       <MoodBoard 
-        key={moodBoardKey}
         rows={moodBoardRows} 
         onVideoSelect={handleVideoSelect} 
       />
