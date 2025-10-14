@@ -65,10 +65,42 @@ const stegpro = localFont({
   display: 'swap',
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://marapost.co';
+
 export const metadata: Metadata = {
-  title: 'Mara Post',
-  description: 'Mara Post LIMITLESS CREATIVITY',
-  icons: null,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Mara Post | Limitless Creativity',
+    template: '%s | Mara Post',
+  },
+  description: 'Mara Post: Alchemists of atmospheres, exploring and creating new ways of telling stories. We are that magical essence that transforms reality as far as imagination can take you.',
+  openGraph: {
+    title: 'Mara Post | Limitless Creativity',
+    description: 'Creative post-production studio specializing in editing, color grading, and VFX.',
+    url: SITE_URL,
+    siteName: 'Mara Post',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Mara Post Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mara Post | Limitless Creativity',
+    description: 'Creative post-production studio specializing in editing, color grading, and VFX.',
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -79,7 +111,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="data:;base64,=" />
         <link rel="preconnect" href="https://player.vimeo.com" />
       </head>
       <body className={cn(

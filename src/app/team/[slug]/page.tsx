@@ -10,46 +10,47 @@ import { PageWrapper } from "@/components/page-wrapper";
 // In a real app, you'd fetch this from a CMS or database
 const teamMembers = [
   {
-    name: "Jane Doe",
-    slug: "jane-doe",
-    role: "Founder & Creative Director",
+    name: "MATEO",
+    slug: "mateo",
+    role: "Filmmaker & Editor",
     imageUrl: "https://placehold.co/200x200.png",
-    hint: "professional woman",
-    bio: "Jane es la fuerza visionaria detrás de Visionary Digital. Con más de 15 años de experiencia en la industria creativa, su pasión es construir narrativas de marca que cautiven e inspiren. Su liderazgo impulsa al equipo a superar los límites de la creatividad y la estrategia. Es una oradora solicitada en conferencias de la industria y ha ganado múltiples premios por su trabajo innovador en publicidad digital. En su tiempo libre, disfruta de la fotografía analógica y es voluntaria en un refugio de animales local.",
+    hint: "professional camera operator",
+    bio: "Filmmaker passionate about exploring new narratives and crafting visual aesthetics that connect with and impact audiences. Postproduction is the ideal space to shape each story—from editing to designing rhythm and atmosphere—seeking to ensure that every visual decision enhances the emotion and intention behind the image. The motivation lies in transforming raw material into unique audiovisual experiences that leave a lasting impression.",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerHint: "modern office"
+    headerHint: "film set with camera",
+    headerVideoId: "1071175157"
   },
   {
-    name: "John Smith",
-    slug: "john-smith",
-    role: "Lead Videographer",
+    name: "JOEL",
+    slug: "joel",
+    role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
-    hint: "man with camera",
-    bio: "John tiene un ojo cinematográfico incomparable. Es un experto en capturar la esencia de una historia a través de la lente, transformando conceptos en obras de arte visuales. Domina desde comerciales de alto octanaje hasta documentales emotivos. Su trabajo ha sido presentado en festivales de cine internacionales y ha colaborado con algunas de las marcas más reconocidas a nivel mundial. Cuando no está detrás de la cámara, está explorando nuevas rutas de senderismo o experimentando con técnicas de cocina gourmet.",
+    hint: "man",
+    bio: "Editing gives pulse to the images. In music videos, rhythm, tempo, and energy find a space to expand visually. Every cut, every transition, and every pause builds a dialogue between image and sound. The narrative not only follows the song but elevates it, creating inevitable moments where the music seems to dictate the movement of each image. Color is a language of sensations. Every frame breathes and conveys an emotional state beyond what is visible. Contrast, light, and atmosphere act as a bridge between what is seen and what is felt. The aim is to create visual worlds that immerse the viewer, where color not only accompanies the story but transforms it. ",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "816721195",
+    headerVideoId: "947152373",
     headerHint: "video production set"
   },
   {
-    name: "Emily White",
-    slug: "emily-white",
-    role: "Marketing Strategist",
+    name: "HAROLD",
+    slug: "harold",
+    role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
-    hint: "woman at whiteboard",
-    bio: "Emily es la mente analítica del equipo. Combina la creatividad con datos para diseñar campañas de marketing digital que no solo generan engagement, sino que también impulsan resultados medibles. Su especialidad es conectar marcas con sus audiencias ideales. Posee certificaciones en todas las principales plataformas de publicidad digital y es una experta en SEO y marketing de contenidos. Fuera del trabajo, es una ávida jugadora de ajedrez y organiza torneos locales.",
+    hint: "man",
+    bio: "As a graphic designer focused on illustration, my work is born from a love of color, shape, and movement. My process is deeply influenced by urban art, its energy and authenticity, which drives me to explore new ways of visual communication. I've taken graphics to the next level, integrating animation as a natural extension of design, creating pieces that are not only seen, but also felt. My goal is to bring ideas to life, build visual universes that connect emotion and aesthetics, and generate a new form of visual magic through movement and graphic expression.",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "816721195",
+    headerVideoId: "947163605",
     headerHint: "marketing data charts"
   },
    {
-    name: "Michael Brown",
-    slug: "michael-brown",
-    role: "Senior Editor",
+    name: "DIEGO",
+    slug: "diego",
+    role: "Colorist",
     imageUrl: "https://placehold.co/200x200.png",
-    hint: "man editing video",
-    bio: "Michael es donde la magia de la postproducción cobra vida. Con una meticulosa atención al detalle, ensambla el metraje, el sonido y los efectos para crear un producto final pulido y potente que deja una impresión duradera. Es un maestro del color grading y el diseño de sonido, y su trabajo ha sido fundamental para el éxito de muchas de nuestras campañas premiadas. En su tiempo libre, compone música electrónica y es un apasionado del cine clásico.",
+    hint: "man working on color grading",
+    bio: "Colorista con formación en Cine y Televisión con énfasis en Fotografía Cinematográfica. Con más de dos años de experiencia en la industria publicitaria, se dedica a la corrección y creación de color en piezas audiovisuales, trabajando de la mano con directores de fotografía y equipos creativos para lograr resultados consistentes, atractivos y fieles a la visión de cada proyecto",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "816721195",
+    headerVideoId: "1125340167",
     headerHint: "editing suite monitors"
   },
   {
@@ -80,9 +81,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man at computer",
-    bio: "I consider myself a highly creative person, with a great ability to imagine and carry out innovative ideas. I firmly believe that imagination is a key tool in the field of post-production, as it allows us to create special effects, edit images and sounds, and generate fresh and original ideas for the projects we work on. From the moment I started working in this industry, I discovered the importance of letting my imagination run wild and being able to visualize the final result even before starting to work on it.",
+    bio: "Professional in Film and Television with experience in coordinating, planning, and executing activities for audiovisual content production. Skilled in product photography, modeling, and commercial photography. Capable of ensuring quality standards in audio and video editing, supervising audiovisual production and filming, developing storyboards and scripts, and directing processes for video creation. Known for innovation, results-oriented mindset, leadership, organization, and planning skills.",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "803618978",
+    headerVideoId: "950075762",
     headerHint: "color grading suite"
   },
   {
@@ -91,9 +92,9 @@ const teamMembers = [
     role: "Editor",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "creative professional",
-    bio: "I have always been passionate about storytelling in all its forms, but I specialize in its visual variant. I believe that the image, both in motion and still, is the most versatile and influential medium of expression in a time when attention and recall have become scarce and valuable resources.",
+    bio: "As video editor I have worked in many advertising projects for broadcasting. With each commercial I have developed and tuned some kind of sensibility to build short stories with few cuts. I think that image is an excellent medium to reach emotions in others and to deliver ideas, ways to change people’s perception about the world. Each idea that comes to me has its own conditions, limitations and targets. But always the ultimate goal is to give it a impactful narration and comprehensive structure. After 9 years of experience in the postproduction audiovisual industry I believe that the key is a solid and thorough comprehension of the idea that gave birth to the campaign. Nevertheless I know that a talented team is also a excellent starting point to achieve an effective and artful moving image.",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "803616178",
+    headerVideoId: "107110557",
     headerHint: "motion graphics display"
   },
   {
@@ -115,7 +116,7 @@ const teamMembers = [
     hint: "man working on vfx",
     bio: "As a VFX composer, I feel a burning passion for my work. I love diving into the creative process, from conceptualization to final execution. Each project is an opportunity to challenge myself and explore new techniques and approaches. It excites me to see how my skills and knowledge can transform a simple image into a visually stunning masterpiece. The satisfaction I feel when I see my work on the big screen is incomparable and inspires me to keep improving and pushing my limits on every project.",
     headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "816721195",
+    headerVideoId: "1120884927",
     headerHint: "visual effects breakdown"
   },
   {
@@ -124,7 +125,7 @@ const teamMembers = [
     role: "VFX Artist",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man with graphics tablet",
-    bio: "I am passionate about breaking the limits of what is considered possible or realistic. That’s why I found in visual effects the perfect tool to capture those ideas that seem impossible to materialize. VFX gives me the freedom to experiment with new techniques and tools to create worlds and situations that seem unreal, taking the exploration between the real and the imaginary to another level.",
+    bio: "I’m passionate about challenging the limits of what’s possible. For me, visual effects are more than a craft — they’re a way to turn imagination into reality. Through VFX, I transform concepts that seem impossible into vivid, cinematic experiences that blur the line between the real and the surreal. Constantly exploring new techniques and technologies, I aim to create visuals that not only look extraordinary but also evoke emotion and meaning. My work is driven by curiosity, precision, and the belief that every frame can expand the boundaries of what we believe is real.",
     headerImage: "https://placehold.co/1920x1080.png",
     headerVideoId: "816723625",
     headerHint: "3d modeling software"

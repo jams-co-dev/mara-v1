@@ -1,14 +1,16 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { VideoData } from '@/lib/video-data';
 import { cn } from '@/lib/utils';
-import { MoodBoardRow } from '@/app/page';
+import { MoodBoardRow } from '@/app/home-client-page';
 
 interface MoodBoardProps {
   rows: MoodBoardRow[];
   onVideoSelect: (video: VideoData) => void;
+  refreshKey: number;
 }
 
 function getLayoutClasses(itemCount: number) {
@@ -28,37 +30,74 @@ interface BackgroundVideoItemProps {
     item: VideoData;
     onVideoSelect: (video: VideoData) => void;
     className?: string;
+    refreshKey: number;
 }
 
-const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVideoSelect, className }: BackgroundVideoItemProps) {
+const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
+    const [showThumbnail, setShowThumbnail] = useState(true);
+
+    useEffect(() => {
+        // Always start by showing the thumbnail on a refresh or initial load
+        setShowThumbnail(true);
+        
+        // After a delay, start fading out the thumbnail.
+        // This gives the iframe time to start loading, and the fade effect
+        // masks the black flash. The duration of the fade is controlled by CSS.
+        const timer = setTimeout(() => {
+            setShowThumbnail(false);
+        }, 3000); 
+
+        return () => clearTimeout(timer);
+    }, [refreshKey]);
+
+    // The key on the iframe is crucial. It forces the iframe to re-mount and autoplay.
+    const iframeKey = `${item.id}-${refreshKey}`;
+
     return (
         <div
-            className={cn("relative h-full group overflow-hidden cursor-pointer", className)}
+            className={cn("relative h-full group overflow-hidden cursor-pointer bg-black", className)}
         >
             <div 
                 onClick={() => onVideoSelect(item)}
-                className="absolute inset-0 z-10"
+                className="absolute inset-0 z-20"
                 aria-label={`Open video ${item.title}`}
             />
+
+            {/* Iframe: Always present. The key change forces it to reload. */}
             <iframe
+                key={iframeKey}
                 src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
-                className="absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:scale-105 pointer-events-none"
+                className={cn(
+                    "absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 pointer-events-none transition-all duration-500"
+                )}
                 title={item.title}
             ></iframe>
-            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
+
+             {/* Thumbnail Image: Acts as a smooth cover during reload */}
+             <Image
+                src={item.thumbnail}
+                alt={`Thumbnail for ${item.title}`}
+                fill
+                objectFit="cover"
+                priority
+                className={cn(
+                    "absolute inset-0 z-10 pointer-events-none transition-opacity duration-1000 ease-in-out",
+                    showThumbnail ? "opacity-100" : "opacity-0"
+                )}
+            />
+
+            <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none z-20">
                 <h3 className="text-white text-sm font-semibold">
                     {item.title}
                 </h3>
             </div>
         </div>
     );
-});
-BackgroundVideoItem.displayName = "BackgroundVideoItem";
+};
 
-
-export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
+export const MoodBoard = ({ rows, onVideoSelect, refreshKey }: MoodBoardProps) => {
   return (
     <div className="w-full relative">
       <div className="flex flex-col">
@@ -66,10 +105,11 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
           <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full">
             {row.items.map((item) => (
               <BackgroundVideoItem 
-                key={item.id} 
+                key={item.id}
                 item={item} 
                 onVideoSelect={onVideoSelect} 
                 className={getLayoutClasses(row.items.length)}
+                refreshKey={refreshKey}
               />
             ))}
           </div>
@@ -77,5 +117,4 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
       </div>
     </div>
   );
-});
-MoodBoard.displayName = "MoodBoard";
+};
