@@ -48,7 +48,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
             // avoiding the "black flash".
             const timer = setTimeout(() => {
                 setShowThumbnail(false);
-            }, 300); // 300ms is a good balance.
+            }, 600); // Increased from 300ms to 600ms
 
             // Cleanup the timer if the component unmounts.
             return () => clearTimeout(timer);
