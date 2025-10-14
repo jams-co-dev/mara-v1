@@ -34,22 +34,20 @@ interface BackgroundVideoItemProps {
 }
 
 const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
-    // Show thumbnail only when refreshKey is greater than 0 (i.e., after a popup closes)
-    const [showThumbnail, setShowThumbnail] = useState(refreshKey > 0);
+    const [showThumbnail, setShowThumbnail] = useState(true);
 
     useEffect(() => {
-        if (refreshKey > 0) {
-            setShowThumbnail(true);
-            
-            // After a delay, start fading out the thumbnail.
-            // This gives the iframe time to start loading, and the fade effect
-            // masks the black flash. The duration of the fade is controlled by CSS.
-            const timer = setTimeout(() => {
-                setShowThumbnail(false);
-            }, 3000); // Increased timeout to 3000ms
+        // Always start by showing the thumbnail on a refresh or initial load
+        setShowThumbnail(true);
+        
+        // After a delay, start fading out the thumbnail.
+        // This gives the iframe time to start loading, and the fade effect
+        // masks the black flash. The duration of the fade is controlled by CSS.
+        const timer = setTimeout(() => {
+            setShowThumbnail(false);
+        }, 3000); 
 
-            return () => clearTimeout(timer);
-        }
+        return () => clearTimeout(timer);
     }, [refreshKey]);
 
     // The key on the iframe is crucial. It forces the iframe to re-mount and autoplay.
