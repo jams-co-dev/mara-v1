@@ -46,12 +46,10 @@ export default function HomeClientPage() {
   return (
     <main>
       <h1 className="sr-only">Mara Post - Homepage Mood Board</h1>
-      <div style={{ transform: 'translateZ(0)' }}>
-        <MoodBoard 
-          rows={moodBoardRows} 
-          onVideoSelect={handleVideoSelect} 
-        />
-      </div>
+      <MoodBoard 
+        rows={moodBoardRows} 
+        onVideoSelect={handleVideoSelect} 
+      />
       <VideoPopup 
         video={selectedVideo}
         onClose={handleClosePopup}

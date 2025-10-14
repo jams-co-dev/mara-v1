@@ -55,12 +55,6 @@ const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVi
         </div>
     );
 });
-BackgroundVideoItem.displayName = "BackgroundVideoItem";
-
-const VideoWrapper = React.memo(({ children }: { children: React.ReactNode }) => {
-    return <>{children}</>;
-});
-VideoWrapper.displayName = "VideoWrapper";
 
 export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
   return (
@@ -69,13 +63,12 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="flex flex-col md:flex-row aspect-video md:h-[50vh] w-full">
             {row.items.map((item) => (
-              <VideoWrapper key={item.id}>
-                <BackgroundVideoItem 
-                  item={item} 
-                  onVideoSelect={onVideoSelect} 
-                  className={getLayoutClasses(row.items.length)}
-                />
-              </VideoWrapper>
+              <BackgroundVideoItem 
+                key={item.id}
+                item={item} 
+                onVideoSelect={onVideoSelect} 
+                className={getLayoutClasses(row.items.length)}
+              />
             ))}
           </div>
         ))}
@@ -83,4 +76,3 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
     </div>
   );
 });
-MoodBoard.displayName = "MoodBoard";
