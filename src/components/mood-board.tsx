@@ -47,7 +47,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
             // masks the black flash. The duration of the fade is controlled by CSS.
             const timer = setTimeout(() => {
                 setShowThumbnail(false);
-            }, 1000); // Increased timeout to 1000ms
+            }, 2000); // Increased timeout to 2000ms
 
             return () => clearTimeout(timer);
         }
