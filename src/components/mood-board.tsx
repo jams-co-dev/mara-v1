@@ -38,7 +38,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
 
     useEffect(() => {
         if (refreshKey > 0) {
-            // Change the src to force a reload
+            // Change the src to force a reload by adding a unique fragment
             setIframeSrc(`${baseUrl}#${refreshKey}`);
         }
     }, [refreshKey, baseUrl]);
