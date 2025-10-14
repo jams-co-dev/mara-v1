@@ -31,6 +31,7 @@ const generateMoodBoardRows = (videos: VideoData[]): MoodBoardRow[] => {
 
 export default function HomeClientPage() {
   const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   const moodBoardRows = useMemo(() => generateMoodBoardRows(allVideos), []);
 
@@ -40,6 +41,7 @@ export default function HomeClientPage() {
 
   const handleClosePopup = () => {
     setSelectedVideo(null);
+    setRefreshKey(prevKey => prevKey + 1);
   };
 
   return (
@@ -47,7 +49,8 @@ export default function HomeClientPage() {
       <h1 className="sr-only">Mara Post - Homepage Mood Board</h1>
       <MoodBoard 
         rows={moodBoardRows} 
-        onVideoSelect={handleVideoSelect} 
+        onVideoSelect={handleVideoSelect}
+        refreshKey={refreshKey}
       />
       <VideoPopup 
         video={selectedVideo}

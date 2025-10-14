@@ -1,7 +1,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { VideoData } from '@/lib/video-data';
 import { cn } from '@/lib/utils';
 import { MoodBoardRow } from '@/app/home-client-page';
@@ -9,6 +9,7 @@ import { MoodBoardRow } from '@/app/home-client-page';
 interface MoodBoardProps {
   rows: MoodBoardRow[];
   onVideoSelect: (video: VideoData) => void;
+  refreshKey: number;
 }
 
 function getLayoutClasses(itemCount: number) {
@@ -28,9 +29,20 @@ interface BackgroundVideoItemProps {
     item: VideoData;
     onVideoSelect: (video: VideoData) => void;
     className?: string;
+    refreshKey: number;
 }
 
-const BackgroundVideoItem = ({ item, onVideoSelect, className }: BackgroundVideoItemProps) => {
+const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
+    const baseUrl = `https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`;
+    const [iframeSrc, setIframeSrc] = useState(baseUrl);
+
+    useEffect(() => {
+        if (refreshKey > 0) {
+            // Change the src to force a reload
+            setIframeSrc(`${baseUrl}#${refreshKey}`);
+        }
+    }, [refreshKey, baseUrl]);
+
     return (
         <div
             className={cn("relative h-full group overflow-hidden cursor-pointer", className)}
@@ -41,11 +53,12 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className }: BackgroundVideo
                 aria-label={`Open video ${item.title}`}
             />
             <iframe
-                src={`https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
+                src={iframeSrc}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 className="absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-in-out group-hover:scale-105 pointer-events-none"
                 title={item.title}
+                key={item.id}
             ></iframe>
             <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black/60 to-transparent w-full pointer-events-none">
                 <h3 className="text-white text-sm font-semibold">
@@ -56,7 +69,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className }: BackgroundVideo
     );
 };
 
-export const MoodBoard = ({ rows, onVideoSelect }: MoodBoardProps) => {
+export const MoodBoard = ({ rows, onVideoSelect, refreshKey }: MoodBoardProps) => {
   return (
     <div className="w-full relative">
       <div className="flex flex-col">
@@ -68,6 +81,7 @@ export const MoodBoard = ({ rows, onVideoSelect }: MoodBoardProps) => {
                 item={item} 
                 onVideoSelect={onVideoSelect} 
                 className={getLayoutClasses(row.items.length)}
+                refreshKey={refreshKey}
               />
             ))}
           </div>
