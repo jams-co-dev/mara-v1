@@ -35,19 +35,19 @@ interface BackgroundVideoItemProps {
 
 const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
     // Show thumbnail only when refreshKey is greater than 0 (i.e., after a popup closes)
-    const [showThumbnail, setShowThumbnail] = useState(false);
+    const [showThumbnail, setShowThumbnail] = useState(refreshKey > 0);
 
     useEffect(() => {
         if (refreshKey > 0) {
             // 1. Show the thumbnail immediately.
             setShowThumbnail(true);
             
-            // 2. After a very short delay, start fading it out.
+            // 2. After a delay, start fading it out.
             // This gives the iframe time to start loading, and the fade effect
             // masks the black flash. The duration of the fade is controlled by CSS.
             const timer = setTimeout(() => {
                 setShowThumbnail(false);
-            }, 100); // Start the fade-out almost immediately.
+            }, 1000); // Increased timeout to 1000ms
 
             return () => clearTimeout(timer);
         }
