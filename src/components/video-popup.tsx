@@ -19,11 +19,11 @@ export function VideoPopup({ video, onClose }: VideoPopupProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none"
+            className="fixed inset-x-1 inset-y-1 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
             onClick={onClose}
           >
             <div
-              className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl pointer-events-auto"
+              className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()} 
             >
               <div className="absolute top-0 left-0 right-0 z-20 p-4 bg-gradient-to-b from-black/60 to-transparent pointer-events-none">
