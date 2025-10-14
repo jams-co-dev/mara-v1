@@ -34,24 +34,27 @@ interface BackgroundVideoItemProps {
 }
 
 const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
-    // Start with isLoaded = true only on the initial page load (refreshKey === 0)
-    const [isLoaded, setIsLoaded] = useState(refreshKey === 0);
+    const [showThumbnail, setShowThumbnail] = useState(refreshKey > 0);
     const iframeSrc = `https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`;
 
     useEffect(() => {
-        // When refreshKey changes (after closing popup), set isLoaded to false to show thumbnail
+        // This effect runs when the popup is closed and refreshKey changes.
         if (refreshKey > 0) {
-            setIsLoaded(false);
+            // 1. Show the thumbnail immediately to cover the iframe.
+            setShowThumbnail(true);
+            
+            // 2. After a short delay, fade the thumbnail out.
+            // This gives the iframe enough time to start playing in the background,
+            // avoiding the "black flash".
+            const timer = setTimeout(() => {
+                setShowThumbnail(false);
+            }, 300); // 300ms is a good balance.
+
+            // Cleanup the timer if the component unmounts.
+            return () => clearTimeout(timer);
         }
     }, [refreshKey]);
 
-    const handleLoad = () => {
-        // To prevent a black flash, we wait a moment for the Vimeo player to initialize
-        // before fading out the thumbnail.
-        setTimeout(() => {
-            setIsLoaded(true);
-        }, 300);
-    };
 
     return (
         <div
@@ -63,27 +66,27 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
                 aria-label={`Open video ${item.title}`}
             />
 
+            {/* Thumbnail Image: Covers the video during the transition */}
             <Image
                 src={item.thumbnail}
                 alt={`Thumbnail for ${item.title}`}
-                layout="fill"
+                fill
                 objectFit="cover"
                 priority
                 className={cn(
-                    "absolute inset-0 transition-opacity duration-500 ease-in-out z-10 pointer-events-none",
-                    isLoaded ? "opacity-0" : "opacity-100"
+                    "absolute inset-0 transition-opacity duration-300 ease-in-out z-10 pointer-events-none",
+                    showThumbnail ? "opacity-100" : "opacity-0"
                 )}
             />
             
+            {/* Iframe: Always present and attempting to play. */}
             <iframe
                 key={`${item.id}-${refreshKey}`}
                 src={iframeSrc}
-                onLoad={handleLoad}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 className={cn(
-                    "absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ease-in-out group-hover:scale-105 pointer-events-none",
-                    isLoaded ? "opacity-100" : "opacity-0"
+                    "absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 pointer-events-none"
                 )}
                 title={item.title}
             ></iframe>
