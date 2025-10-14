@@ -34,16 +34,20 @@ interface BackgroundVideoItemProps {
 }
 
 const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: BackgroundVideoItemProps) => {
-    const [isLoaded, setIsLoaded] = useState(false);
+    // Start with isLoaded = true only on the initial page load (refreshKey === 0)
+    const [isLoaded, setIsLoaded] = useState(refreshKey === 0);
     const iframeSrc = `https://player.vimeo.com/video/${item.videoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`;
 
     useEffect(() => {
-        setIsLoaded(false);
+        // When refreshKey changes (after closing popup), set isLoaded to false to show thumbnail
+        if (refreshKey > 0) {
+            setIsLoaded(false);
+        }
     }, [refreshKey]);
 
     const handleLoad = () => {
-        // Wait a fraction of a second before fading the image out.
-        // This gives the Vimeo player time to initialize and avoids a black flash.
+        // To prevent a black flash, we wait a moment for the Vimeo player to initialize
+        // before fading out the thumbnail.
         setTimeout(() => {
             setIsLoaded(true);
         }, 300);
