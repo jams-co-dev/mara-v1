@@ -30,7 +30,7 @@ interface BackgroundVideoItemProps {
     className?: string;
 }
 
-const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVideoSelect, className }: BackgroundVideoItemProps) {
+const BackgroundVideoItem = ({ item, onVideoSelect, className }: BackgroundVideoItemProps) => {
     return (
         <div
             className={cn("relative h-full group overflow-hidden cursor-pointer", className)}
@@ -54,9 +54,9 @@ const BackgroundVideoItem = React.memo(function BackgroundVideoItem({ item, onVi
             </div>
         </div>
     );
-});
+};
 
-export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: MoodBoardProps) {
+export const MoodBoard = ({ rows, onVideoSelect }: MoodBoardProps) => {
   return (
     <div className="w-full relative">
       <div className="flex flex-col">
@@ -75,4 +75,4 @@ export const MoodBoard = React.memo(function MoodBoard({ rows, onVideoSelect }: 
       </div>
     </div>
   );
-});
+};
