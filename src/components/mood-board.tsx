@@ -42,7 +42,11 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
     }, [refreshKey]);
 
     const handleLoad = () => {
-        setIsLoaded(true);
+        // Wait a fraction of a second before fading the image out.
+        // This gives the Vimeo player time to initialize and avoids a black flash.
+        setTimeout(() => {
+            setIsLoaded(true);
+        }, 300);
     };
 
     return (
@@ -62,7 +66,7 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
                 objectFit="cover"
                 priority
                 className={cn(
-                    "absolute inset-0 transition-opacity duration-500 ease-in-out z-10",
+                    "absolute inset-0 transition-opacity duration-500 ease-in-out z-10 pointer-events-none",
                     isLoaded ? "opacity-0" : "opacity-100"
                 )}
             />
