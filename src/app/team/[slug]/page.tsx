@@ -10,7 +10,7 @@ import { PageWrapper } from "@/components/page-wrapper";
 // In a real app, you'd fetch this from a CMS or database
 const teamMembers = [
   {
-    name: "MATEO",
+    name: "MATEO HERRERA",
     slug: "mateo",
     role: "Filmmaker & Editor",
     imageUrl: "https://placehold.co/200x200.png",
@@ -34,7 +34,7 @@ const teamMembers = [
   {
     name: "HAROLD",
     slug: "harold",
-    role: "Editor",
+    role: "VFX Artist",
     imageUrl: "https://placehold.co/200x200.png",
     hint: "man",
     bio: "As a graphic designer focused on illustration, my work is born from a love of color, shape, and movement. My process is deeply influenced by urban art, its energy and authenticity, which drives me to explore new ways of visual communication. I've taken graphics to the next level, integrating animation as a natural extension of design, creating pieces that are not only seen, but also felt. My goal is to bring ideas to life, build visual universes that connect emotion and aesthetics, and generate a new form of visual magic through movement and graphic expression.",
@@ -43,7 +43,7 @@ const teamMembers = [
     headerHint: "marketing data charts"
   },
    {
-    name: "DIEGO",
+    name: "DIEGO BARRAGAN",
     slug: "diego",
     role: "Colorist",
     imageUrl: "https://placehold.co/200x200.png",
@@ -63,17 +63,6 @@ const teamMembers = [
     headerImage: "https://placehold.co/1920x1080.png",
     headerVideoId: "803603427",
     headerHint: "video editing timeline"
-  },
-  {
-    name: "JORGE BELTRAN",
-    slug: "jorge-beltran",
-    role: "Editor",
-    imageUrl: "https://placehold.co/200x200.png",
-    hint: "focused editor",
-    bio: "My goal is to contribute with my skills and knowledge to create high-quality content and meet the needs of the audience, but it sounds cliché. What is true, however, is that we create content that makes people dream and inspires others, and because I keep dreaming, I am here.",
-    headerImage: "https://placehold.co/1920x1080.png",
-    headerVideoId: "800012862",
-    headerHint: "sound mixing board"
   },
   {
     name: "CARLOS LEON",

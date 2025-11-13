@@ -19,11 +19,10 @@ const services = [
     title: "EDIT",
     names: [
         { name: "JAVIER PINILLA", slug: "javier-pinilla" },
-        { name: "JORGE BELTRAN", slug: "jorge-beltran" },
         { name: "CARLOS LEON", slug: "carlos-leon" },
         { name: "DANIEL VARGAS", slug: "daniel-vargas" },
-        { name: "HAROLD", slug: "harold" },
-        { name: "MATEO", slug: "mateo" },
+        { name: "MATEO HERRERA", slug: "mateo" },
+        { name: "JOEL", slug: "joel" },
     ],
     color: "bg-gray-900",
     textColor: "text-gray-200"
@@ -33,8 +32,7 @@ const services = [
     title: "COLOR",
     names: [
         { name: "ARTURO PEREZ", slug: "arturo-perez" },
-        { name: "DIEGO", slug: "diego" },
-        { name: "JOEL", slug: "joel" },
+        { name: "DIEGO BARRAGAN", slug: "diego" },
     ],
     color: "bg-sky-200/70",
     textColor: "text-sky-900"
@@ -44,10 +42,19 @@ const services = [
     title: "VFX",
     names: [
         { name: "CRISTIAN PICO", slug: "cristian-pico" },
+        { name: "HAROLD", slug: "harold" },
         { name: "JUAN CONTRERAS", slug: "juan-contreras" },
     ],
     color: "bg-violet-200/70",
     textColor: "text-violet-900"
+  },
+  {
+    icon: Sparkles,
+    title: "IA",
+    names: [
+    ],
+    color: "bg-gray-900",
+    textColor: "text-gray-200"
   },
 ];
 
