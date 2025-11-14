@@ -8,7 +8,7 @@ export default function AboutClientPage() {
   return (
     <div className="bg-background text-primary-foreground">
       <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
-        <main className="flex-grow pt-16 pb-24">
+        <main className="flex-grow pt-24 pb-24">
           <div className="container mx-auto px-4">
             <section className="text-center">
               <h1 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-white">
