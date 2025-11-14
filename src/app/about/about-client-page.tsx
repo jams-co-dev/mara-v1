@@ -1,26 +1,12 @@
 
 'use client';
 
-import Image from 'next/image';
-
 export default function AboutClientPage() {
 
   return (
     <div>
-      <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
-        <main className="relative flex items-center justify-center text-primary-foreground text-center overflow-hidden flex-grow">
-          <div className="absolute inset-0">
-            <Image
-              src="https://picsum.photos/seed/about/1920/1080"
-              alt="Mara Post team working"
-              fill
-              className="object-cover"
-              data-ai-hint="creative team collaboration"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
+      <div className="flex flex-col min-h-[calc(100vh_-_5rem)] bg-black">
+        <main className="relative flex items-center justify-center text-primary-foreground text-center flex-grow">
           <div className="relative z-10 p-4">
             <section className="mb-8">
               <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white">
