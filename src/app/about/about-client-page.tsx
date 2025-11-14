@@ -28,7 +28,7 @@ export default function AboutClientPage() {
                     data-ai-hint="team collaboration"
                   />
                 </div>
-                <div className="absolute left-0 top-1/2 w-full max-w-md p-6 bg-black/70 rounded-lg backdrop-blur-sm ml-4 md:ml-8">
+                <div className="absolute left-0 top-1/2 w-full max-w-md p-6 bg-black/70 rounded-lg backdrop-blur-sm ml-8 md:ml-12 mt-8">
                   <p className="text-sm text-white/90 mb-4">
                     We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                   </p>
