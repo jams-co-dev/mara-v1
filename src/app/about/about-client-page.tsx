@@ -17,7 +17,7 @@ export default function AboutClientPage() {
             </section>
 
             <section className="mt-12 mb-16">
-              <div className="max-w-9xl mx-auto relative flex justify-center items-center">
+              <div className="max-w-9xl mx-auto relative flex flex-col md:justify-center md:items-center">
                 <div className="w-full">
                   <Image
                     src="/images/About_us.png"
@@ -28,7 +28,7 @@ export default function AboutClientPage() {
                     data-ai-hint="team collaboration"
                   />
                 </div>
-                <div className="absolute left-0 top-1/2 w-full max-w-sm p-6 bg-black/70 rounded-lg backdrop-blur-sm -ml-4 md:-ml-8 mt-8">
+                <div className="relative md:absolute md:left-0 md:top-1/2 w-full max-w-sm p-6 bg-black/70 rounded-lg backdrop-blur-sm -ml-0 md:-ml-8 mt-4 md:mt-8">
                   <p className="text-xs text-white/90 mb-4">
                     We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                   </p>
