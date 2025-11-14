@@ -1,24 +1,34 @@
 
 'use client';
 
+import Image from 'next/image';
+
 export default function AboutClientPage() {
 
   return (
-    <div>
-      <div className="flex flex-col min-h-[calc(100vh_-_5rem)] bg-black">
-        <main className="relative flex items-center justify-center text-primary-foreground text-center flex-grow">
-          <div className="relative z-10 p-4">
-            <section className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white">
+    <div className="bg-black text-primary-foreground">
+      <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
+        <main className="flex-grow pt-16 pb-24">
+          <div className="container mx-auto px-4">
+            <section className="text-center">
+              <h1 className="text-3xl md:text-4xl font-sans font-bold tracking-tight text-white">
                 About Us
               </h1>
-              <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
-                The creative force behind Mara Post.
-              </p>
             </section>
 
-            <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-sans text-accent mb-4">LIMITLESS C R E A T I V I T Y </h2>
+            <section className="mt-12 mb-16">
+              <div className="relative aspect-video max-w-5xl mx-auto">
+                <Image
+                  src="/images/About_us.png"
+                  alt="Mara Post Team"
+                  fill
+                  className="object-cover rounded-lg"
+                  data-ai-hint="team collaboration"
+                />
+              </div>
+            </section>
+
+            <div className="max-w-4xl mx-auto text-center">
                 <p className="text-lg text-white/90 mb-4">
                 We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                 </p>
