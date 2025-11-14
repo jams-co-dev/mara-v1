@@ -17,24 +17,24 @@ export default function AboutClientPage() {
             </section>
 
             <section className="mt-12 mb-16">
-              <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div className="max-w-xl mx-auto">
-                    <Image
+              <div className="max-w-5xl mx-auto relative flex justify-center items-center">
+                <div className="w-full">
+                  <Image
                     src="/images/About_us.png"
                     alt="Mara Post Team"
                     width={1280}
                     height={720}
                     className="w-full h-auto rounded-lg"
                     data-ai-hint="team collaboration"
-                    />
+                  />
                 </div>
-                <div className="max-w-md mx-auto text-left md:text-left">
-                    <p className="text-lg text-white/90 mb-4">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full max-w-md p-6 bg-black/70 rounded-lg backdrop-blur-sm ml-4 md:ml-8">
+                  <p className="text-base text-white/90 mb-4">
                     We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
-                    </p>
-                    <p className="text-lg text-white/90">
-                        Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
-                    </p>
+                  </p>
+                  <p className="text-base text-white/90">
+                    Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
+                  </p>
                 </div>
               </div>
             </section>
