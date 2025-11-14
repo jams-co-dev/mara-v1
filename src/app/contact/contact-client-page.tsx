@@ -43,7 +43,7 @@ export default function ContactClientPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {contactPeople.map((person) => (
                                 <div key={person.name} className="flex flex-col items-center text-center md:items-start md:text-left">
-                                    <h2 className="text-2xl font-sans text-primary">{person.name}</h2>
+                                    <h2 className="text-2xl font-sans text-accent">{person.name}</h2>
                                     <p className="text-muted-foreground mb-4">{person.role}</p>
                                     <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
                                         <Phone className="w-4 h-4" />
