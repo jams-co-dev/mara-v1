@@ -29,10 +29,10 @@ export default function AboutClientPage() {
                   />
                 </div>
                 <div className="absolute left-0 top-1/2 w-full max-w-md p-6 bg-black/70 rounded-lg backdrop-blur-sm -ml-4 md:-ml-8 mt-8">
-                  <p className="text-sm text-white/90 mb-4">
+                  <p className="text-xs text-white/90 mb-4">
                     We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
                   </p>
-                  <p className="text-sm text-white/90">
+                  <p className="text-xs text-white/90">
                     Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
                   </p>
                 </div>
