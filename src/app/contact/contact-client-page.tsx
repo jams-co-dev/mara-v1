@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Separator } from "@/components/ui/separator";
@@ -43,16 +43,21 @@ export default function ContactClientPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {contactPeople.map((person) => (
                                 <div key={person.name} className="flex flex-col items-center text-center md:items-start md:text-left">
-                                    <h2 className="text-2xl font-sans text-accent">{person.name}</h2>
-                                    <p className="text-muted-foreground mb-4">{person.role}</p>
-                                    <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-                                        <Phone className="w-4 h-4" />
-                                        <span>{person.phone}</span>
-                                    </a>
-                                    <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-                                        <Mail className="w-4 h-4" />
-                                        <span>{person.email}</span>
-                                    </a>
+                                    <div className="flex items-center gap-3">
+                                      <User className="w-6 h-6 text-[#55ffb3]" />
+                                      <h2 className="text-2xl font-sans text-accent">{person.name}</h2>
+                                    </div>
+                                    <p className="text-muted-foreground mb-4 md:pl-[36px]">{person.role}</p>
+                                    <div className="md:pl-[36px]">
+                                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+                                            <Phone className="w-4 h-4" />
+                                            <span>{person.phone}</span>
+                                        </a>
+                                        <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+                                            <Mail className="w-4 h-4" />
+                                            <span>{person.email}</span>
+                                        </a>
+                                    </div>
                                 </div>
                             ))}
                         </div>
