@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Mail, Phone, MapPin, User } from "lucide-react";
+import { Mail, Phone, MapPin, UserCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageWrapper } from "@/components/page-wrapper";
 import { Separator } from "@/components/ui/separator";
@@ -44,7 +44,7 @@ export default function ContactClientPage() {
                             {contactPeople.map((person) => (
                                 <div key={person.name} className="flex flex-col items-center text-center md:items-start md:text-left">
                                     <div className="flex items-center gap-3">
-                                      <User className="w-6 h-6 text-[#55ffb3]" />
+                                      <UserCircle2 className="w-6 h-6 text-[#55ffb3]" />
                                       <h2 className="text-2xl font-sans text-accent">{person.name}</h2>
                                     </div>
                                     <p className="text-muted-foreground mb-4 md:pl-[36px]">{person.role}</p>
