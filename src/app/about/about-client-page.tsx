@@ -17,7 +17,7 @@ export default function AboutClientPage() {
             </section>
 
             <section className="mt-12 mb-16">
-              <div className="max-w-7xl mx-auto relative flex justify-center items-center">
+              <div className="max-w-9xl mx-auto relative flex justify-center items-center">
                 <div className="w-full">
                   <Image
                     src="/images/About_us.png"
