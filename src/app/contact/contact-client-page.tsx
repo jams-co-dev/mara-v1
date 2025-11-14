@@ -58,9 +58,9 @@ export default function ContactClientPage() {
                         </div>
                         <Separator className="my-8" />
                         <div className="text-center">
-                            <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                               <MapPin className="w-5 h-5" />
-                               <p className="text-lg">Calle 89 # 20 - 45 Bogotá, Colombia.</p>
+                            <div className="flex items-center justify-center gap-2">
+                               <MapPin className="w-5 h-5 text-[#55ffb3]" />
+                               <p className="text-lg text-muted-foreground">Calle 89 # 20 - 45 Bogotá, Colombia.</p>
                             </div>
                         </div>
                     </CardContent>
