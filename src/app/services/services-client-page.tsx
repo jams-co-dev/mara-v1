@@ -127,7 +127,7 @@ export default function ServicesClientPage() {
                     activeService === index ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                    <div className="flex h-full w-full items-start justify-start">
+                    <div className="flex h-full w-full items-center justify-start">
                       <div className="flex items-center h-full mr-16">
                           <h2
                               className={cn(
@@ -139,11 +139,11 @@ export default function ServicesClientPage() {
                           </h2>
                       </div>
                       <div 
-                          className="flex-grow flex items-start justify-start"
+                          className="flex-grow flex items-center justify-start"
                           onMouseLeave={() => setHoveredName(null)}
                       >
                         {service.names && (
-                            <div className="flex flex-col text-left mt-8">
+                            <div className="flex flex-col text-left">
                               {service.names.map(member => (
                                   <Link key={member.slug} href={`/team/${member.slug}`}>
                                       <span 
