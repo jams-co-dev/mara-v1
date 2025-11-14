@@ -105,13 +105,13 @@
     --secondary-foreground: 60 20% 90%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 60 20% 60%;
-    --accent: 0 52% 52%; /* Bright Red */
+    --accent: 352 80% 54%; /* Bright Red */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
-    --ring: 0 52% 52%;
+    --ring: 352 80% 54%;
   }
 }
 
