@@ -24,7 +24,7 @@ const services = [
         { name: "MATEO HERRERA", slug: "mateo" },
         { name: "JOEL", slug: "joel" },
     ],
-    color: "bg-gray-900",
+    color: "bg-[#141414]",
     textColor: "text-gray-200"
   },
   {
@@ -34,7 +34,7 @@ const services = [
         { name: "ARTURO PEREZ", slug: "arturo-perez" },
         { name: "DIEGO BARRAGAN", slug: "diego" },
     ],
-    color: "bg-sky-200/70",
+    color: "bg-[#ce283e]",
     textColor: "text-sky-900"
   },
   {
@@ -45,8 +45,8 @@ const services = [
         { name: "HAROLD", slug: "harold" },
         { name: "JUAN CONTRERAS", slug: "juan-contreras" },
     ],
-    color: "bg-violet-200/70",
-    textColor: "text-violet-900"
+    color: "bg-[#ffffff]",
+    textColor: "text-black"
   },
   {
     icon: Sparkles,
@@ -123,7 +123,7 @@ export default function ServicesClientPage() {
                 </div>
                 <div
                   className={cn(
-                    "absolute inset-0 flex items-start justify-start transition-opacity duration-500 p-8",
+                    "absolute inset-0 flex items-center justify-start transition-opacity duration-500 p-8",
                     activeService === index ? 'opacity-100' : 'opacity-0'
                   )}
                 >
