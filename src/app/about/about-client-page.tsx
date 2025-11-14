@@ -11,7 +11,7 @@ export default function AboutClientPage() {
         <main className="flex-grow pt-16 pb-24">
           <div className="container mx-auto px-4">
             <section className="text-center">
-              <h1 className="text-3xl md:text-4xl font-sans font-bold tracking-tight text-white">
+              <h1 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-white">
                 About Us
               </h1>
             </section>
