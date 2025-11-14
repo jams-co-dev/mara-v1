@@ -17,12 +17,13 @@ export default function AboutClientPage() {
             </section>
 
             <section className="mt-12 mb-16">
-              <div className="relative aspect-video max-w-5xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <Image
                   src="/images/About_us.png"
                   alt="Mara Post Team"
-                  fill
-                  className="object-cover rounded-lg"
+                  width={1280}
+                  height={720}
+                  className="w-full h-auto rounded-lg"
                   data-ai-hint="team collaboration"
                 />
               </div>
