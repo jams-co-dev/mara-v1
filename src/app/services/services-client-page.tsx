@@ -131,12 +131,12 @@ export default function ServicesClientPage() {
                 </div>
                 <div
                   className={cn(
-                    "absolute inset-0 flex items-center justify-start transition-opacity duration-500 p-8",
+                    "absolute inset-0 flex items-center justify-start transition-opacity duration-500",
                     activeService === index ? 'opacity-100' : 'opacity-0'
                   )}
                 >
                     <div className="flex h-full w-full items-center justify-between">
-                      <div className="flex h-full items-center">
+                      <div className="flex h-full items-center p-8">
                           <h2
                               className={cn(
                                   "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180 mr-16",
