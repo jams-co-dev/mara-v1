@@ -22,7 +22,7 @@ const services = [
         { name: "CARLOS LEON", slug: "carlos-leon" },
         { name: "DANIEL VARGAS", slug: "daniel-vargas" },
         { name: "MATEO HERRERA", slug: "mateo" },
-        { name: "JOEL", slug: "joel" },
+        { name: "ARTURO PEREZ", slug: "arturo-p" },
     ],
     color: "bg-[#141414]",
     textColor: "text-[#f2f0da]"
