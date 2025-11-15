@@ -32,7 +32,7 @@ const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 
 const socialLinks = [
-    { href: "https://instagram.com/marapost.co", icon: InstagramIcon, name: "Instagram" },
+    { href: "https://instagram.com/marafilmspost", icon: InstagramIcon, name: "Instagram" },
     { href: "https://vimeo.com/marapost", icon: VimeoIcon, name: "Vimeo" },
     { href: "https://linkedin.com/company/mara-post", icon: LinkedInIcon, name: "LinkedIn" },
     { href: "https://www.behance.net/marapost", icon: BehanceIcon, name: "Behance" },
