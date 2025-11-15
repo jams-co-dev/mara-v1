@@ -38,7 +38,7 @@ const services = [
     ],
     color: "bg-[#ce283e]",
     textColor: "text-[#f2f0da]",
-    imageUrl: "https://picsum.photos/seed/color/800/1200",
+    imageUrl: "/images/color_2.png",
     imageHint: "color palette",
   },
   {
@@ -51,7 +51,7 @@ const services = [
     ],
     color: "bg-[#ffffff]",
     textColor: "text-black",
-    imageUrl: "https://picsum.photos/seed/vfx/800/1200",
+    imageUrl: "/images/vfx_3.png",
     imageHint: "visual effects",
   },
   {
