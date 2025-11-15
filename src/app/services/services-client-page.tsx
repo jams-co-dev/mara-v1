@@ -18,11 +18,11 @@ const services = [
     icon: PenTool,
     title: "EDIT",
     names: [
-        { name: "JAVIER PINILLA", slug: "javier-pinilla" },
-        { name: "CARLOS LEON", slug: "carlos-leon" },
-        { name: "DANIEL VARGAS", slug: "daniel-vargas" },
-        { name: "MATEO HERRERA", slug: "mateo" },
-        { name: "ARTURO PEREZ", slug: "arturo-p" },
+        { name: "Javier Pinilla", slug: "javier-pinilla" },
+        { name: "Carlos León", slug: "carlos-leon" },
+        { name: "Daniel Vargas", slug: "daniel-vargas" },
+        { name: "Mateo Herrera", slug: "mateo" },
+        { name: "Arturo Perez", slug: "arturo-p" },
     ],
     color: "bg-[#141414]",
     textColor: "text-[#f2f0da]"
@@ -31,8 +31,8 @@ const services = [
     icon: Palette,
     title: "COLOR",
     names: [
-        { name: "ARTURO PEREZ", slug: "arturo-perez" },
-        { name: "DIEGO BARRAGAN", slug: "diego" },
+        { name: "Arturo Perez", slug: "arturo-perez" },
+        { name: "Juan Diego Barragan", slug: "diego" },
     ],
     color: "bg-[#ce283e]",
     textColor: "text-[#f2f0da]"
@@ -41,9 +41,9 @@ const services = [
     icon: Sparkles,
     title: "VFX",
     names: [
-        { name: "CRISTIAN PICO", slug: "cristian-pico" },
-        { name: "HAROLD", slug: "harold" },
-        { name: "JUAN CONTRERAS", slug: "juan-contreras" },
+        { name: "Cristian Pico", slug: "cristian-pico" },
+        { name: "Harold Rodríguez", slug: "harold" },
+        { name: "Juan Contreras", slug: "juan-contreras" },
     ],
     color: "bg-[#ffffff]",
     textColor: "text-black"
@@ -148,7 +148,7 @@ export default function ServicesClientPage() {
                                   <Link key={member.slug} href={`/team/${member.slug}`}>
                                       <span 
                                           className={cn(
-                                              "text-4xl font-sans font-bold uppercase cursor-pointer transition-opacity duration-300 block",
+                                              "text-4xl font-sans font-bold cursor-pointer transition-opacity duration-300 block",
                                               service.textColor,
                                               hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
                                           )}
