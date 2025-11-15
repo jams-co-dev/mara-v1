@@ -25,7 +25,7 @@ const services = [
         { name: "JOEL", slug: "joel" },
     ],
     color: "bg-[#141414]",
-    textColor: "text-foreground"
+    textColor: "text-[#f2f0da]"
   },
   {
     icon: Palette,
@@ -35,7 +35,7 @@ const services = [
         { name: "DIEGO BARRAGAN", slug: "diego" },
     ],
     color: "bg-[#ce283e]",
-    textColor: "text-sky-900"
+    textColor: "text-[#f2f0da]"
   },
   {
     icon: Sparkles,
