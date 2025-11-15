@@ -42,7 +42,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { name: "Instagram", href: "https://instagram.com/marafilmspost.co", icon: InstagramIcon },
+    { name: "Instagram", href: "https://instagram.com/marafilmspost", icon: InstagramIcon },
     { name: "Vimeo", href: "https://vimeo.com/marapost", icon: VimeoIcon },
     { name: "LinkedIn", href: "https://linkedin.com/company/mara-post", icon: LinkedInIcon },
     { name: "Behance", href: "https://www.behance.net/marapost", icon: BehanceIcon },
