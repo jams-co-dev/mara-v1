@@ -239,21 +239,35 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
       <div className="pb-24 pt-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative -mt-24 md:-mt-32">
-              <Card className="overflow-hidden shadow-2xl">
-                <CardContent className="p-6 md:p-12">
-                  <div className="text-center">
-                    <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
-                      {member.name}
-                    </CardTitle>
-                    <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
-                      {member.role}
-                    </CardDescription>
-                  </div>
-                  <div className="prose prose-lg max-w-4xl mx-auto mt-8 text-muted-foreground">
-                    <p>{member.bio}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex shadow-2xl">
+                 <Card className="w-[70%] rounded-r-none">
+                    <CardContent className="p-6 md:p-12">
+                        <div className="text-center md:text-left">
+                            <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
+                            {member.name}
+                            </CardTitle>
+                            <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
+                            {member.role}
+                            </CardDescription>
+                        </div>
+                        <div className="prose prose-lg max-w-4xl mt-8 text-muted-foreground text-left">
+                            <p>{member.bio}</p>
+                        </div>
+                    </CardContent>
+                </Card>
+                <Card className="w-[30%] rounded-l-none">
+                    <CardContent className="p-0 h-full">
+                         <Image
+                            src={member.imageUrl}
+                            alt={member.name}
+                            width={400}
+                            height={400}
+                            className="w-full h-full object-cover"
+                            data-ai-hint={member.hint}
+                        />
+                    </CardContent>
+                </Card>
+              </div>
             </div>
             
             {workVideos.length > 0 && (
@@ -311,3 +325,5 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
     </>
   );
 }
+
+    
