@@ -26,7 +26,7 @@ const services = [
     ],
     color: "bg-[#141414]",
     textColor: "text-[#f2f0da]",
-    imageUrl: "https://picsum.photos/seed/edit/800/1200",
+    imageUrl: "/images/EDIT.png",
     imageHint: "editing equipment",
   },
   {
