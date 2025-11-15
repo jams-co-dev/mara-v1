@@ -170,7 +170,7 @@ export default function ServicesClientPage() {
                           </div>
                       </div>
                       <div className={cn(
-                          "relative h-full w-2/5 transition-all duration-700 ease-in-out",
+                          "relative h-full w-1/2 transition-all duration-700 ease-in-out",
                           activeService === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       )}>
                           <Image
