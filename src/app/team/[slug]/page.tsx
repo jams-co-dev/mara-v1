@@ -257,12 +257,12 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
             </div>
             
             {workVideos.length > 0 && (
-              <div className="mt-16 space-y-4 md:space-y-8">
+              <div className="mt-16 space-y-0">
                 {/* Row 1 */}
                 {firstRowVideos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
                     {firstRowVideos.map((video: { videoId: string }, index: number) => (
-                      <div key={`row1-${index}`} className="aspect-video relative overflow-hidden rounded-lg shadow-lg">
+                      <div key={`row1-${index}`} className="aspect-video relative overflow-hidden">
                         <iframe
                           src={`https://player.vimeo.com/video/${video.videoId}?autoplay=0&muted=1&title=0&byline=0&portrait=0`}
                           width="100%"
@@ -279,9 +279,9 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
                 
                 {/* Row 2 */}
                 {secondRowVideos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {secondRowVideos.map((video: { videoId: string }, index: number) => (
-                      <div key={`row2-${index}`} className="aspect-video relative overflow-hidden rounded-lg shadow-lg">
+                      <div key={`row2-${index}`} className="aspect-video relative overflow-hidden">
                         <iframe
                           src={`https://player.vimeo.com/video/${video.videoId}?autoplay=0&muted=1&title=0&byline=0&portrait=0`}
                           width="100%"
