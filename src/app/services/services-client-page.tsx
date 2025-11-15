@@ -51,7 +51,7 @@ const services = [
     ],
     color: "bg-[#ffffff]",
     textColor: "text-black",
-    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/vfx_3.png",
+    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=400,format=auto,quality=80/vfx_3.png",
     imageHint: "visual effects",
   },
   {
