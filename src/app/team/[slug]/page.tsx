@@ -255,7 +255,7 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="w-[30%] rounded-l-none bg-transparent border-none shadow-none relative z-10 -ml-16">
+                <Card className="w-[30%] rounded-l-none bg-transparent border-none shadow-none relative z-20 -ml-8">
                     <CardContent className="p-0 h-full">
                          <Image
                             src={member.imageUrl}
