@@ -6,40 +6,38 @@ import Image from 'next/image';
 export default function AboutClientPage() {
 
   return (
-    <div>
+    <div className="bg-background text-primary-foreground">
       <div className="flex flex-col min-h-[calc(100vh_-_5rem)]">
-        <main className="relative flex items-center justify-center text-primary-foreground text-center overflow-hidden flex-grow">
-          <div className="absolute inset-0">
-            <Image
-              src="https://picsum.photos/seed/about/1920/1080"
-              alt="Mara Post team working"
-              fill
-              className="object-cover"
-              data-ai-hint="creative team collaboration"
-              priority
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          <div className="relative z-10 p-4">
-            <section className="mb-8">
-              <h1 className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-white">
+        <main className="flex-grow pt-24 pb-24">
+          <div className="container mx-auto px-4">
+            <section className="text-center">
+              <h1 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-primary-foreground">
                 About Us
               </h1>
-              <p className="mt-4 max-w-2xl mx-auto text-lg text-white/80">
-                The creative force behind Mara Post.
-              </p>
             </section>
 
-            <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-sans text-accent mb-4">LIMITLESS C R E A T I V I T Y </h2>
-                <p className="text-lg text-white/90 mb-4">
-                We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
-                </p>
-                <p className="text-lg text-white/90">
+            <section className="mt-12 mb-16">
+              <div className="max-w-7xl mx-auto relative flex flex-col md:justify-center md:items-center">
+                <div className="w-full">
+                  <Image
+                    src="/images/About_us_2.png"
+                    alt="Mara Post Team"
+                    width={1280}
+                    height={720}
+                    className="w-full h-auto rounded-lg"
+                    data-ai-hint="team collaboration"
+                  />
+                </div>
+                <div className="relative md:absolute md:left-0 md:top-1/2 w-full max-w-sm p-6 rounded-lg backdrop-blur-sm mt-4 md:mt-0">
+                  <p className="text-xs text-white/90 mb-4">
+                    We are transforming alchemists of atmospheres, exploring and creating new ways of telling stories. We see how images find their voice, and how light and shadow dance with colors and textures, finding perfect harmony. We are that magical essence that transforms reality as far as imagination can take you. We are Mara Post.
+                  </p>
+                  <p className="text-xs text-white/90">
                     Founded on the principles of innovation, collaboration, and excellence, we strive to be more than just a service provider; we aim to be a true partner in our clients' success.
-                </p>
-            </div>
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
         </main>
       </div>

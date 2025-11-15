@@ -18,36 +18,43 @@ const services = [
     icon: PenTool,
     title: "EDIT",
     names: [
-        { name: "JAVIER PINILLA", slug: "javier-pinilla" },
-        { name: "JORGE BELTRAN", slug: "jorge-beltran" },
-        { name: "CARLOS LEON", slug: "carlos-leon" },
-        { name: "DANIEL VARGAS", slug: "daniel-vargas" },
-        { name: "HAROLD", slug: "harold" },
-        { name: "MATEO", slug: "mateo" },
+        { name: "Javier Pinilla", slug: "javier-pinilla" },
+        { name: "Carlos León", slug: "carlos-leon" },
+        { name: "Daniel Vargas", slug: "daniel-vargas" },
+        { name: "Mateo Herrera", slug: "mateo" },
+        { name: "Arturo Perez", slug: "arturo-p" },
     ],
-    color: "bg-gray-900",
-    textColor: "text-gray-200"
+    color: "bg-[#141414]",
+    textColor: "text-[#f2f0da]"
   },
   {
     icon: Palette,
     title: "COLOR",
     names: [
-        { name: "ARTURO PEREZ", slug: "arturo-perez" },
-        { name: "DIEGO", slug: "diego" },
-        { name: "JOEL", slug: "joel" },
+        { name: "Arturo Perez", slug: "arturo-perez" },
+        { name: "Juan Diego Barragan", slug: "diego" },
     ],
-    color: "bg-sky-200/70",
-    textColor: "text-sky-900"
+    color: "bg-[#ce283e]",
+    textColor: "text-[#f2f0da]"
   },
   {
     icon: Sparkles,
     title: "VFX",
     names: [
-        { name: "CRISTIAN PICO", slug: "cristian-pico" },
-        { name: "JUAN CONTRERAS", slug: "juan-contreras" },
+        { name: "Cristian Pico", slug: "cristian-pico" },
+        { name: "Harold Rodríguez", slug: "harold" },
+        { name: "Juan Contreras", slug: "juan-contreras" },
     ],
-    color: "bg-violet-200/70",
-    textColor: "text-violet-900"
+    color: "bg-[#ffffff]",
+    textColor: "text-black"
+  },
+  {
+    icon: Sparkles,
+    title: "IA",
+    names: [
+    ],
+    color: "bg-gray-900",
+    textColor: "text-gray-200"
   },
 ];
 
@@ -116,11 +123,11 @@ export default function ServicesClientPage() {
                 </div>
                 <div
                   className={cn(
-                    "absolute inset-0 flex items-start justify-start transition-opacity duration-500 p-8",
+                    "absolute inset-0 flex items-center justify-start transition-opacity duration-500 p-8",
                     activeService === index ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                    <div className="flex h-full w-full items-start justify-start">
+                    <div className="flex h-full w-full items-center justify-start">
                       <div className="flex items-center h-full mr-16">
                           <h2
                               className={cn(
@@ -132,16 +139,16 @@ export default function ServicesClientPage() {
                           </h2>
                       </div>
                       <div 
-                          className="flex-grow flex items-start justify-start"
+                          className="flex-grow flex items-center justify-start"
                           onMouseLeave={() => setHoveredName(null)}
                       >
                         {service.names && (
-                            <div className="flex flex-col text-left mt-8">
+                            <div className="flex flex-col text-left">
                               {service.names.map(member => (
                                   <Link key={member.slug} href={`/team/${member.slug}`}>
                                       <span 
                                           className={cn(
-                                              "text-4xl font-sans font-bold uppercase cursor-pointer transition-opacity duration-300 block",
+                                              "text-4xl font-sans font-bold cursor-pointer transition-opacity duration-300 block",
                                               service.textColor,
                                               hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
                                           )}

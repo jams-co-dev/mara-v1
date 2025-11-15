@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '9xl': '90rem',
+      },
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
         code: ['monospace'],
