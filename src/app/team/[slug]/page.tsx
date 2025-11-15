@@ -241,16 +241,16 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
             <div className="relative -mt-24 md:-mt-32">
               <div className="flex">
                  <Card className="w-[70%] rounded-r-none bg-transparent border-none shadow-none">
-                    <CardContent className="p-6 md:p-12">
+                    <CardContent className="p-6 md:p-12 text-[#f2f0da]">
                         <div className="text-center md:text-left">
-                            <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight text-primary">
+                            <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight">
                             {member.name}
                             </CardTitle>
-                            <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold text-accent">
+                            <CardDescription as="p" className="mt-2 text-xl md:text-2xl font-semibold">
                             {member.role}
                             </CardDescription>
                         </div>
-                        <div className="prose prose-lg max-w-4xl mt-8 text-muted-foreground text-left">
+                        <div className="prose prose-lg max-w-4xl mt-8 text-left">
                             <p>{member.bio}</p>
                         </div>
                     </CardContent>
