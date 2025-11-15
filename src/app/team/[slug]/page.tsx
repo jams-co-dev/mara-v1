@@ -240,7 +240,7 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative -mt-24 md:-mt-32">
               <div className="flex items-stretch">
-                 <Card className="w-[70%] rounded-r-none bg-transparent border-none shadow-none">
+                 <Card className="w-[70%] rounded-r-none bg-transparent border-none shadow-none relative z-10">
                     <CardContent className="p-6 md:p-12 text-[#f2f0da]">
                         <div className="text-center md:text-left">
                             <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight">
@@ -325,3 +325,5 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
     </>
   );
 }
+
+    
