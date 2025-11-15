@@ -8,17 +8,18 @@ import { Separator } from "@/components/ui/separator";
 
 const contactPeople = [
     {
-        name: "Javier Pinilla",
-        role: "CEO / Post-production supervisor",
-        phone: "+57 318 2648834",
-        email: "javier@marapost.co"
-    },
-    {
         name: "Cristina Duque",
-        role: "Manager",
+        role: "post-production coordinator",
         phone: "+57 319 3323839",
         email: "cristina@marapost.co"
+    },
+    {
+        name: "Javier Pinilla",
+        role: "post-production director",
+        phone: "+57 318 2648834",
+        email: "javier@marapost.co"
     }
+    
 ]
 
 export default function ContactClientPage() {
@@ -49,13 +50,13 @@ export default function ContactClientPage() {
                                     </div>
                                     <p className="text-muted-foreground mb-4 md:pl-[36px]">{person.role}</p>
                                     <div className="md:pl-[36px]">
-                                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-                                            <Phone className="w-4 h-4" />
-                                            <span>{person.phone}</span>
-                                        </a>
                                         <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
                                             <Mail className="w-4 h-4" />
                                             <span>{person.email}</span>
+                                        </a>
+                                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+                                            <Phone className="w-4 h-4" />
+                                            <span>{person.phone}</span>
                                         </a>
                                     </div>
                                 </div>
