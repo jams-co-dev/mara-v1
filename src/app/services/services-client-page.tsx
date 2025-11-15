@@ -1,8 +1,8 @@
-
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { PenTool, Palette, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageWrapper } from '@/components/page-wrapper';
@@ -25,7 +25,9 @@ const services = [
         { name: "Arturo Perez", slug: "arturo-p" },
     ],
     color: "bg-[#141414]",
-    textColor: "text-[#f2f0da]"
+    textColor: "text-[#f2f0da]",
+    imageUrl: "https://picsum.photos/seed/edit/800/1200",
+    imageHint: "editing equipment",
   },
   {
     icon: Palette,
@@ -35,7 +37,9 @@ const services = [
         { name: "Juan Diego Barragan", slug: "diego" },
     ],
     color: "bg-[#ce283e]",
-    textColor: "text-[#f2f0da]"
+    textColor: "text-[#f2f0da]",
+    imageUrl: "https://picsum.photos/seed/color/800/1200",
+    imageHint: "color palette",
   },
   {
     icon: Sparkles,
@@ -46,7 +50,9 @@ const services = [
         { name: "Juan Contreras", slug: "juan-contreras" },
     ],
     color: "bg-[#ffffff]",
-    textColor: "text-black"
+    textColor: "text-black",
+    imageUrl: "https://picsum.photos/seed/vfx/800/1200",
+    imageHint: "visual effects",
   },
   {
     icon: Sparkles,
@@ -54,7 +60,9 @@ const services = [
     names: [
     ],
     color: "bg-gray-900",
-    textColor: "text-gray-200"
+    textColor: "text-gray-200",
+    imageUrl: "https://picsum.photos/seed/ai/800/1200",
+    imageHint: "artificial intelligence",
   },
 ];
 
@@ -127,40 +135,52 @@ export default function ServicesClientPage() {
                     activeService === index ? 'opacity-100' : 'opacity-0'
                   )}
                 >
-                    <div className="flex h-full w-full items-center justify-start">
-                      <div className="flex items-center h-full mr-16">
+                    <div className="flex h-full w-full items-center justify-between">
+                      <div className="flex h-full items-center">
                           <h2
                               className={cn(
-                                  "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180",
+                                  "text-2xl font-sans font-bold uppercase tracking-widest [writing-mode:vertical-rl] transform rotate-180 mr-16",
                                   service.textColor
                               )}
                           >
                               {service.title}
                           </h2>
+                          <div 
+                              className="flex-grow flex items-center justify-start"
+                              onMouseLeave={() => setHoveredName(null)}
+                          >
+                            {service.names && (
+                                <div className="flex flex-col text-left">
+                                  {service.names.map(member => (
+                                      <Link key={member.slug} href={`/team/${member.slug}`}>
+                                          <span 
+                                              className={cn(
+                                                  "text-4xl font-sans font-bold cursor-pointer transition-opacity duration-300 block",
+                                                  service.textColor,
+                                                  hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
+                                              )}
+                                              onMouseEnter={() => setHoveredName(member.name)}
+                                          >
+                                              {member.name}
+                                          </span>
+                                      </Link>
+                                  ))}
+                                </div>
+                            )}
+                          </div>
                       </div>
-                      <div 
-                          className="flex-grow flex items-center justify-start"
-                          onMouseLeave={() => setHoveredName(null)}
-                      >
-                        {service.names && (
-                            <div className="flex flex-col text-left">
-                              {service.names.map(member => (
-                                  <Link key={member.slug} href={`/team/${member.slug}`}>
-                                      <span 
-                                          className={cn(
-                                              "text-4xl font-sans font-bold cursor-pointer transition-opacity duration-300 block",
-                                              service.textColor,
-                                              hoveredName === null ? 'opacity-70' : (hoveredName === member.name ? 'opacity-100' : 'opacity-50')
-                                          )}
-                                          onMouseEnter={() => setHoveredName(member.name)}
-                                      >
-                                          {member.name}
-                                      </span>
-                                  </Link>
-                              ))}
-                            </div>
-                        )}
-                        </div>
+                      <div className={cn(
+                          "relative h-[80%] w-1/3 transition-all duration-700 ease-in-out",
+                          activeService === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                      )}>
+                          <Image
+                            src={service.imageUrl}
+                            alt={service.title}
+                            fill
+                            className="object-cover rounded-lg"
+                            data-ai-hint={service.imageHint}
+                          />
+                      </div>
                     </div>
                 </div>
               </div>
