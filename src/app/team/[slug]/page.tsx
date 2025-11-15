@@ -85,7 +85,7 @@ const teamMembers = [
     name: "JAVIER PINILLA",
     slug: "javier-pinilla",
     role: "Editor",
-    imageUrl: "https://placehold.co/200x200.png",
+    imageUrl: "/images/JAVI_FX_V2.png",
     hint: "man editing film",
     bio: "As Director of Postproduction, I have based my career on the excellence I bring to each commercial. I am passionate about what I do, specializing in connecting and expressing through images what I see and feel. I enjoy understanding and interpreting each idea that comes to us from agencies and producers in order to give it a comprehensive and powerful structure according to the campaign concept. I have 16 years of experience in the advertising audiovisual industry where I have managed to create a solid company and a talented team, always seeking to ensure that our workflow achieves the effectiveness and impact necessary for each of the pieces.",
     headerImage: "https://placehold.co/1920x1080.png",
@@ -325,3 +325,5 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
     </>
   );
 }
+
+    
