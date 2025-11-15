@@ -239,7 +239,7 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
       <div className="pb-24 pt-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative -mt-24 md:-mt-32">
-              <div className="flex">
+              <div className="flex items-stretch">
                  <Card className="w-[70%] rounded-r-none bg-transparent border-none shadow-none">
                     <CardContent className="p-6 md:p-12 text-[#f2f0da]">
                         <div className="text-center md:text-left">
@@ -255,7 +255,7 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="w-[30%] rounded-l-none bg-transparent border-none shadow-none">
+                <Card className="w-[30%] rounded-l-none bg-transparent border-none shadow-none relative z-10 -ml-16">
                     <CardContent className="p-0 h-full">
                          <Image
                             src={member.imageUrl}
