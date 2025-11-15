@@ -170,14 +170,14 @@ export default function ServicesClientPage() {
                           </div>
                       </div>
                       <div className={cn(
-                          "relative h-[80%] w-1/3 transition-all duration-700 ease-in-out",
+                          "relative h-full w-2/5 transition-all duration-700 ease-in-out",
                           activeService === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       )}>
                           <Image
                             src={service.imageUrl}
                             alt={service.title}
                             fill
-                            className="object-cover rounded-lg"
+                            className="object-cover"
                             data-ai-hint={service.imageHint}
                           />
                       </div>
