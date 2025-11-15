@@ -201,7 +201,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function TeamMemberPage({ params }: { params: { slug: string } }) {
+export default function TeamMemberPage({ params }: { params: { slug:string } }) {
   const member = getTeamMember(params.slug);
 
   if (!member) {
