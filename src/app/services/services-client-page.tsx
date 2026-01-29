@@ -26,7 +26,7 @@ const services = [
     ],
     color: "bg-[#141414]",
     textColor: "text-[#f2f0da]",
-    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/EDIT.png",
+    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/EDIT_final.png",
     imageHint: "editing equipment",
   },
   {
@@ -38,7 +38,7 @@ const services = [
     ],
     color: "bg-[#ce283e]",
     textColor: "text-[#f2f0da]",
-    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/color_2.png",
+    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/Color_final.png",
     imageHint: "color palette",
   },
   {
@@ -51,7 +51,7 @@ const services = [
     ],
     color: "bg-[#ffffff]",
     textColor: "text-black",
-    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/vfx_3.png",
+    imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/VFX_final.png",
     imageHint: "visual effects",
   },
   {
