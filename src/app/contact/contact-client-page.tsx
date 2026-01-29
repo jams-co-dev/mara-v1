@@ -1,10 +1,8 @@
 
 "use client";
 
-import { Mail, Phone, MapPin, UserCircle2 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Phone, MapPin, User } from "lucide-react";
 import { PageWrapper } from "@/components/page-wrapper";
-import { Separator } from "@/components/ui/separator";
 
 const contactPeople = [
     {
@@ -39,38 +37,34 @@ export default function ContactClientPage() {
             </section>
 
             <div className="max-w-4xl mx-auto">
-                <Card>
-                    <CardContent className="p-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {contactPeople.map((person) => (
-                                <div key={person.name} className="flex flex-col items-center text-center md:items-start md:text-left">
-                                    <div className="flex items-center gap-3">
-                                      <UserCircle2 className="w-6 h-6 text-[#55ffb3]" />
-                                      <h2 className="text-2xl font-sans text-accent">{person.name}</h2>
-                                    </div>
-                                    <p className="text-muted-foreground mb-4 md:pl-[36px]">{person.role}</p>
-                                    <div className="md:pl-[36px]">
-                                        <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-                                            <Mail className="w-4 h-4" />
-                                            <span>{person.email}</span>
-                                        </a>
-                                        <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-                                            <Phone className="w-4 h-4" />
-                                            <span>{person.phone}</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                        <Separator className="my-8" />
-                        <div className="text-center">
-                            <div className="flex items-center justify-center gap-2">
-                               <MapPin className="w-5 h-5 text-[#55ffb3]" />
-                               <p className="text-lg text-muted-foreground">Calle 89 # 20 - 45 Bogotá, Colombia.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {contactPeople.map((person) => (
+                        <div key={person.name} className="flex flex-col items-center text-center font-sans">
+                            <div className="flex items-center gap-3 mb-2">
+                                <User className="w-6 h-6 text-[#55ffb3] fill-[#55ffb3]" />
+                                <h2 className="text-2xl font-sans font-bold text-accent">{person.name}</h2>
+                            </div>
+                            <p className="text-muted-foreground mb-4">{person.role}</p>
+                            <div className="flex flex-col items-center gap-2">
+                                <a href={`mailto:${person.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+                                    <Mail className="w-4 h-4 fill-current" />
+                                    <span>{person.email}</span>
+                                </a>
+                                <a href={`tel:${person.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+                                    <Phone className="w-4 h-4 fill-current" />
+                                    <span>{person.phone}</span>
+                                </a>
                             </div>
                         </div>
-                    </CardContent>
-                </Card>
+                    ))}
+                </div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-[#55ffb3]/30 to-transparent my-12" />
+                <div className="text-center">
+                    <div className="flex items-center justify-center gap-2">
+                       <MapPin className="w-5 h-5 text-background fill-[#55ffb3]" />
+                        <p className="text-lg text-muted-foreground">Calle 89 # 20 - 45 Bogotá, Colombia.</p>
+                    </div>
+                </div>
             </div>
           </div>
         </div>

@@ -28,6 +28,7 @@ const services = [
     textColor: "text-[#f2f0da]",
     imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/EDIT_final.png",
     imageHint: "editing equipment",
+    imageWidth: "object-[85%_center]",
   },
   {
     icon: Palette,
@@ -40,6 +41,7 @@ const services = [
     textColor: "text-[#f2f0da]",
     imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/Color_final.png",
     imageHint: "color palette",
+    imageWidth: "object-[90%_center]",
   },
   {
     icon: Sparkles,
@@ -53,6 +55,7 @@ const services = [
     textColor: "text-black",
     imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/VFX_final.png",
     imageHint: "visual effects",
+    imageWidth: "object-[100%_center]",
   },
   {
     icon: Sparkles,
@@ -63,6 +66,7 @@ const services = [
     textColor: "text-gray-200",
     imageUrl: "https://picsum.photos/seed/ai/800/1200",
     imageHint: "artificial intelligence",
+    imageWidth: "object-[85%_center]",
   },
 ];
 
@@ -177,7 +181,7 @@ export default function ServicesClientPage() {
                             src={service.imageUrl}
                             alt={service.title}
                             fill
-                            className="object-cover"
+                            className={`object-cover ${service.imageWidth}`}
                             data-ai-hint={service.imageHint}
                           />
                       </div>
