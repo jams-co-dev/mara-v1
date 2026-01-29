@@ -1,0 +1,10 @@
+name = "mara-v1"
+# pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2025-01-21"
+compatibility_flags = ["nodejs_compat"]
+
+
+
+[vars]
+# Variables de entorno para local
+NEXT_PUBLIC_SITE_URL = "http://localhost:8788"

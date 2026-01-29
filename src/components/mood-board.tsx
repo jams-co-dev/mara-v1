@@ -80,10 +80,9 @@ const BackgroundVideoItem = ({ item, onVideoSelect, className, refreshKey }: Bac
                 src={item.thumbnail}
                 alt={`Thumbnail for ${item.title}`}
                 fill
-                objectFit="cover"
                 priority
                 className={cn(
-                    "absolute inset-0 z-10 pointer-events-none transition-opacity duration-1000 ease-in-out",
+                    "absolute inset-0 z-10 pointer-events-none transition-opacity duration-1000 ease-in-out object-cover",
                     showThumbnail ? "opacity-100" : "opacity-0"
                 )}
             />
