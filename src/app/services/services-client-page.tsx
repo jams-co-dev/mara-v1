@@ -28,7 +28,7 @@ const services = [
     textColor: "text-[#f2f0da]",
     imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/EDIT_final.png",
     imageHint: "editing equipment",
-    imageWidth: "object-[85%_center]",
+    imageWidth: "object-[80%_center]",
   },
   {
     icon: Palette,
@@ -41,7 +41,7 @@ const services = [
     textColor: "text-[#f2f0da]",
     imageUrl: "https://marapost.co/cdn-cgi/image/fit=scale-down,width=auto,format=auto,quality=80,sharpen=1/Color_final.png",
     imageHint: "color palette",
-    imageWidth: "object-[90%_center]",
+    imageWidth: "object-[85%_center]",
   },
   {
     icon: Sparkles,
@@ -111,9 +111,10 @@ export default function ServicesClientPage() {
               <div
                 key={index}
                 className={cn(
-                  "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out overflow-hidden",
-                  "flex items-center",
-                  activeService === index ? 'flex-grow w-full md:w-[90%]' : 'flex-shrink w-full md:w-[calc(10%_/_2)]',
+                  "relative h-full text-white cursor-pointer transition-all duration-500 ease-in-out flex items-center",
+                  activeService === index 
+                    ? 'flex-grow w-full md:w-[90%] z-40 overflow-visible shadow-2xl' 
+                    : 'flex-shrink w-full md:w-[calc(10%_/_2)] z-0 overflow-hidden',
                   service.color
                 )}
                 onClick={() => setActiveService(index)}
@@ -174,7 +175,7 @@ export default function ServicesClientPage() {
                           </div>
                       </div>
                       <div className={cn(
-                          "relative h-full w-1/2 transition-all duration-700 ease-in-out",
+                          "absolute right-0 h-full w-[65%] transition-all duration-700 ease-in-out z-50 pointer-events-none",
                           activeService === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       )}>
                           <Image
