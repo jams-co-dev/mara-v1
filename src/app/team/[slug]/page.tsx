@@ -201,8 +201,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function TeamMemberPage({ params }: { params: { slug:string } }) {
-  const member = getTeamMember(params.slug);
+export default async function TeamMemberPage({ params }: { params: Promise<{ slug:string }> }) {
+  const { slug } = await params;
+  const member = getTeamMember(slug);
 
   if (!member) {
     notFound();
@@ -214,7 +215,7 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
 
   return (
     <>
-      <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-black">
+      <section className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
         {(member as any).headerVideoId ? (
           <iframe
             src={`https://player.vimeo.com/video/${(member as any).headerVideoId}?background=1&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0`}
@@ -239,8 +240,8 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
       <div className="pb-24 pt-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative -mt-24 md:-mt-32">
-              <div className="flex items-stretch">
-                 <Card className="w-[70%] rounded-r-none bg-transparent border-none shadow-none relative z-10">
+              <div className="relative min-h-[400px]">
+                 <Card className="w-full md:w-[65%] bg-transparent border-none shadow-none relative z-10">
                     <CardContent className="p-6 md:p-12 text-[#f2f0da]">
                         <div className="text-center md:text-left">
                             <CardTitle as="h1" className="text-4xl md:text-6xl font-sans font-bold tracking-tight">
@@ -255,37 +256,35 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="w-[30%] rounded-l-none bg-transparent border-none shadow-none relative z-50 -ml-8">
-                    <CardContent className="p-0 h-full">
+                <div className="absolute right-0 top-0 md:-top-20 w-[40%] md:w-[35%] h-auto z-50 pointer-events-none transform scale-110 md:scale-115 origin-top-right">
                          <Image
                             src={member.imageUrl}
                             alt={member.name}
-                            width={400}
-                            height={400}
-                            className="w-full h-full object-cover"
+                            width={600}
+                            height={600}
+                            className="w-full h-auto object-contain drop-shadow-2xl"
                             data-ai-hint={member.hint}
+                            priority
                         />
-                    </CardContent>
-                </Card>
+                </div>
               </div>
             </div>
             
             {workVideos.length > 0 && (
-              <div className="mt-16 space-y-0">
+              <div className="mt-16 flex flex-col w-full">
                 {/* Row 1 */}
                 {firstRowVideos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+                  <div className="flex flex-col md:flex-row w-full aspect-video md:h-[50vh]">
                     {firstRowVideos.map((video: { videoId: string }, index: number) => (
-                      <div key={`row1-${index}`} className="aspect-video relative overflow-hidden">
+                      <div key={`row1-${index}`} className="relative flex-1 group overflow-hidden bg-black">
                         <iframe
                           src={`https://player.vimeo.com/video/${video.videoId}?background=1&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0`}
-                          width="100%"
-                          height="100%"
+                          className="absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture"
-                          className="w-full h-full absolute top-0 left-0"
                           title={`Work video ${index + 1} for ${member.name}`}
                         ></iframe>
+                        <div className="absolute inset-0 z-10 bg-transparent" />
                       </div>
                     ))}
                   </div>
@@ -293,18 +292,17 @@ export default function TeamMemberPage({ params }: { params: { slug:string } }) 
                 
                 {/* Row 2 */}
                 {secondRowVideos.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+                  <div className="flex flex-col md:flex-row w-full aspect-video md:h-[50vh]">
                     {secondRowVideos.map((video: { videoId: string }, index: number) => (
-                      <div key={`row2-${index}`} className="aspect-video relative overflow-hidden">
+                      <div key={`row2-${index}`} className="relative flex-1 group overflow-hidden bg-black">
                         <iframe
                           src={`https://player.vimeo.com/video/${video.videoId}?background=1&autoplay=0&loop=1&muted=1&title=0&byline=0&portrait=0`}
-                          width="100%"
-                          height="100%"
+                          className="absolute top-1/2 left-1/2 w-auto h-auto min-w-[177.77vh] min-h-[100vw] -translate-x-1/2 -translate-y-1/2 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
                           frameBorder="0"
                           allow="autoplay; fullscreen; picture-in-picture"
-                          className="w-full h-full absolute top-0 left-0"
                           title={`Work video ${index + 4} for ${member.name}`}
                         ></iframe>
+                        <div className="absolute inset-0 z-10 bg-transparent" />
                       </div>
                     ))}
                   </div>
