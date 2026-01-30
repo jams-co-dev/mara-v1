@@ -66,7 +66,8 @@ const services = [
     textColor: "text-gray-200",
     imageUrl: "https://picsum.photos/seed/ai/800/1200",
     imageHint: "artificial intelligence",
-    imageWidth: "object-[85%_center]",
+    imageWidth: "object-[100%_center]",
+    videoUrl: "https://marapost.co/reel_ia%20(1080p).mp4",
   },
 ];
 
@@ -175,16 +176,28 @@ export default function ServicesClientPage() {
                           </div>
                       </div>
                       <div className={cn(
-                          "absolute right-0 h-full w-[65%] transition-all duration-700 ease-in-out z-50 pointer-events-none",
+                          "absolute right-0 h-full transition-all duration-700 ease-in-out z-50 pointer-events-none",
+                          service.videoUrl ? "w-[95%]" : "w-[65%]",
                           activeService === index ? "opacity-100 scale-100" : "opacity-0 scale-95"
                       )}>
-                          <Image
-                            src={service.imageUrl}
-                            alt={service.title}
-                            fill
-                            className={`object-cover ${service.imageWidth}`}
-                            data-ai-hint={service.imageHint}
-                          />
+                          {service.videoUrl ? (
+                            <video
+                                src={service.videoUrl}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className={`w-full h-full object-cover ${service.imageWidth}`}
+                            />
+                          ) : (
+                            <Image
+                                src={service.imageUrl || ''}
+                                alt={service.title}
+                                fill
+                                className={`object-cover ${service.imageWidth}`}
+                                data-ai-hint={service.imageHint}
+                            />
+                          )}
                       </div>
                     </div>
                 </div>
